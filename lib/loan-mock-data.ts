@@ -18,17 +18,20 @@ export interface TopMetrics {
 }
 
 export interface LoanDistribution {
+    [key: string]: string | number;
     name: string;
     value: number;
     color: string;
 }
 
 export interface LoanType {
+    [key: string]: string | number;
     name: string;
     applications: number;
 }
 
 export interface BankData {
+    [key: string]: string | number;
     bank: string;
     applications: number;
 }
@@ -43,6 +46,7 @@ export interface PartnerPerformance {
 }
 
 export interface ApplicationLoan {
+    [key: string]: string | number;
     type: string;
     count: number;
 }
