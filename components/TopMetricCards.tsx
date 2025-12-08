@@ -132,9 +132,9 @@ export default function TopMetricCards() {
     ];
 
     return (
-        <div className="flex gap-4">
-            {/* Main Cards Section - 2 cards side by side */}
-            <div className="flex gap-4 flex-[2]">
+        <div className="flex flex-col lg:flex-row gap-4">
+            {/* Main Cards Section - stacked on mobile, side by side on tablet+ */}
+            <div className="flex flex-col sm:flex-row gap-4 lg:flex-[2]">
                 <MainCard
                     title="Total Leads"
                     value={formatNumber(metrics.totalLeadsThisMonth)}
@@ -158,7 +158,7 @@ export default function TopMetricCards() {
             </div>
 
             {/* Small Cards Section - 2x2 Grid */}
-            <div className="grid grid-cols-2 gap-4 flex-1">
+            <div className="grid grid-cols-2 gap-4 lg:flex-1">
                 {smallCards.map((card, index) => (
                     <SmallCard key={index} {...card} delay={0.15 + index * 0.05} />
                 ))}

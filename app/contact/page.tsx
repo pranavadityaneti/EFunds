@@ -44,20 +44,20 @@ export default function ContactPage() {
                 icon={MessageCircle}
             />
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
                 {/* Contact Form */}
-                <div className="bg-white rounded-2xl p-6 opacity-0 animate-fadeInUp" style={{ boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)', animationDelay: '0.1s' }}>
-                    <div className="mb-6">
+                <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 opacity-0 animate-fadeInUp" style={{ boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)', animationDelay: '0.1s' }}>
+                    <div className="mb-4 sm:mb-6">
                         <span className="text-xs font-semibold text-[#f48b3b] uppercase tracking-wider">CONTACT</span>
-                        <h2 className="text-2xl font-bold text-gray-900 mt-1">Get in <span className="italic">touch</span></h2>
-                        <p className="text-gray-500 mt-2">Receive expert guidance to resolve any issues or queries.</p>
+                        <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mt-1">Get in <span className="italic">touch</span></h2>
+                        <p className="text-sm sm:text-base text-gray-500 mt-2">Receive expert guidance to resolve any issues or queries.</p>
                     </div>
 
                     {/* Team Toggle */}
-                    <div className="flex gap-2 mb-6">
+                    <div className="flex gap-2 mb-4 sm:mb-6">
                         <button
                             onClick={() => setSelectedTeam('tech')}
-                            className={`flex-1 py-2.5 px-4 rounded-xl font-medium text-sm transition-all ${selectedTeam === 'tech'
+                            className={`flex-1 py-2 sm:py-2.5 px-3 sm:px-4 rounded-xl font-medium text-xs sm:text-sm transition-all ${selectedTeam === 'tech'
                                 ? 'bg-[#f48b3b] text-white'
                                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                                 }`}
@@ -66,17 +66,17 @@ export default function ContactPage() {
                         </button>
                         <button
                             onClick={() => setSelectedTeam('business')}
-                            className={`flex-1 py-2.5 px-4 rounded-xl font-medium text-sm transition-all ${selectedTeam === 'business'
+                            className={`flex-1 py-2 sm:py-2.5 px-3 sm:px-4 rounded-xl font-medium text-xs sm:text-sm transition-all ${selectedTeam === 'business'
                                 ? 'bg-[#f48b3b] text-white'
                                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                                 }`}
                         >
-                            Business Development
+                            Business Dev
                         </button>
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-4">
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-1.5">Your Name</label>
                                 <input
@@ -123,7 +123,7 @@ export default function ContactPage() {
                         </div>
                         <button
                             type="submit"
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-[#374151] text-white font-medium rounded-xl hover:bg-gray-800 transition-colors"
+                            className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#374151] text-white font-medium rounded-xl hover:bg-gray-800 transition-colors text-sm sm:text-base"
                         >
                             <Send className="w-4 h-4" />
                             Send Message
@@ -131,7 +131,7 @@ export default function ContactPage() {
                     </form>
 
                     {/* Contact Info */}
-                    <div className="flex items-center gap-6 mt-6 pt-6 border-t border-gray-100">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 mt-6 pt-6 border-t border-gray-100">
                         <a href="mailto:support@efundzz.com" className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#f48b3b]">
                             <Mail className="w-4 h-4" />
                             support@efundzz.com
