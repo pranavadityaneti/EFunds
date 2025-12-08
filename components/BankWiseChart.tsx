@@ -9,11 +9,11 @@ export default function BankWiseChart() {
     return (
         <div className="bg-white rounded-2xl p-6 transition-all duration-200 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:-translate-y-1 opacity-0 animate-fadeInUp stagger-5" style={{ boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)' }}>
             <h3 className="text-lg font-semibold text-gray-900 mb-6">Bank-wise Applications</h3>
-            <div className="h-72">
+            <div className="h-64">
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                         data={data}
-                        margin={{ top: 5, right: 20, left: 10, bottom: 50 }}
+                        margin={{ top: 10, right: 10, left: 0, bottom: 60 }}
                     >
                         <defs>
                             <linearGradient id="blueGradient" x1="0" y1="0" x2="0" y2="1">
@@ -26,7 +26,8 @@ export default function BankWiseChart() {
                             dataKey="bank"
                             angle={-45}
                             textAnchor="end"
-                            height={80}
+                            height={70}
+                            interval={0}
                             stroke="#6B7280"
                             style={{ fontSize: '11px' }}
                             axisLine={false}
