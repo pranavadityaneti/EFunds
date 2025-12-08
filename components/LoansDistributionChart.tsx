@@ -22,7 +22,7 @@ export default function LoansDistributionChart() {
     // Calculate arc positions
     const radius = 120;
     const strokeWidth = 20;
-    const gap = 8; // Gap between segments in degrees
+    const gap = 0; // No gap between segments
     const centerX = 150;
     const centerY = 150;
 
@@ -99,7 +99,7 @@ export default function LoansDistributionChart() {
                                 fill="none"
                                 stroke={`url(#arcGradient-${index})`}
                                 strokeWidth={strokeWidth}
-                                strokeLinecap="round"
+                                strokeLinecap="butt"
                                 className="transition-all duration-300 cursor-pointer"
                                 style={{
                                     filter: hoveredIndex === index ? 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))' : 'none',
