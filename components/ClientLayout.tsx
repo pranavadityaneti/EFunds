@@ -1,5 +1,6 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import Sidebar, { SidebarProvider, useSidebar, MobileHeader } from '@/components/Sidebar';
 
 function MainContent({ children }: { children: React.ReactNode }) {
@@ -29,6 +30,13 @@ function MainContent({ children }: { children: React.ReactNode }) {
 }
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
+    const pathname = usePathname();
+
+    // Landing page doesn't need sidebar
+    if (pathname === '/landing' || pathname === '/') {
+        return <>{children}</>;
+    }
+
     return (
         <SidebarProvider>
             <Sidebar />
