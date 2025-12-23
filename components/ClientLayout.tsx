@@ -1,6 +1,7 @@
 'use client';
 
 import Sidebar, { SidebarProvider, useSidebar, MobileHeader } from '@/components/Sidebar';
+import { usePathname } from 'next/navigation';
 
 function MainContent({ children }: { children: React.ReactNode }) {
     const { isCollapsed } = useSidebar();
@@ -29,6 +30,13 @@ function MainContent({ children }: { children: React.ReactNode }) {
 }
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
+    const pathname = usePathname();
+
+    // Landing page should not have the sidebar layout
+    if (pathname === '/landing') {
+        return <>{children}</>;
+    }
+
     return (
         <SidebarProvider>
             <Sidebar />
