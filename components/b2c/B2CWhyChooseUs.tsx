@@ -56,7 +56,7 @@ export default function B2CWhyChooseUs() {
                     {/* Small Card 1 - Transparency */}
                     <BentoCard
                         tag="Transparency"
-                        title="The Real Cost of Bad Design (It's Zero)"
+
                         headline="Zero Hidden Charges"
                         desc="We believe in complete clarity. What you see is exactly what you pay. No surprises."
                         image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop"
