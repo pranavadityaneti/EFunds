@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Shield, Zap, QrCode, Users, LayoutDashboard, Puzzle } from "lucide-react";
 
 interface Product {
@@ -109,39 +108,35 @@ export default function B2BProducts() {
                         {products.map((product) => (
                             <div
                                 key={product.id}
-                                className="group relative w-[550px] md:w-[600px] h-[350px] rounded-[2.5rem] overflow-hidden p-10 flex flex-col justify-between shrink-0 transition-transform hover:scale-[1.01] snap-center"
-                                style={{
-                                    background: 'linear-gradient(145deg, #18181b 0%, #09090b 100%)',
-                                    border: '1px solid rgba(234, 88, 12, 0.2)'
-                                }}
+                                className="group relative w-[550px] md:w-[600px] h-[350px] rounded-[2.5rem] overflow-hidden p-10 flex flex-col justify-between shrink-0 transition-all duration-500 snap-center border border-gray-100 bg-white hover:border-orange-500/0 hover:shadow-2xl hover:shadow-orange-500/20"
                             >
+                                {/* Hover Gradient Background */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
+
                                 {/* Content */}
                                 <div className="relative z-10">
-                                    <h3 className="text-3xl font-semibold text-white mb-4">
+                                    <h3 className="text-3xl font-semibold text-gray-900 group-hover:text-white mb-4 transition-colors duration-300">
                                         {product.title}
                                     </h3>
-                                    <p className="text-gray-400 text-base leading-relaxed max-w-[85%] group-hover:text-gray-300 transition-colors">
+                                    <p className="text-gray-500 text-base leading-relaxed max-w-[85%] group-hover:text-white/90 transition-colors duration-300">
                                         {product.description}
                                     </p>
                                 </div>
 
                                 {/* CTA Button */}
-                                <button className="relative z-10 w-fit text-orange-500 bg-orange-500/10 hover:bg-orange-500/20 backdrop-blur-sm px-8 py-4 rounded-2xl text-base font-medium flex items-center gap-2 transition-all group-hover:pl-10 border border-orange-500/20">
+                                <button className="relative z-10 w-fit text-orange-600 bg-orange-50 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30 backdrop-blur-sm px-8 py-4 rounded-2xl text-base font-medium flex items-center gap-2 transition-all duration-300 group-hover:pl-10 border border-orange-100">
                                     {product.cta}
                                     <ArrowRight size={20} />
                                 </button>
 
                                 {/* Decorative Icon/Visual */}
-                                <div className="absolute right-[-40px] bottom-[-40px] opacity-20 group-hover:opacity-30 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12">
+                                <div className="absolute right-[-40px] bottom-[-40px] opacity-10 group-hover:opacity-20 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12 z-0">
                                     <product.icon
                                         size={240}
-                                        className="text-orange-500"
+                                        className="text-orange-500 group-hover:text-white transition-colors duration-500"
                                         strokeWidth={1}
                                     />
                                 </div>
-
-                                {/* Inner Shine Effect */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                             </div>
                         ))}
                     </div>
