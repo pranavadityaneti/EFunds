@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function B2BHero() {
     return (
-        <section className="relative w-full min-h-screen bg-white text-black overflow-hidden flex flex-col pt-32 pb-20">
+        <section className="relative w-full min-h-screen bg-black text-white overflow-hidden flex flex-col pt-32 pb-20">
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
                 {/* Main Headline */}
@@ -59,11 +59,11 @@ export default function B2BHero() {
                 </div>
 
                 {/* Bottom Content */}
-                <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl md:text-5xl font-serif text-gray-900 leading-tight mb-6">
-                        The fintech company aims to disrupt conventional financial systems and processes - <span className="text-gray-400">leveraging cutting-edge technologies and creative solutions</span> to address various pain points <span className="font-sans font-bold">and challenges</span> <span className="text-blue-500">within the industry.</span>
+                <div className="max-w-4xl mx-auto text-center">
+                    <h2 className="text-3xl md:text-5xl font-serif text-white leading-tight mb-6">
+                        The fintech company aims to disrupt conventional financial systems and processes - <span className="text-gray-500">leveraging cutting-edge technologies and creative solutions</span> to address various pain points <span className="font-sans font-bold">and challenges</span> <span className="text-blue-500">within the industry.</span>
                     </h2>
-                    <p className="text-gray-500 text-lg max-w-2xl">
+                    <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                         By adopting a progressive approach, they seek to improve the overall efficiency, accessibility, and transparency of financial services.
                     </p>
                 </div>
