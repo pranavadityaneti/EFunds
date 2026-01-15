@@ -1,10 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { TimerIcon, TransparencyIcon, NetworkIcon, ShieldIcon } from "./B2CIcons";
 
 export default function B2CWhyChooseUs() {
+    const [mainCardHovered, setMainCardHovered] = useState(false);
+
     return (
         <section className="py-24 bg-gray-50">
             <div className="container mx-auto px-6 lg:px-12">
@@ -24,12 +26,14 @@ export default function B2CWhyChooseUs() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
+                        onHoverStart={() => setMainCardHovered(true)}
+                        onHoverEnd={() => setMainCardHovered(false)}
                         className="md:col-span-3 bg-black rounded-[2rem] overflow-hidden shadow-xl flex flex-col md:flex-row relative group"
                     >
                         {/* Animation Side (Left) */}
                         <div className="w-full md:w-1/2 h-64 md:h-full relative overflow-hidden bg-gradient-to-br from-gray-900 to-black flex items-center justify-center border-r border-white/5">
                             <div className="relative z-10 scale-150">
-                                <TimerIcon />
+                                <TimerIcon isHovered={mainCardHovered} />
                             </div>
                             {/* Decorative background glow */}
                             <div className="absolute inset-0 bg-orange-500/5 blur-3xl rounded-full transform scale-75" />
@@ -56,7 +60,7 @@ export default function B2CWhyChooseUs() {
                     {/* Small Card 1 - Transparency */}
                     <BentoCard
                         tag="Transparency"
-                        icon={<TransparencyIcon />}
+                        Icon={TransparencyIcon}
                         headline="Zero Hidden Charges"
                         desc="We believe in complete clarity. What you see is exactly what you pay. No surprises."
                         delay={0.1}
@@ -65,7 +69,7 @@ export default function B2CWhyChooseUs() {
                     {/* Small Card 2 - Choice */}
                     <BentoCard
                         tag="Choice"
-                        icon={<NetworkIcon />}
+                        Icon={NetworkIcon}
                         headline="50+ Banking Partners"
                         desc="We compare across top banks and NBFCs to get you the lowest interest rates available."
                         delay={0.2}
@@ -74,7 +78,7 @@ export default function B2CWhyChooseUs() {
                     {/* Small Card 3 - Security */}
                     <BentoCard
                         tag="Security"
-                        icon={<ShieldIcon />}
+                        Icon={ShieldIcon}
                         headline="Bank-Grade Encryption"
                         desc="Your data is protected with the same global security standards used by major financial institutions."
                         delay={0.3}
@@ -86,13 +90,17 @@ export default function B2CWhyChooseUs() {
     );
 }
 
-const BentoCard = ({ tag, headline, desc, icon, delay }: { tag: string, headline: string, desc: string, icon: React.ReactNode, delay: number }) => {
+const BentoCard = ({ tag, headline, desc, Icon, delay }: { tag: string, headline: string, desc: string, Icon: React.ElementType<{ isHovered?: boolean }>, delay: number }) => {
+    const [isHovered, setIsHovered] = useState(false);
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay }}
+            onHoverStart={() => setIsHovered(true)}
+            onHoverEnd={() => setIsHovered(false)}
             className="bg-black rounded-[2rem] overflow-hidden shadow-lg border border-white/5 flex flex-col group h-full relative"
         >
             {/* Gradient Overlay */}
@@ -101,7 +109,7 @@ const BentoCard = ({ tag, headline, desc, icon, delay }: { tag: string, headline
 
             {/* Animation Top */}
             <div className="h-48 relative overflow-hidden shrink-0 flex items-center justify-center z-10 border-b border-white/5 bg-white/2">
-                {icon}
+                <Icon isHovered={isHovered} />
             </div>
 
             {/* Content Bottom */}

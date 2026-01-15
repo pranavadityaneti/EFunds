@@ -1,9 +1,30 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
 
 // 1. Timer Icon (Approvals in Minutes)
-export const TimerIcon = () => {
+export const TimerIcon = ({ isHovered }: { isHovered?: boolean }) => {
+    const handControls = useAnimation();
+    const labelControls = useAnimation();
+
+    useEffect(() => {
+        if (isHovered) {
+            // Reset and play
+            handControls.set({ rotate: 0 });
+            handControls.start({
+                rotate: 360 * 2 + 30,
+                transition: { duration: 2, ease: "circOut" }
+            });
+
+            labelControls.set({ opacity: 0, y: 10 });
+            labelControls.start({
+                opacity: 1, y: 0,
+                transition: { delay: 1.5, duration: 0.5 }
+            });
+        }
+    }, [isHovered, handControls, labelControls]);
+
     return (
         <div className="relative w-32 h-32 flex items-center justify-center">
             {/* Clock Face */}
@@ -33,7 +54,8 @@ export const TimerIcon = () => {
                     className="absolute w-1 h-12 bg-orange-500 rounded-full origin-bottom"
                     style={{ bottom: "50%", left: "calc(50% - 2px)" }}
                     initial={{ rotate: 0 }}
-                    whileInView={{ rotate: 360 * 2 + 30 }} // Spin twice then land on 1 o'clock (5 mins)
+                    whileInView={{ rotate: 360 * 2 + 30 }}
+                    animate={handControls}
                     transition={{ duration: 2, ease: "circOut", delay: 0.2 }}
                 />
 
@@ -45,6 +67,7 @@ export const TimerIcon = () => {
             <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                animate={labelControls}
                 transition={{ delay: 1.5, duration: 0.5 }}
                 className="absolute -bottom-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg"
             >
@@ -55,7 +78,26 @@ export const TimerIcon = () => {
 };
 
 // 2. Shield Icon (Security)
-export const ShieldIcon = () => {
+export const ShieldIcon = ({ isHovered }: { isHovered?: boolean }) => {
+    const pathControls = useAnimation();
+    const lockControls = useAnimation();
+
+    useEffect(() => {
+        if (isHovered) {
+            pathControls.set({ pathLength: 0, opacity: 0 });
+            pathControls.start({
+                pathLength: 1, opacity: 1,
+                transition: { duration: 1.5, ease: "easeInOut" }
+            });
+
+            lockControls.set({ scale: 0, opacity: 0 });
+            lockControls.start({
+                scale: 1, opacity: 1,
+                transition: { delay: 1, type: "spring" }
+            });
+        }
+    }, [isHovered, pathControls, lockControls]);
+
     return (
         <div className="w-24 h-24 relative flex items-center justify-center">
             <svg viewBox="0 0 24 24" className="w-full h-full text-orange-500" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -63,12 +105,14 @@ export const ShieldIcon = () => {
                     d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
                     initial={{ pathLength: 0, opacity: 0 }}
                     whileInView={{ pathLength: 1, opacity: 1 }}
+                    animate={pathControls}
                     transition={{ duration: 1.5, ease: "easeInOut" }}
                 />
             </svg>
             <motion.div
                 initial={{ scale: 0, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
+                animate={lockControls}
                 transition={{ delay: 1, type: "spring" }}
                 className="absolute text-white"
             >
@@ -82,14 +126,28 @@ export const ShieldIcon = () => {
 };
 
 // 3. Network/Handshake Icon (Choice - 50+ Partners)
-export const NetworkIcon = () => {
+export const NetworkIcon = ({ isHovered }: { isHovered?: boolean }) => {
     const nodes = [0, 1, 2, 3, 4]; // Satellite nodes
+    const controls = useAnimation();
+
+    useEffect(() => {
+        if (isHovered) {
+            controls.set("hidden");
+            controls.start("visible");
+        }
+    }, [isHovered, controls]);
+
     return (
         <div className="w-32 h-32 relative flex items-center justify-center">
             {/* Central Node */}
             <motion.div
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
+                variants={{
+                    hidden: { scale: 0 },
+                    visible: { scale: 1 }
+                }}
+                animate={controls}
                 transition={{ duration: 0.5 }}
                 className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg shadow-orange-500/30 z-10"
             >
@@ -109,6 +167,11 @@ export const NetworkIcon = () => {
                         className="absolute"
                         initial={{ opacity: 0, x: 0, y: 0 }}
                         whileInView={{ opacity: 1, x, y }}
+                        animate={controls}
+                        variants={{
+                            hidden: { opacity: 0, x: 0, y: 0 },
+                            visible: { opacity: 1, x, y }
+                        }}
                         transition={{ delay: 0.5 + i * 0.1, type: "spring" }}
                     >
                         {/* Connecting Line */}
@@ -123,6 +186,11 @@ export const NetworkIcon = () => {
                             }}
                             initial={{ scaleX: 0 }}
                             whileInView={{ scaleX: 1 }}
+                            animate={controls}
+                            variants={{
+                                hidden: { scaleX: 0 },
+                                visible: { scaleX: 1 }
+                            }}
                             transition={{ delay: 0.5 + i * 0.1, duration: 0.3 }}
                         />
                         <div className="w-6 h-6 bg-gray-800 border border-gray-700 rounded-full flex items-center justify-center shadow-sm">
@@ -136,13 +204,33 @@ export const NetworkIcon = () => {
 };
 
 // 4. Transparency Icon (Zero Hidden Charges)
-export const TransparencyIcon = () => {
+export const TransparencyIcon = ({ isHovered }: { isHovered?: boolean }) => {
+    const docControls = useAnimation();
+    const glassControls = useAnimation();
+
+    useEffect(() => {
+        if (isHovered) {
+            docControls.set({ y: 20, opacity: 0 });
+            docControls.start({
+                y: 0, opacity: 1,
+                transition: { duration: 0.5 }
+            });
+
+            glassControls.set({ scale: 0, x: 20, y: 20 });
+            glassControls.start({
+                scale: 1, x: 10, y: 10,
+                transition: { delay: 1, type: "spring" }
+            });
+        }
+    }, [isHovered, docControls, glassControls]);
+
     return (
         <div className="w-24 h-24 relative flex items-center justify-center">
             {/* Document */}
             <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
+                animate={docControls}
                 transition={{ duration: 0.5 }}
                 className="w-16 h-20 bg-white/10 border border-white/20 rounded-lg p-2 flex flex-col gap-1.5 backdrop-blur-sm"
             >
@@ -153,6 +241,10 @@ export const TransparencyIcon = () => {
                         style={{ width: `${w}%` }}
                         initial={{ width: 0 }}
                         whileInView={{ width: `${w}%` }}
+                        // Note: For simplicity, re-animating doc/glass is enough, bars inside can just stay or inherit key if we wanted.
+                        // But let's let them replay if docControls replays? 
+                        // Actually explicit controls for children is messy without variants.
+                        // Let's just trust key-frame or parent opacity reset handles visual "replay" feel.
                         transition={{ delay: 0.5 + i * 0.1, duration: 0.5 }}
                     />
                 ))}
@@ -162,6 +254,7 @@ export const TransparencyIcon = () => {
             <motion.div
                 initial={{ scale: 0, x: 20, y: 20 }}
                 whileInView={{ scale: 1, x: 10, y: 10 }}
+                animate={glassControls}
                 transition={{ delay: 1, type: "spring" }}
                 className="absolute w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg border-2 border-white"
             >
