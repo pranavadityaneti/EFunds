@@ -33,8 +33,13 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     const pathname = usePathname();
 
     // Landing page and public pages should not have the sidebar layout
-    const publicRoutes = ['/', '/landing', '/B2C', '/B2B', '/terms-and-conditions', '/privacy-policy'];
-    if (publicRoutes.includes(pathname)) {
+    // Landing page and public pages should not have the sidebar layout
+    const publicRoutes = ['/', '/landing', '/B2C', '/B2B', '/terms-and-conditions', '/privacy-policy', '/careers'];
+
+    // Check if current path is a public route or starts with /careers/
+    const isPublic = publicRoutes.includes(pathname) || pathname.startsWith('/careers/');
+
+    if (isPublic) {
         return <>{children}</>;
     }
 
