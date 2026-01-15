@@ -74,14 +74,12 @@ function BusinessCard({
 
             {/* CTA Button */}
             {/* CTA Button */}
-            <button
-                className="relative z-10 w-full py-4 rounded-xl font-bold text-base mb-8 transition-all duration-300 
-                bg-white text-[#f97316] border border-[#f97316]/20 shadow-sm
-                group-hover:bg-white group-hover:text-[#f97316] group-hover:shadow-lg
-                hover:scale-[1.02] active:scale-[0.98]"
+            {/* CTA Button */}
+            <div
+                className="relative z-10 w-full py-4 rounded-xl font-bold text-base mb-8 transition-all duration-300 bg-white text-[#f97316] border border-[#f97316]/20 shadow-sm group-hover:bg-white group-hover:text-[#f97316] group-hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] text-center"
             >
                 Learn More
-            </button>
+            </div>
 
             {/* Features List */}
             <div className="relative z-10 space-y-4 mt-auto border-t border-zinc-200 group-hover:border-white/20 pt-6 transition-colors duration-300">
@@ -93,13 +91,17 @@ function BusinessCard({
     );
 }
 
+import { useRouter } from "next/navigation";
+
 export default function LandingBusinessCards() {
+    const router = useRouter();
+
     const handleB2BClick = () => {
-        console.log("Navigate to B2B page");
+        router.push("/B2B");
     };
 
     const handleB2CClick = () => {
-        console.log("Navigate to B2C page");
+        router.push("/B2C");
     };
 
     const b2bFeatures = [

@@ -1,56 +1,26 @@
-import TopMetricCards from "@/components/TopMetricCards";
-import LoansDistributionChart from "@/components/LoansDistributionChart";
-import LoanTypesChart from "@/components/LoanTypesChart";
-import BankWiseChart from "@/components/BankWiseChart";
-import PartnerPerformanceTable from "@/components/PartnerPerformanceTable";
-import ApplicationLoansChart from "@/components/ApplicationLoansChart";
-import ReportsBanner from "@/components/ReportsBanner";
+import LandingHero from "@/components/landing/LandingHero";
+import LandingSolutions from "@/components/landing/LandingSolutions";
+import LandingFeatures from "@/components/landing/LandingFeatures";
+import LandingAudience from "@/components/landing/LandingAudience";
+import LandingAbout from "@/components/landing/LandingAbout";
+import LandingBusinessCards from "@/components/landing/LandingBusinessCards";
+import LandingFAQ from "@/components/landing/LandingFAQ";
 
-export default function Home() {
-  return (
-    <div className="space-y-6 lg:space-y-8">
-      {/* Header - Responsive */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-        <div>
-          <h1 className="text-xl sm:text-2xl font-semibold text-gray-900">Dashboard</h1>
-          <p className="text-sm text-gray-500 mt-0.5">Welcome back</p>
-        </div>
-        <div className="text-xs sm:text-sm text-gray-500">
-          {new Date().toLocaleDateString('en-US', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-          })}
-        </div>
-      </div>
+import LandingFooter from "@/components/landing/LandingFooter";
 
-      {/* Top Section - Metric Cards (Bento Layout) */}
-      <section>
-        <TopMetricCards />
-      </section>
+export default function LandingPage() {
+    return (
+        <main>
+            <LandingHero />
+            <LandingAbout />
+            <LandingBusinessCards />
+            <LandingSolutions />
+            <LandingFeatures />
+            <LandingAudience />
+            <LandingFAQ />
 
-      {/* Analytics Grid - Bento Layout */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-        <LoansDistributionChart />
-        <LoanTypesChart />
-      </section>
+            <LandingFooter />
+        </main>
 
-      {/* Download Reports Banner */}
-      <section>
-        <ReportsBanner />
-      </section>
-
-      {/* Partner Performance - Full Width */}
-      <section>
-        <PartnerPerformanceTable />
-      </section>
-
-      {/* Lower Analytics Grid */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-        <BankWiseChart />
-        <ApplicationLoansChart />
-      </section>
-    </div>
-  );
+    );
 }

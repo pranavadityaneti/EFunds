@@ -98,7 +98,7 @@ export default function Sidebar() {
     const { isCollapsed, isMobileOpen, toggleSidebar, closeMobile } = useSidebar();
 
     const navItems = [
-        { href: '/', icon: LayoutDashboard, label: 'Dashboard' },
+        { href: '/CRMdashboard', icon: LayoutDashboard, label: 'Dashboard' },
         { href: '/leads', icon: TrendingUp, label: 'Leads' },
         { href: '/applications', icon: FileText, label: 'Applications' },
         { href: '/partners', icon: Briefcase, label: 'Partners' },

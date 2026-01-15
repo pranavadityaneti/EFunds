@@ -32,8 +32,9 @@ function MainContent({ children }: { children: React.ReactNode }) {
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
 
-    // Landing page should not have the sidebar layout
-    if (pathname === '/landing') {
+    // Landing page and public pages should not have the sidebar layout
+    const publicRoutes = ['/', '/landing', '/B2C', '/B2B', '/terms-and-conditions', '/privacy-policy'];
+    if (publicRoutes.includes(pathname)) {
         return <>{children}</>;
     }
 

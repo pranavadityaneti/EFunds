@@ -13,6 +13,7 @@ interface AnimatedGradientBackgroundProps {
     containerStyle?: React.CSSProperties;
     containerClassName?: string;
     topOffset?: number;
+    enableSunrise?: boolean;
 }
 
 const AnimatedGradientBackground: React.FC<AnimatedGradientBackgroundProps> = ({
@@ -33,6 +34,8 @@ const AnimatedGradientBackground: React.FC<AnimatedGradientBackgroundProps> = ({
     containerStyle = {},
     topOffset = 0,
     containerClassName = "",
+    gradientPosition = "50% 20%",
+    enableSunrise = false,
 }) => {
     if (gradientColors.length !== gradientStops.length) {
         throw new Error(
@@ -47,6 +50,9 @@ const AnimatedGradientBackground: React.FC<AnimatedGradientBackgroundProps> = ({
         let width = startingGap;
         let directionWidth = 1;
 
+        // Sunrise animation state
+        let sunriseOffset = enableSunrise ? 50 : 0; // Start 50% lower than target
+
         const animateGradient = () => {
             if (width >= startingGap + breathingRange) directionWidth = -1;
             if (width <= startingGap - breathingRange) directionWidth = 1;
@@ -54,11 +60,29 @@ const AnimatedGradientBackground: React.FC<AnimatedGradientBackgroundProps> = ({
             if (!Breathing) directionWidth = 0;
             width += directionWidth * animationSpeed;
 
+            // Handle Sunrise
+            if (enableSunrise && sunriseOffset > 0) {
+                sunriseOffset -= 0.3; // Rise speed
+                if (sunriseOffset < 0) sunriseOffset = 0;
+            }
+
             const gradientStopsString = gradientStops
                 .map((stop, index) => `${gradientColors[index]} ${stop}%`)
                 .join(", ");
 
-            const gradient = `radial-gradient(${width}% ${width + topOffset}% at 50% 20%, ${gradientStopsString})`;
+            // Parse position to apply offset
+            // Assumes format "X% Y%"
+            let currentGradientPosition = gradientPosition;
+            if (enableSunrise && sunriseOffset > 0) {
+                const parts = gradientPosition.split(" ");
+                if (parts.length === 2 && parts[1].includes("%")) {
+                    const x = parts[0];
+                    const yVal = parseFloat(parts[1]);
+                    currentGradientPosition = `${x} ${yVal + sunriseOffset}%`;
+                }
+            }
+
+            const gradient = `radial-gradient(${width}% ${width + topOffset}% at ${currentGradientPosition}, ${gradientStopsString})`;
 
             if (containerRef.current) {
                 containerRef.current.style.background = gradient;
@@ -70,7 +94,7 @@ const AnimatedGradientBackground: React.FC<AnimatedGradientBackgroundProps> = ({
         animationFrame = requestAnimationFrame(animateGradient);
 
         return () => cancelAnimationFrame(animationFrame);
-    }, [startingGap, Breathing, gradientColors, gradientStops, animationSpeed, breathingRange, topOffset]);
+    }, [startingGap, Breathing, gradientColors, gradientStops, animationSpeed, breathingRange, topOffset, gradientPosition, enableSunrise]);
 
     return (
         <motion.div
@@ -89,8 +113,8 @@ const AnimatedGradientBackground: React.FC<AnimatedGradientBackgroundProps> = ({
             }}
             className={`absolute inset-0 overflow-hidden pointer-events-none ${containerClassName}`}
             style={{
-                maskImage: "linear-gradient(to bottom, transparent 0%, black 40%)",
-                WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 40%)",
+                // maskImage: "linear-gradient(to bottom, transparent 0%, black 40%)",
+                // WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 40%)",
             }}
         >
             <div

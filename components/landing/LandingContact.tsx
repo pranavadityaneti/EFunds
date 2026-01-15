@@ -23,21 +23,7 @@ export default function LandingContact() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <span className="inline-block px-4 py-2 bg-[#f97316]/20 text-[#fb923c] rounded-full text-sm font-medium mb-4">
-                            Get Started
-                        </span>
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-                            Ready to Transform
-                            <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f97316] to-[#fb923c]">
-                                Your Lending Business?
-                            </span>
-                        </h2>
-                        <p className="text-lg text-gray-400 mb-10 leading-relaxed">
-                            Get in touch with our team to learn how Efunds can help you
-                            launch and scale your lending operations. We&apos;re here to answer
-                            your questions and provide a personalized demo.
-                        </p>
+
 
                         {/* Contact Info */}
                         <div className="space-y-6">
