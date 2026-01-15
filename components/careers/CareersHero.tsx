@@ -1,5 +1,7 @@
 "use client";
 
+import LandingHeader from "@/components/landing/LandingHeader";
+
 import { motion } from "framer-motion";
 
 // Placeholder avatars - using unsplash distinct faces
@@ -15,7 +17,12 @@ const avocados = [
 
 export default function CareersHero() {
     return (
-        <section className="relative w-full h-[600px] overflow-hidden rounded-[2rem] mx-auto max-w-[95%] lg:max-w-7xl mt-6 lg:mt-10">
+        <section className="relative w-full min-h-[700px] overflow-hidden">
+            {/* Header Integration */}
+            <div className="absolute top-0 w-full z-50">
+                <LandingHeader />
+            </div>
+
             {/* Gradient Background */}
             <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-orange-600 opacity-95" />
 
@@ -42,12 +49,12 @@ export default function CareersHero() {
             ))}
 
             {/* Central Content */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
+            <div className="relative h-full flex flex-col items-center justify-center text-center px-4 z-10 min-h-[700px]">
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-sm"
+                    className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-sm max-w-4xl"
                 >
                     Search for your next job
                 </motion.h1>
@@ -55,7 +62,7 @@ export default function CareersHero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-white/90 text-lg md:text-xl max-w-lg font-medium drop-shadow-sm"
+                    className="text-white/90 text-lg md:text-xl max-w-2xl font-medium drop-shadow-sm"
                 >
                     When you're searching for a job, there are a few things you can do to get the most out of your search
                 </motion.p>
