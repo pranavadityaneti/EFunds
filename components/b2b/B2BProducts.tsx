@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Shield, Zap, QrCode, Users, LayoutDashboard, Puzzle } from "lucide-react";
 
 interface Product {
@@ -72,6 +73,16 @@ export default function B2BProducts() {
 
     return (
         <section className="w-full bg-white pb-24 overflow-hidden">
+            {/* hidden svg defs for gradient stroke */}
+            <svg width="0" height="0" className="absolute">
+                <defs>
+                    <linearGradient id="icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#000000" /> {/* Black */}
+                        <stop offset="100%" stopColor="#f97316" /> {/* Orange-500 */}
+                    </linearGradient>
+                </defs>
+            </svg>
+
             <div className="w-full">
                 <div className="container mx-auto px-6 lg:px-12 mb-12 flex justify-between items-end">
                     <h2 className="text-xl font-medium tracking-wide text-gray-900">Our Products -</h2>
@@ -130,13 +141,38 @@ export default function B2BProducts() {
                                 </button>
 
                                 {/* Decorative Icon/Visual */}
-                                <div className="absolute right-[-40px] bottom-[-40px] opacity-10 group-hover:opacity-20 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12 z-0">
-                                    <product.icon
-                                        size={240}
-                                        className="text-orange-500 group-hover:text-white transition-colors duration-500"
-                                        strokeWidth={1}
-                                    />
-                                </div>
+                                <motion.div
+                                    className="absolute right-[-40px] bottom-[-40px] z-0"
+                                    animate={{
+                                        y: [0, -15, 0],
+                                        rotate: [0, 5, 0]
+                                    }}
+                                    transition={{
+                                        duration: 6,
+                                        repeat: Infinity,
+                                        ease: "easeInOut"
+                                    }}
+                                >
+                                    <div className="opacity-10 group-hover:opacity-20 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12">
+                                        {/* 
+                                            We apply the gradient via the `stroke` prop referencing the SVG def ID.
+                                            On hover, we override with `text-white` class which usually sets stroke="currentColor".
+                                            However, stroke attribute often takes precedence. 
+                                            We need to handle the hover switch manually or via CSS.
+                                            The `lucide` icon uses `currentColor` for stroke if not specified.
+                                            If we pass `stroke`, it overrides.
+                                            We can toggle the prop based on hover? No, CSS is cleaner.
+                                            Let's try using a CSS class that sets stroke.
+                                         */}
+                                        <product.icon
+                                            size={240}
+                                            strokeWidth={1}
+                                            className="transition-colors duration-500 stroke-[url(#icon-gradient)] group-hover:stroke-white"
+                                        // Fallback/Override: The class `stroke-[url(#icon-gradient)]` sets the gradient.
+                                        // `group-hover:stroke-white` sets it to white on hover.
+                                        />
+                                    </div>
+                                </motion.div>
                             </div>
                         ))}
                     </div>
