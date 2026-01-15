@@ -12,8 +12,9 @@ export async function generateStaticParams() {
     }));
 }
 
-export default function JobDetailPage({ params }: { params: { id: string } }) {
-    const job = jobPositions.find((p) => p.id === params.id);
+export default async function JobDetailPage({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
+    const job = jobPositions.find((p) => p.id === id);
 
     if (!job) {
         notFound();
