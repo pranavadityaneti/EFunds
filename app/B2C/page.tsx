@@ -2,7 +2,7 @@ import B2CHero from "@/components/b2c/B2CHero";
 import B2CProductsCarousel from "@/components/b2c/B2CProductsCarousel";
 import B2CWhyChooseUs from "@/components/b2c/B2CWhyChooseUs";
 import LandingFooter from "@/components/landing/LandingFooter";
-import LandingAudience from "@/components/landing/LandingAudience";
+
 
 export default function CustomersPage() {
     return (
@@ -13,10 +13,7 @@ export default function CustomersPage() {
 
             <B2CWhyChooseUs />
 
-            {/* Dark theme audience section */}
-            <div className="bg-white">
-                <LandingAudience />
-            </div>
+
 
             <LandingFooter />
         </main>
