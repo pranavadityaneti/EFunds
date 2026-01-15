@@ -4,8 +4,8 @@ import LandingHeader from "@/components/landing/LandingHeader";
 
 export default function B2BPage() {
     return (
-        <main className="min-h-screen bg-white">
-            <div className="bg-white sticky top-0 z-50">
+        <main className="min-h-screen bg-black">
+            <div className="absolute top-0 w-full z-50">
                 <LandingHeader />
             </div>
 
