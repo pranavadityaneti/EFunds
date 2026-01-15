@@ -32,9 +32,12 @@ const row3 = [
     "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop",
 ];
 
+import LandingHeader from "../landing/LandingHeader";
+
 export default function B2CHero() {
     return (
-        <section className="relative min-h-screen bg-[#0A0A0A] overflow-hidden flex flex-col lg:flex-row items-center">
+        <section className="relative min-h-screen bg-[#0A0A0A] overflow-hidden flex flex-col">
+            <LandingHeader />
 
             {/* Background Gradients */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
@@ -43,7 +46,7 @@ export default function B2CHero() {
             </div>
 
             {/* Content Container */}
-            <div className="container mx-auto px-6 lg:px-12 relative z-10 w-full grid lg:grid-cols-2 gap-12 h-full py-32 lg:py-0">
+            <div className="container mx-auto px-6 lg:px-12 relative z-10 w-full grid lg:grid-cols-2 gap-12 flex-1 items-center py-12 lg:py-0">
 
                 {/* Left Side: Text Content */}
                 <div className="flex flex-col justify-center max-w-xl">
