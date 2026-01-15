@@ -1,6 +1,7 @@
 import B2BHero from "@/components/b2b/B2BHero";
 import B2BContent from "@/components/b2b/B2BContent";
 import B2BProducts from "@/components/b2b/B2BProducts";
+import B2BFeatures from "@/components/b2b/B2BFeatures";
 import LandingFooter from "@/components/landing/LandingFooter";
 import LandingHeader from "@/components/landing/LandingHeader";
 
@@ -17,6 +18,7 @@ export default function B2BPage() {
 
             <B2BProducts />
 
+            <B2BFeatures />
 
             <LandingFooter />
         </main>
