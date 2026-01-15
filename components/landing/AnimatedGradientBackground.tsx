@@ -14,6 +14,7 @@ interface AnimatedGradientBackgroundProps {
     containerClassName?: string;
     topOffset?: number;
     enableSunrise?: boolean;
+    gradientPosition?: string;
 }
 
 const AnimatedGradientBackground: React.FC<AnimatedGradientBackgroundProps> = ({
