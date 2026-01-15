@@ -5,36 +5,36 @@ import { BarChart3, Workflow, Zap, Database, Globe, Lock, Clock } from "lucide-r
 
 export default function B2BFeatures() {
     return (
-        <section className="w-full bg-white py-24 px-6 lg:px-12">
-            <div className="container mx-auto">
-                <div className="mb-16">
+        <section className="w-full bg-white py-16 px-4 lg:px-8">
+            <div className="container mx-auto max-w-6xl">
+                <div className="mb-10">
                     <h2 className="text-xl font-medium tracking-wide text-gray-900 border-l-4 border-orange-500 pl-4">
                         Key Features
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-auto lg:h-[800px]">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 h-auto lg:h-[600px]">
                     {/* Card 1: Data Intelligence (Tall Left) */}
-                    <div className="lg:col-span-1 h-[500px] lg:h-full bg-zinc-50 rounded-[2.5rem] p-8 md:p-12 border border-zinc-100 flex flex-col justify-between overflow-hidden relative group">
+                    <div className="lg:col-span-1 h-[450px] lg:h-full bg-zinc-50 rounded-[2rem] p-6 md:p-8 border border-zinc-100 flex flex-col justify-between overflow-hidden relative group hover:border-orange-500/20 transition-colors">
                         <div className="relative z-10">
-                            <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
-                                <BarChart3 className="text-orange-500" />
+                            <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center mb-5 shadow-sm">
+                                <BarChart3 className="text-orange-500 w-5 h-5" />
                             </div>
-                            <h3 className="text-3xl font-medium text-gray-900 mb-4">
+                            <h3 className="text-2xl font-medium text-gray-900 mb-3">
                                 Track what matters
                             </h3>
-                            <p className="text-gray-500 leading-relaxed">
+                            <p className="text-gray-500 text-sm leading-relaxed">
                                 Stay focused with visual goal tracking across key areas of your operations. Real-time insights into agent performance and loan velocity.
                             </p>
                         </div>
 
                         {/* Heatmap Visual */}
-                        <div className="w-full aspect-square bg-white rounded-3xl p-6 shadow-sm border border-zinc-100 mt-8 relative overflow-hidden">
-                            <div className="grid grid-cols-7 gap-2 h-full">
+                        <div className="w-full aspect-square bg-white rounded-2xl p-4 shadow-sm border border-zinc-100 mt-6 relative overflow-hidden">
+                            <div className="grid grid-cols-7 gap-1.5 h-full">
                                 {Array.from({ length: 49 }).map((_, i) => (
                                     <motion.div
                                         key={i}
-                                        className="rounded-md bg-orange-500"
+                                        className="rounded-sm bg-orange-500"
                                         initial={{ opacity: 0.1 }}
                                         animate={{
                                             opacity: [0.1, Math.random() * 0.8 + 0.2, 0.1]
@@ -49,7 +49,7 @@ export default function B2BFeatures() {
                             </div>
                             {/* Floating Tooltip Mockup */}
                             <motion.div
-                                className="absolute top-1/2 left-1/2 bg-gray-900 text-white text-xs px-3 py-1.5 rounded-lg shadow-xl"
+                                className="absolute top-1/2 left-1/2 bg-gray-900 text-white text-[10px] px-2 py-1 rounded shadow-xl"
                                 animate={{ y: [0, -10, 0] }}
                                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                             >
@@ -58,27 +58,27 @@ export default function B2BFeatures() {
                         </div>
                     </div>
 
-                    <div className="lg:col-span-2 flex flex-col gap-6 h-full">
+                    <div className="lg:col-span-2 flex flex-col gap-4 h-full">
                         {/* Card 2: Ecosystem (Top Right) */}
-                        <div className="flex-1 bg-zinc-50 rounded-[2.5rem] p-8 md:p-12 border border-zinc-100 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden group">
+                        <div className="flex-1 bg-zinc-50 rounded-[2rem] p-6 md:p-8 border border-zinc-100 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden group hover:border-orange-500/20 transition-colors">
                             <div className="relative z-10 max-w-sm">
-                                <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
-                                    <Workflow className="text-orange-500" />
+                                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center mb-5 shadow-sm">
+                                    <Workflow className="text-orange-500 w-5 h-5" />
                                 </div>
-                                <h3 className="text-3xl font-medium text-gray-900 mb-4">
+                                <h3 className="text-2xl font-medium text-gray-900 mb-3">
                                     Smarter workflows
                                 </h3>
-                                <p className="text-gray-500 leading-relaxed">
+                                <p className="text-gray-500 text-sm leading-relaxed">
                                     Connect with 100+ financial partners instantly via our universal API ecosystem.
                                 </p>
                             </div>
 
                             {/* Floating Icons Visual */}
-                            <div className="relative w-64 h-64 flex-shrink-0">
+                            <div className="relative w-48 h-48 flex-shrink-0 scale-90 md:scale-100">
                                 {/* Central Node */}
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="w-20 h-20 bg-orange-500 rounded-3xl flex items-center justify-center shadow-lg shadow-orange-500/20 z-10">
-                                        <Database className="text-white w-8 h-8" />
+                                    <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-500/20 z-10">
+                                        <Database className="text-white w-6 h-6" />
                                     </div>
                                 </div>
 
@@ -86,16 +86,15 @@ export default function B2BFeatures() {
                                 {[Globe, Lock, Zap, Clock].map((Icon, i) => (
                                     <motion.div
                                         key={i}
-                                        className="absolute top-1/2 left-1/2 w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-zinc-100"
+                                        className="absolute top-1/2 left-1/2 w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center border border-zinc-100"
                                         animate={{
-                                            x: Math.cos(i * Math.PI / 2) * 80,
-                                            y: Math.sin(i * Math.PI / 2) * 80,
+                                            x: Math.cos(i * Math.PI / 2) * 60,
+                                            y: Math.sin(i * Math.PI / 2) * 60,
                                         }}
                                         initial={{ x: 0, y: 0 }}
-                                        // Adding a subtle localized float on top of the position
                                         whileHover={{ scale: 1.1 }}
                                     >
-                                        <Icon className="w-5 h-5 text-gray-600" />
+                                        <Icon className="w-4 h-4 text-gray-600" />
                                     </motion.div>
                                 ))}
                                 {/* Connecting Lines (SVG) */}
@@ -104,12 +103,12 @@ export default function B2BFeatures() {
                                         <motion.line
                                             key={i}
                                             x1="50%" y1="50%"
-                                            x2={50 + Math.cos(i * Math.PI / 2) * 35 + "%"}
-                                            y2={50 + Math.sin(i * Math.PI / 2) * 35 + "%"}
-                                            stroke="#fed7aa" // orange-200
+                                            x2={50 + Math.cos(i * Math.PI / 2) * 30 + "%"}
+                                            y2={50 + Math.sin(i * Math.PI / 2) * 30 + "%"}
+                                            stroke="#fed7aa"
                                             strokeWidth="2"
-                                            strokeDasharray="4 4"
-                                            animate={{ strokeDashoffset: [0, -8] }}
+                                            strokeDasharray="3 3"
+                                            animate={{ strokeDashoffset: [0, -6] }}
                                             transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                                         />
                                     ))}
@@ -118,41 +117,41 @@ export default function B2BFeatures() {
                         </div>
 
                         {/* Card 3: Automation (Bottom Right) */}
-                        <div className="flex-1 bg-zinc-50 rounded-[2.5rem] p-8 md:p-12 border border-zinc-100 flex flex-col justify-between relative overflow-hidden group">
+                        <div className="flex-1 bg-zinc-50 rounded-[2rem] p-6 md:p-8 border border-zinc-100 flex flex-col justify-between relative overflow-hidden group hover:border-orange-500/20 transition-colors">
                             <div className="relative z-10">
-                                <h3 className="text-3xl font-medium text-gray-900 mb-4">
+                                <h3 className="text-2xl font-medium text-gray-900 mb-3">
                                     Progress you can see
                                 </h3>
-                                <p className="text-gray-500 leading-relaxed max-w-2xl">
+                                <p className="text-gray-500 text-sm leading-relaxed max-w-xl">
                                     Visualize your track and keep the momentum with real-time updates. Automate underwriting and slash turnaround times.
                                 </p>
                             </div>
 
                             {/* Timeline Visual */}
-                            <div className="mt-8 relative">
-                                <div className="flex justify-between text-xs font-semibold text-gray-400 mb-4 px-2">
+                            <div className="mt-6 relative">
+                                <div className="flex justify-between text-[10px] font-semibold text-gray-400 mb-3 px-1">
                                     <span>JAN</span>
                                     <span>FEB</span>
                                     <span>MAR</span>
                                     <span>APR</span>
                                     <span>MAY</span>
                                 </div>
-                                <div className="space-y-4 relative">
+                                <div className="space-y-3 relative">
                                     {/* Vertical Line */}
                                     <div className="absolute top-0 bottom-0 left-[65%] w-px bg-red-400/50 z-0 border-r border-dashed border-red-400" />
-                                    <div className="absolute top-0 left-[65%] w-2 h-2 bg-red-500 rounded-full -translate-x-1/2 -translate-y-1/2 z-10" />
+                                    <div className="absolute top-0 left-[65%] w-1.5 h-1.5 bg-red-500 rounded-full -translate-x-1/2 -translate-y-1/2 z-10" />
 
                                     {/* Bars */}
                                     {[
-                                        { label: "Loan Application Process", width: "100%", color: "bg-green-500" },
-                                        { label: "Document Verification", width: "80%", color: "bg-teal-500" },
-                                        { label: "Credit Underwriting", width: "65%", color: "bg-blue-500" },
+                                        { label: "Application", width: "100%", color: "bg-green-500" },
+                                        { label: "Verification", width: "80%", color: "bg-teal-500" },
+                                        { label: "Underwriting", width: "65%", color: "bg-blue-500" },
                                         { label: "Disbursement", width: "40%", color: "bg-purple-500" },
                                     ].map((item, i) => (
-                                        <div key={i} className="relative">
-                                            <div className="flex items-center gap-4">
+                                        <div key={i} className="relative w-full">
+                                            <div className="flex items-center gap-2">
                                                 <motion.div
-                                                    className={`h-10 rounded-xl ${item.color} flex items-center px-4 text-white text-sm font-medium whitespace-nowrap shadow-sm z-10`}
+                                                    className={`h-8 rounded-lg ${item.color} flex items-center px-3 text-white text-xs font-medium whitespace-nowrap shadow-sm z-10 overflow-hidden text-ellipsis`}
                                                     initial={{ width: "20%" }}
                                                     whileInView={{ width: item.width }}
                                                     viewport={{ once: true }}
@@ -161,7 +160,7 @@ export default function B2BFeatures() {
                                                     {item.label}
                                                 </motion.div>
                                                 {/* Faded future bar */}
-                                                <div className={`h-10 rounded-xl ${item.color} opacity-10 flex-1`} />
+                                                <div className={`h-8 rounded-lg ${item.color} opacity-10 flex-1`} />
                                             </div>
                                         </div>
                                     ))}
