@@ -13,8 +13,6 @@ export default function CustomersPage() {
 
             <B2CWhyChooseUs />
 
-
-
             <LandingFooter />
         </main>
     );

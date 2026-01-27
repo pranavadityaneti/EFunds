@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
 import {
     Banknote,
     Building2,
@@ -13,7 +12,7 @@ import {
     GraduationCap,
     FileText,
     CreditCard,
-    ArrowUpRight
+    ArrowUpRight,
 } from "lucide-react";
 
 // Product Data with Icons and Expanded Descriptions
@@ -100,22 +99,17 @@ export default function B2CProductsCarousel() {
 const MarqueeRow = ({ products, direction, speed }: { products: any[], direction: "left" | "right", speed: number }) => {
     return (
         <div className="flex gap-8 overflow-hidden w-full py-10">
-            <motion.div
-                className="flex gap-8 flex-shrink-0"
-                animate={{
-                    x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"],
-                }}
-                transition={{
-                    duration: speed,
-                    repeat: Infinity,
-                    ease: "linear",
+            <div
+                className={`flex gap-8 flex-shrink-0 ${direction === 'left' ? 'animate-marquee' : 'animate-marquee-reverse'} pause`}
+                style={{
+                    animationDuration: `${speed}s`,
                 }}
             >
                 {/* Seamless Loop: products + products */}
                 {[...products, ...products].map((product, idx) => (
                     <Card key={idx} product={product} />
                 ))}
-            </motion.div>
+            </div>
         </div>
     );
 }

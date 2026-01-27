@@ -1,5 +1,6 @@
 import LandingHero from "@/components/landing/LandingHero";
 import LandingSolutions from "@/components/landing/LandingSolutions";
+import LoanEligibilityCalculator from "@/components/landing/LoanEligibilityCalculator";
 import LandingFeatures from "@/components/landing/LandingFeatures";
 
 import LandingAbout from "@/components/landing/LandingAbout";
@@ -14,6 +15,7 @@ export default function LandingPage() {
             <LandingHero />
             <LandingAbout />
             <LandingBusinessCards />
+            <LoanEligibilityCalculator />
             <LandingSolutions />
             <LandingFeatures />
 
