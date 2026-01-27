@@ -536,7 +536,6 @@ export default function LoanEligibilityCalculator() {
                                     ))) : (
                                         <div className="text-center py-10 text-gray-500">
                                             No eligible offers at this time based on the detailed bank criteria.
-                                            <br /><span className="text-xs">Try increasing the tenure or checking for a Co-Applicant.</span>
                                         </div>
                                     )}
                                 </div>
