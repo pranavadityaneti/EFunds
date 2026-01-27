@@ -205,19 +205,19 @@ export default function LoanEligibilityCalculator() {
         return bankRules.map((bank) => {
             // 1. Check Score
             if (score < bank.minCibil) {
-                return { bank, eligible: false, reason: `Min Score ${bank.minCibil}`, maxLoan: 0, foirUsed: 0 };
+                return { bank, eligible: false, reason: `Min Score ${bank.minCibil}`, maxLoan: 0, foirUsed: 0, emi: 0, isRequestCovered: false };
             }
             // 2. Check Age
             if (age < bank.minAge || (bank.maxAge > 0 && age > bank.maxAge)) {
-                return { bank, eligible: false, reason: `Age ${bank.minAge}-${bank.maxAge}`, maxLoan: 0, foirUsed: 0 };
+                return { bank, eligible: false, reason: `Age ${bank.minAge}-${bank.maxAge}`, maxLoan: 0, foirUsed: 0, emi: 0, isRequestCovered: false };
             }
             // 3. Check Min Salary
             if (salary < bank.minSalary) {
-                return { bank, eligible: false, reason: `Min Salary ${formatCurrency(bank.minSalary)}`, maxLoan: 0, foirUsed: 0 };
+                return { bank, eligible: false, reason: `Min Salary ${formatCurrency(bank.minSalary)}`, maxLoan: 0, foirUsed: 0, emi: 0, isRequestCovered: false };
             }
             // 4. Check Listed/Unlisted
             if (!isListed && !bank.allowUnlisted) {
-                return { bank, eligible: false, reason: "Listed Company Reqd", maxLoan: 0, foirUsed: 0 };
+                return { bank, eligible: false, reason: "Listed Company Reqd", maxLoan: 0, foirUsed: 0, emi: 0, isRequestCovered: false };
             }
 
             // 5. Calculate Metrics
