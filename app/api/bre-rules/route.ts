@@ -81,12 +81,12 @@ const loadRules = () => {
         // 1. Identify Bank Columns (Exclude "Parameter", "Criteria / Definition", "Purpose...", "Example Partner...")
         const allColumns = meta.fields || [];
         const ignoredCols = ["Parameter", "Criteria / Definition", "Purpose for Risk Underwriting", "Example Partner 1 (Top Tier Bank)", "Example Partner 2 (Mid-Tier NBFC)"];
-        const bankColumns = allColumns.filter(col => !ignoredCols.includes(col) && col.trim() !== "");
+        const bankColumns = allColumns.filter((col: string) => !ignoredCols.includes(col) && col.trim() !== "");
 
         const bankRules: Record<string, Partial<BankRule>> = {};
 
         // Initialize bank objects
-        bankColumns.forEach(bank => {
+        bankColumns.forEach((bank: string) => {
             bankRules[bank] = {
                 bankName: bank,
                 id: bank.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, ''),
@@ -98,7 +98,7 @@ const loadRules = () => {
             const param = row['Parameter']?.trim();
             if (!param) return;
 
-            bankColumns.forEach(bank => {
+            bankColumns.forEach((bank: string) => {
                 const value = row[bank];
                 // Map parameters to fields
                 if (param.includes('Age (Min)')) {
