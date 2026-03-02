@@ -34,7 +34,7 @@ const row3 = [
 
 import LandingHeader from "../landing/LandingHeader";
 
-export default function B2CHero() {
+export default function B2CHero({ onGetStarted }: { onGetStarted?: () => void }) {
     return (
         <section className="relative min-h-screen bg-[#0A0A0A] overflow-hidden flex flex-col">
             <LandingHeader />
@@ -73,13 +73,13 @@ export default function B2CHero() {
                         </p>
 
                         <div className="flex gap-4">
-                            <a
-                                href="#apply"
+                            <button
+                                onClick={onGetStarted}
                                 className="group bg-white text-black px-8 py-4 rounded-full text-lg font-bold transition-all hover:bg-gray-200 hover:scale-105 flex items-center gap-2"
                             >
                                 Get Started
                                 <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-                            </a>
+                            </button>
                         </div>
                     </motion.div>
                 </div>

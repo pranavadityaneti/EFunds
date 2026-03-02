@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import {
     Banknote,
     Building2,
@@ -79,7 +80,7 @@ const products = [
     }
 ];
 
-export default function B2CProductsCarousel() {
+export default function B2CProductsCarousel({ onCardClick }: { onCardClick?: (title: string) => void }) {
     return (
         <section className="py-24 bg-white relative overflow-hidden">
             {/* Section Title */}
@@ -90,35 +91,44 @@ export default function B2CProductsCarousel() {
 
             {/* Infinite Marquee Container */}
             <div className="relative w-full overflow-hidden mask-gradient-sides">
-                <MarqueeRow products={products} direction="right" speed={40} />
+                <MarqueeRow products={products} direction="right" speed={40} onCardClick={onCardClick} />
             </div>
         </section>
     );
 }
 
-const MarqueeRow = ({ products, direction, speed }: { products: any[], direction: "left" | "right", speed: number }) => {
+const MarqueeRow = ({ products, direction, speed, onCardClick }: { products: any[], direction: "left" | "right", speed: number, onCardClick?: (title: string) => void }) => {
     return (
         <div className="flex gap-8 overflow-hidden w-full py-10">
-            <div
-                className={`flex gap-8 flex-shrink-0 ${direction === 'left' ? 'animate-marquee' : 'animate-marquee-reverse'} pause`}
-                style={{
-                    animationDuration: `${speed}s`,
+            <motion.div
+                className="flex gap-8 flex-shrink-0"
+                animate={{
+                    x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"],
+                }}
+                transition={{
+                    duration: speed,
+                    repeat: Infinity,
+                    ease: "linear",
                 }}
             >
                 {/* Seamless Loop: products + products */}
                 {[...products, ...products].map((product, idx) => (
-                    <Card key={idx} product={product} />
+                    <Card key={idx} product={product} onClick={() => onCardClick?.(product.title)} />
                 ))}
-            </div>
+            </motion.div>
         </div>
     );
 }
 
-const Card = ({ product }: { product: typeof products[0] }) => {
+const Card = ({ product, onClick }: { product: typeof products[0], onClick?: () => void }) => {
     const Icon = product.icon;
+    const isPersonalLoan = product.title === "Personal Loans";
 
     return (
-        <div className="relative w-[340px] h-[460px] flex-shrink-0 rounded-[2.5rem] overflow-hidden group cursor-pointer transition-transform duration-300 hover:scale-105">
+        <div
+            onClick={!isPersonalLoan ? onClick : undefined}
+            className={`relative w-[340px] h-[460px] flex-shrink-0 rounded-[2.5rem] overflow-hidden group transition-transform duration-300 hover:scale-105 ${!isPersonalLoan ? 'cursor-pointer' : ''}`}
+        >
 
             {/* Card Background: Dark Gradient + Noise */}
             <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black border border-white/5 rounded-[2.5rem]" />
@@ -143,16 +153,18 @@ const Card = ({ product }: { product: typeof products[0] }) => {
                     <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gradient-to-r ${product.color} blur-[60px] opacity-20`} />
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">{product.title}</h3>
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors uppercase">{product.title}</h3>
 
                 <p className="text-white/50 text-sm leading-relaxed max-w-[260px]">
                     {product.desc}
                 </p>
 
                 {/* Arrow Icon */}
-                <div className="absolute bottom-8 right-8 w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-colors">
-                    <ArrowUpRight className="text-white/60 w-5 h-5 group-hover:text-white transition-colors" />
-                </div>
+                {!isPersonalLoan && (
+                    <div className="absolute bottom-8 right-8 w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                        <ArrowUpRight className="text-white/60 w-5 h-5 group-hover:text-white transition-colors" />
+                    </div>
+                )}
 
             </div>
         </div>
