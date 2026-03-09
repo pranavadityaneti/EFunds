@@ -77,6 +77,12 @@ const products = [
         desc: "Enjoy exclusive rewards, cashback, and lifestyle benefits with our wide range of premium credit cards.",
         icon: CreditCard,
         color: "from-gray-200 to-gray-400"
+    },
+    {
+        title: "Loan Against Property",
+        desc: "Unlock the value of your commercial or residential property to fund your business or personal needs.",
+        icon: Home,
+        color: "from-emerald-500 to-teal-400"
     }
 ];
 
