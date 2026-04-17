@@ -27,7 +27,7 @@ export default function LandingHeader() {
                     <img
                         src="/logo.png"
                         alt="Finlot Logo"
-                        className="h-10 w-auto object-contain bg-white/95 px-3 py-1.5 rounded-xl shadow-sm"
+                        className="h-10 w-auto object-contain"
                     />
                 </a>
 
