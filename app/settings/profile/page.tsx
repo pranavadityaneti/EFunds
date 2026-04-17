@@ -7,7 +7,7 @@ export default function ProfilePage() {
     const [formData, setFormData] = useState({
         firstName: 'Demo',
         lastName: 'User',
-        email: 'demo.user@efundzz.com',
+        email: 'demo.user@finlot.ai',
         phone: '+91 98765 43210',
         showPhone: true,
     });

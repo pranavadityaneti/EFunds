@@ -6,24 +6,24 @@ import { useState } from "react";
 
 const faqs = [
     {
-        question: "What is Efunds?",
+        question: "What is Finlot?",
         answer:
-            "Efunds is a comprehensive lending infrastructure platform that enables businesses to launch and scale their lending operations. We provide APIs, dashboards, and tools for loan origination, processing, disbursement, and collection.",
+            "Finlot is a comprehensive lending infrastructure platform that enables businesses to launch and scale their lending operations. We provide APIs, dashboards, and tools for loan origination, processing, disbursement, and collection.",
     },
     {
-        question: "How quickly can I integrate with Efunds?",
+        question: "How quickly can I integrate with Finlot?",
         answer:
             "Most partners complete their integration within 2-4 weeks. Our plug-and-play APIs and detailed documentation make it easy to get started. We also provide dedicated technical support throughout the integration process.",
     },
     {
         question: "What types of loans does the platform support?",
         answer:
-            "Efunds supports multiple loan products including personal loans, business loans, credit lines, BNPL (Buy Now Pay Later), and customized loan products. You can configure loan terms, interest rates, and eligibility criteria based on your requirements.",
+            "Finlot supports multiple loan products including personal loans, business loans, credit lines, BNPL (Buy Now Pay Later), and customized loan products. You can configure loan terms, interest rates, and eligibility criteria based on your requirements.",
     },
     {
-        question: "Is Efunds compliant with RBI regulations?",
+        question: "Is Finlot compliant with RBI regulations?",
         answer:
-            "Yes, Efunds is fully compliant with all applicable RBI guidelines and regulations. We maintain the highest standards of regulatory compliance and data security to protect both lenders and borrowers.",
+            "Yes, Finlot is fully compliant with all applicable RBI guidelines and regulations. We maintain the highest standards of regulatory compliance and data security to protect both lenders and borrowers.",
     },
     {
         question: "What kind of support do you offer?",

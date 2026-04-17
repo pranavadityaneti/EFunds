@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Efunds - Plug, Play and Lend",
+    title: "Finlot - Plug, Play and Lend",
     description: "Empower your lending business with seamless infrastructure. Connect, configure, and start disbursing loans in minutes, not months.",
 };
 

@@ -85,7 +85,7 @@ export default function LandingAudience() {
                         </span>
                     </h2>
                     <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                        Efunds brings omnichannel automation and intelligence to lending
+                        Finlot brings omnichannel automation and intelligence to lending
                         intermediaries of all sizes—from large Banks, Fintechs, Cooperative Banks,
                         NBFCs, and even Credit Societies, LSPs or DSAs.
                     </p>

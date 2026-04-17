@@ -132,9 +132,9 @@ export default function ContactPage() {
 
                     {/* Contact Info */}
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 mt-6 pt-6 border-t border-gray-100">
-                        <a href="mailto:support@efundzz.com" className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#30D5C8]">
+                        <a href="mailto:support@finlot.ai" className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#30D5C8]">
                             <Mail className="w-4 h-4" />
-                            support@efundzz.com
+                            support@finlot.ai
                         </a>
                         <a href="tel:+919876543210" className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#30D5C8]">
                             <Phone className="w-4 h-4" />

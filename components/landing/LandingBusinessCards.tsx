@@ -149,7 +149,7 @@ export default function LandingBusinessCards() {
                         bgGraphic={<TrendingUp className="w-48 h-48" strokeWidth={1} />}
                         title="For Partners"
                         subtitle="DSAs & Business Partners"
-                        description="Scale your lending business with Efunds. Fast onboarding, dedicated support, and competitive payouts."
+                        description="Scale your lending business with Finlot. Fast onboarding, dedicated support, and competitive payouts."
                         features={b2bFeatures}
                         onClick={handleB2BClick}
                     />

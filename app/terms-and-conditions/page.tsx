@@ -20,14 +20,14 @@ export default function TermsAndConditions() {
                     <section className="mb-10">
                         <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Introduction</h2>
                         <p className="mb-4">
-                            Welcome to efundzz. By accessing or using our website and services, you agree to be bound by these Terms and Conditions. Please read them carefully before using our platform.
+                            Welcome to Finlot. By accessing or using our website and services, you agree to be bound by these Terms and Conditions. Please read them carefully before using our platform.
                         </p>
                     </section>
 
                     <section className="mb-10">
                         <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Services</h2>
                         <p className="mb-4">
-                            efundzz provides a platform for connecting users with financial institutions for various loan products and services. We do not directly provide loans but act as an aggregator and facilitator for loan applications.
+                            Finlot provides a platform for connecting users with financial institutions for various loan products and services. We do not directly provide loans but act as an aggregator and facilitator for loan applications.
                         </p>
                     </section>
 
@@ -48,14 +48,14 @@ export default function TermsAndConditions() {
                     <section className="mb-10">
                         <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Privacy and Data</h2>
                         <p className="mb-4">
-                            Your use of our services is also governed by our Privacy Policy. By using efundzz, you consent to the collection and use of your information as described in our Privacy Policy.
+                            Your use of our services is also governed by our Privacy Policy. By using Finlot, you consent to the collection and use of your information as described in our Privacy Policy.
                         </p>
                     </section>
 
                     <section className="mb-10">
                         <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Limitation of Liability</h2>
                         <p className="mb-4">
-                            efundzz shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the services.
+                            Finlot shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the services.
                         </p>
                     </section>
                 </div>

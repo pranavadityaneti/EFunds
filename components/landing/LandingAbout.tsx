@@ -141,14 +141,14 @@ export default function LandingAbout() {
                         transition={{ duration: 0.6 }}
                     >
                         <span className="text-gray-400 text-sm uppercase tracking-widest mb-6 block">
-                            About Efunds
+                            About Finlot
                         </span>
                         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                             Powering the Future of{" "}
                             <span className="text-[#30D5C8]">Digital Lending</span>
                         </h2>
                         <p className="text-lg lg:text-xl text-gray-400 leading-relaxed">
-                            Efunds is India&apos;s leading lending infrastructure platform,
+                            Finlot is India&apos;s leading lending infrastructure platform,
                             enabling seamless loan origination with a projected growth
                             trajectory of 35% CAGR.
                         </p>

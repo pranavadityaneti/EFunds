@@ -139,7 +139,7 @@ export default function CustomerHero() {
                                             <div className="flex gap-3">
                                                 <div className="w-4 h-4 rounded border border-gray-300 flex-shrink-0 mt-0.5" />
                                                 <p className="text-[9px] text-gray-400 leading-tight">
-                                                    I hereby consent and authorize Efunds to access my credit information... <span className="text-blue-500">read more</span>
+                                                    I hereby consent and authorize Finlot to access my credit information... <span className="text-blue-500">read more</span>
                                                 </p>
                                             </div>
                                         </div>

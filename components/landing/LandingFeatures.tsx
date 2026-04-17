@@ -16,9 +16,9 @@ function ApiCodeAnimation() {
     }, []);
 
     const codeLines = [
-        { text: "const efundz = new EFundz();", delay: 0 },
-        { text: "await efundz.connect();", delay: 1 },
-        { text: "const loan = await efundz.submit(data);", delay: 2 },
+        { text: "const finlot = new Finlot();", delay: 0 },
+        { text: "await finlot.connect();", delay: 1 },
+        { text: "const loan = await finlot.submit(data);", delay: 2 },
         { text: "// ✓ Loan submitted!", delay: 3 },
     ];
 

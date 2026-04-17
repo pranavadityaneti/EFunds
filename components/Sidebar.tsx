@@ -81,7 +81,7 @@ export function MobileHeader() {
                 <div className="w-9 h-9 bg-[#30D5C8] rounded-xl flex items-center justify-center">
                     <DollarSign className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-lg font-semibold text-gray-900">EFundzz</span>
+                <span className="text-lg font-semibold text-gray-900">Finlot</span>
             </div>
             <button
                 onClick={toggleMobile}
@@ -136,7 +136,7 @@ export default function Sidebar() {
                         </div>
                         {!isCollapsed && (
                             <span className="text-lg font-semibold text-gray-900">
-                                EFundzz
+                                Finlot
                             </span>
                         )}
                     </div>

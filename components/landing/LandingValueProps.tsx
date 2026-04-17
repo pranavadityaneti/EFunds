@@ -175,7 +175,7 @@ export default function LandingValueProps() {
                         </span>
                     </h2>
                     <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                        Efunds lets you scale faster, gain full visibility, and stay fully
+                        Finlot lets you scale faster, gain full visibility, and stay fully
                         compliant—all in one seamless platform powered by AI, with zero technical overhead.
                     </p>
                 </motion.div>

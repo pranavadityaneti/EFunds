@@ -33,8 +33,8 @@ export default function LandingContact() {
                                 </div>
                                 <div>
                                     <div className="text-sm text-gray-500">Email Us</div>
-                                    <a href="mailto:contact@efunds.in" className="text-white hover:text-[#30D5C8] transition-colors font-medium">
-                                        contact@efunds.in
+                                    <a href="mailto:contact@finlot.ai" className="text-white hover:text-[#30D5C8] transition-colors font-medium">
+                                        contact@finlot.ai
                                     </a>
                                 </div>
                             </div>

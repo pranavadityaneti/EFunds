@@ -51,7 +51,7 @@ export default function LandingFooter() {
                             Your Lending Business?
                         </h2>
                         <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-                            Join over 50+ partners who are scaling their operations with Efunds.
+                            Join over 50+ partners who are scaling their operations with Finlot.
                             Experience seamless integration, real-time analytics, and instant disbursals.
                         </p>
                         <div className="flex flex-wrap items-center justify-center gap-4">
@@ -77,7 +77,7 @@ export default function LandingFooter() {
                         <div className="lg:col-span-3 flex flex-col items-start">
                             <img src="/footer-logo.png" alt="Finlot Logo" className="h-14 w-auto object-contain mb-10" />
 
-                            <p className="text-gray-900 font-bold mb-4">Stay updated with Efunds.</p>
+                            <p className="text-gray-900 font-bold mb-4">Stay updated with Finlot.</p>
                             <div className="relative flex items-center mb-6">
                                 <input
                                     type="email"
@@ -136,7 +136,7 @@ export default function LandingFooter() {
 
                 <div className="mt-12 text-center">
                     <p className="text-[14px] text-gray-400">
-                        © {new Date().getFullYear()} efundzz, med. All rights reserved.
+                        © {new Date().getFullYear()} Finlot, med. All rights reserved.
                     </p>
                 </div>
             </div>
