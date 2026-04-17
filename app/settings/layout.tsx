@@ -36,7 +36,7 @@ export default function SettingsLayout({ children }: { children: React.ReactNode
                                     key={item.href}
                                     href={item.href}
                                     className={`flex items-center gap-2 lg:gap-3 px-3 lg:px-4 py-2 lg:py-3 rounded-xl text-sm font-medium transition-all whitespace-nowrap flex-shrink-0 ${isActive
-                                        ? 'bg-[#f48b3b] text-white'
+                                        ? 'bg-[#30D5C8] text-white'
                                         : 'text-gray-600 hover:bg-gray-100 bg-gray-50 lg:bg-transparent'
                                         }`}
                                 >

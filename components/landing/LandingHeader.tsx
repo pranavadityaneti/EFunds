@@ -26,8 +26,8 @@ export default function LandingHeader() {
                 <a href="/" className="flex items-center gap-2">
                     <img
                         src="/logo.png"
-                        alt="Efunds Logo"
-                        className="h-10 w-auto object-contain"
+                        alt="Finlot Logo"
+                        className="h-10 w-auto object-contain bg-white/95 px-3 py-1.5 rounded-xl shadow-sm"
                     />
                 </a>
 
@@ -44,18 +44,18 @@ export default function LandingHeader() {
                     ))}
 
                     <div className="flex items-center gap-4 ml-4 pl-4 border-l border-white/10">
-                        <a
-                            href="/auth/register"
-                            className="text-white/90 hover:text-white text-sm font-medium px-4 py-2 hover:bg-white/5 rounded-lg transition-all"
+                        <button
+                            type="button"
+                            className="text-white/90 hover:text-white text-sm font-medium px-4 py-2 hover:bg-white/5 rounded-lg transition-all cursor-pointer"
                         >
                             Join as a Partner
-                        </a>
-                        <a
-                            href="/auth/login"
-                            className="bg-black hover:bg-zinc-900 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:scale-105 shadow-lg shadow-orange-500/20 border border-white/10"
+                        </button>
+                        <button
+                            type="button"
+                            className="bg-black hover:bg-zinc-900 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:scale-105 shadow-lg shadow-orange-500/20 border border-white/10 cursor-pointer"
                         >
                             Login
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -89,20 +89,20 @@ export default function LandingHeader() {
                                 </a>
                             ))}
                             <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-white/10">
-                                <a
-                                    href="/auth/register"
-                                    className="text-white text-center py-2 px-4 rounded-lg hover:bg-white/5 font-medium"
+                                <button
+                                    type="button"
+                                    className="text-white text-center py-2 px-4 rounded-lg hover:bg-white/5 font-medium cursor-pointer"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
                                     Join as a Partner
-                                </a>
-                                <a
-                                    href="/auth/login"
-                                    className="bg-black hover:bg-zinc-900 text-white px-5 py-3 rounded-full text-sm font-medium transition-all text-center border border-white/10"
+                                </button>
+                                <button
+                                    type="button"
+                                    className="bg-black hover:bg-zinc-900 text-white px-5 py-3 rounded-full text-sm font-medium transition-all text-center border border-white/10 cursor-pointer"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
                                     Login
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </motion.div>

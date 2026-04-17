@@ -38,7 +38,7 @@ export default function ProfilePage() {
                                 D
                             </div>
                             <div className="flex gap-2">
-                                <button className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#f48b3b] text-white font-medium text-sm rounded-xl hover:bg-[#e07a2a] transition-colors">
+                                <button className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#30D5C8] text-white font-medium text-sm rounded-xl hover:bg-[#e07a2a] transition-colors">
                                     <Camera className="w-4 h-4" />
                                     Change Photo
                                 </button>
@@ -60,7 +60,7 @@ export default function ProfilePage() {
                                 name="firstName"
                                 value={formData.firstName}
                                 onChange={handleChange}
-                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#f48b3b]/20 focus:border-[#f48b3b] transition-all"
+                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#30D5C8]/20 focus:border-[#30D5C8] transition-all"
                             />
                         </div>
                         <div>
@@ -70,7 +70,7 @@ export default function ProfilePage() {
                                 name="lastName"
                                 value={formData.lastName}
                                 onChange={handleChange}
-                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#f48b3b]/20 focus:border-[#f48b3b] transition-all"
+                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#30D5C8]/20 focus:border-[#30D5C8] transition-all"
                             />
                         </div>
                         <div>
@@ -81,7 +81,7 @@ export default function ProfilePage() {
                                     name="email"
                                     value={formData.email}
                                     onChange={handleChange}
-                                    className="flex-1 px-4 py-3 border border-gray-200 rounded-xl bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#f48b3b]/20 focus:border-[#f48b3b] transition-all"
+                                    className="flex-1 px-4 py-3 border border-gray-200 rounded-xl bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#30D5C8]/20 focus:border-[#30D5C8] transition-all"
                                     readOnly
                                 />
                                 <button className="px-4 py-3 bg-white border border-gray-200 text-gray-700 font-medium text-sm rounded-xl hover:bg-gray-50 transition-colors">
@@ -96,14 +96,14 @@ export default function ProfilePage() {
                                 name="phone"
                                 value={formData.phone}
                                 onChange={handleChange}
-                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#f48b3b]/20 focus:border-[#f48b3b] transition-all"
+                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#30D5C8]/20 focus:border-[#30D5C8] transition-all"
                             />
                         </div>
                         <div className="flex items-center gap-3">
                             <button
                                 type="button"
                                 onClick={() => setFormData(prev => ({ ...prev, showPhone: !prev.showPhone }))}
-                                className={`relative w-12 h-6 rounded-full transition-colors duration-200 ${formData.showPhone ? 'bg-[#f48b3b]' : 'bg-gray-200'
+                                className={`relative w-12 h-6 rounded-full transition-colors duration-200 ${formData.showPhone ? 'bg-[#30D5C8]' : 'bg-gray-200'
                                     }`}
                             >
                                 <span
@@ -114,7 +114,7 @@ export default function ProfilePage() {
                             <span className="text-sm text-gray-600">Show phone number publicly</span>
                         </div>
 
-                        <button className="inline-flex items-center gap-2 px-6 py-3 bg-[#f48b3b] text-white font-medium rounded-xl hover:bg-[#e07a2a] transition-colors mt-4">
+                        <button className="inline-flex items-center gap-2 px-6 py-3 bg-[#30D5C8] text-white font-medium rounded-xl hover:bg-[#e07a2a] transition-colors mt-4">
                             <Check className="w-4 h-4" />
                             Save Changes
                         </button>

@@ -273,7 +273,7 @@ export default function LoanEligibilityCalculator() {
             <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
                 <div className="mb-12 text-center max-w-2xl mx-auto">
                     <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                        Check Your <span className="text-[#f97316]">Loan Eligibility</span>
+                        Check Your <span className="text-[#30D5C8]">Loan Eligibility</span>
                     </h2>
                     <p className="text-gray-500">
                         Find out estimated eligibility across multiple banks instantly. No credit score impact.
@@ -296,7 +296,7 @@ export default function LoanEligibilityCalculator() {
                                         value={inputs.companyName}
                                         onFocus={() => setShowCompanyDropdown(true)}
                                         onChange={(e) => handleInputChange("companyName", e.target.value)}
-                                        className="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#f97316] focus:border-[#f97316] outline-none transition-all font-semibold text-gray-900 placeholder:text-gray-300"
+                                        className="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#30D5C8] focus:border-[#30D5C8] outline-none transition-all font-semibold text-gray-900 placeholder:text-gray-300"
                                         placeholder="Search Company..."
                                     />
                                     {isSearchingCompany && (
@@ -340,7 +340,7 @@ export default function LoanEligibilityCalculator() {
                                             type="number"
                                             value={inputs.grossSalary}
                                             onChange={(e) => handleInputChange("grossSalary", e.target.value)}
-                                            className="w-full pl-6 pr-3 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#f97316] focus:border-[#f97316] outline-none font-semibold text-gray-900 placeholder:text-gray-300 text-sm"
+                                            className="w-full pl-6 pr-3 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#30D5C8] focus:border-[#30D5C8] outline-none font-semibold text-gray-900 placeholder:text-gray-300 text-sm"
                                             placeholder="50000"
                                         />
                                     </div>
@@ -356,7 +356,7 @@ export default function LoanEligibilityCalculator() {
                                             type="number"
                                             value={inputs.currentEMI}
                                             onChange={(e) => handleInputChange("currentEMI", e.target.value)}
-                                            className="w-full pl-6 pr-3 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#f97316] focus:border-[#f97316] outline-none font-semibold text-gray-900 placeholder:text-gray-300 text-sm"
+                                            className="w-full pl-6 pr-3 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#30D5C8] focus:border-[#30D5C8] outline-none font-semibold text-gray-900 placeholder:text-gray-300 text-sm"
                                             placeholder="15000"
                                         />
                                     </div>
@@ -374,7 +374,7 @@ export default function LoanEligibilityCalculator() {
                                         type="number"
                                         value={inputs.loanAmount}
                                         onChange={(e) => handleInputChange("loanAmount", e.target.value)}
-                                        className="w-full pl-8 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#f97316] focus:border-[#f97316] outline-none transition-all font-semibold text-gray-900 placeholder:text-gray-300"
+                                        className="w-full pl-8 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#30D5C8] focus:border-[#30D5C8] outline-none transition-all font-semibold text-gray-900 placeholder:text-gray-300"
                                         placeholder="e.g. 500000"
                                     />
                                 </div>
@@ -388,7 +388,7 @@ export default function LoanEligibilityCalculator() {
                                         type="number"
                                         value={inputs.age}
                                         onChange={(e) => handleInputChange("age", e.target.value)}
-                                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#f97316] focus:border-[#f97316] outline-none font-semibold text-gray-900 placeholder:text-gray-300"
+                                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#30D5C8] focus:border-[#30D5C8] outline-none font-semibold text-gray-900 placeholder:text-gray-300"
                                         placeholder="28"
                                     />
                                 </div>
@@ -399,7 +399,7 @@ export default function LoanEligibilityCalculator() {
                                         <select
                                             value={inputs.bureauScore}
                                             onChange={(e) => handleInputChange("bureauScore", Number(e.target.value))}
-                                            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#f97316] focus:border-[#f97316] outline-none font-semibold text-gray-900 appearance-none"
+                                            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#30D5C8] focus:border-[#30D5C8] outline-none font-semibold text-gray-900 appearance-none"
                                         >
                                             {BUREAU_SCORES.map(score => <option key={score} value={score}>{score}</option>)}
                                             <option value={850}>850+</option>
@@ -424,12 +424,12 @@ export default function LoanEligibilityCalculator() {
                                         className={`w-full pl-11 pr-4 py-3 bg-gray-50 border rounded-xl focus:ring-2 outline-none transition-all font-semibold text-gray-900 placeholder:text-gray-300
                                             ${pincodeStatus === 'invalid' ? 'border-red-300 focus:border-red-500 focus:ring-red-100' :
                                                 pincodeStatus === 'valid' ? 'border-green-300 focus:border-green-500 focus:ring-green-100' :
-                                                    'border-gray-200 focus:border-[#f97316] focus:ring-[#f97316]'}`}
+                                                    'border-gray-200 focus:border-[#30D5C8] focus:ring-[#30D5C8]'}`}
                                         placeholder="e.g. 560001"
                                     />
                                     {pincodeStatus === 'loading' && (
                                         <div className="absolute right-3 top-1/2 -translate-y-1/2">
-                                            <Loader2 className="w-4 h-4 text-[#f97316] animate-spin" />
+                                            <Loader2 className="w-4 h-4 text-[#30D5C8] animate-spin" />
                                         </div>
                                     )}
                                     {pincodeStatus === 'valid' && (
@@ -473,7 +473,7 @@ export default function LoanEligibilityCalculator() {
                                         <h3 className="text-xl font-bold text-gray-900">Estimated Offers</h3>
                                         <p className="text-sm text-gray-500">Based on your shared details.</p>
                                     </div>
-                                    <span className="mt-2 sm:mt-0 text-xs font-semibold text-[#f97316] bg-orange-50 px-3 py-1.5 rounded-full border border-orange-100 shadow-sm">
+                                    <span className="mt-2 sm:mt-0 text-xs font-semibold text-[#30D5C8] bg-orange-50 px-3 py-1.5 rounded-full border border-orange-100 shadow-sm">
                                         {inputs.companyCategory ? "Listed Company Profile" : "General Profile"}
                                     </span>
                                 </motion.div>
@@ -489,7 +489,7 @@ export default function LoanEligibilityCalculator() {
                                         >
                                             <div className="flex items-start justify-between">
                                                 <div className="flex items-center gap-4">
-                                                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-lg font-bold shrink-0 bg-orange-50 text-[#f97316]`}>
+                                                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-lg font-bold shrink-0 bg-orange-50 text-[#30D5C8]`}>
                                                         {result.bank.bankName.charAt(0)}
                                                     </div>
                                                     <div>
@@ -526,7 +526,7 @@ export default function LoanEligibilityCalculator() {
                                                     EMI (5 Yrs): <span className="font-bold text-gray-600">{formatCurrency(result.emi)}</span> / mo
                                                 </div>
                                                 <Link href="/B2C" className="w-full sm:w-auto">
-                                                    <button className="w-full sm:w-auto text-xs font-bold bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-[#f97316] hover:shadow-lg transition-all flex items-center justify-center gap-2">
+                                                    <button className="w-full sm:w-auto text-xs font-bold bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-[#30D5C8] hover:shadow-lg transition-all flex items-center justify-center gap-2">
                                                         Apply Now <ChevronRight className="w-3.5 h-3.5" />
                                                     </button>
                                                 </Link>

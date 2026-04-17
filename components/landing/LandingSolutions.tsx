@@ -26,13 +26,13 @@ export default function LandingSolutions() {
                     viewport={{ once: true }}
                     className="text-center mb-20"
                 >
-                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 border border-orange-100 text-[#f97316] text-xs font-bold uppercase tracking-widest mb-6">
-                        <span className="w-2 h-2 rounded-full bg-[#f97316] animate-pulse" />
+                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 border border-orange-100 text-[#30D5C8] text-xs font-bold uppercase tracking-widest mb-6">
+                        <span className="w-2 h-2 rounded-full bg-[#30D5C8] animate-pulse" />
                         Platform Solutions
                     </span>
                     <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
                         Powering the Future of <br className="hidden sm:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f97316] to-orange-400">Digital Lending</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#30D5C8] to-orange-400">Digital Lending</span>
                     </h2>
                     <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
                         Discover our suite of enterprise-grade tools designed to accelerate your lending operations and enhance borrower experiences.
@@ -58,7 +58,7 @@ export default function LandingSolutions() {
                                     animate={{ scaleX: 1 }}
                                     transition={{ duration: 5, ease: "linear" }}
                                     style={{ originX: 0 }}
-                                    className="absolute inset-y-0 left-0 right-0 bg-gradient-to-r from-[#f97316] to-orange-400"
+                                    className="absolute inset-y-0 left-0 right-0 bg-gradient-to-r from-[#30D5C8] to-orange-400"
                                 />
                             </div>
 

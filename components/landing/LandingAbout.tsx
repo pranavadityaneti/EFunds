@@ -24,11 +24,11 @@ function ConcentricRings() {
                 className="absolute w-[480px] h-[480px] rounded-full transition-all duration-300"
                 style={{
                     background: isHovered
-                        ? "radial-gradient(circle at 30% 30%, rgba(249,115,22,0.15) 0%, rgba(249,115,22,0.08) 50%, rgba(249,115,22,0.03) 100%)"
+                        ? "radial-gradient(circle at 30% 30%, rgba(48,213,200,0.15) 0%, rgba(48,213,200,0.08) 50%, rgba(48,213,200,0.03) 100%)"
                         : "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.02) 100%)",
                     boxShadow: isHovered
-                        ? "inset 0 0 60px rgba(249,115,22,0.15), 0 0 40px rgba(249,115,22,0.1)"
-                        : "inset 0 0 60px rgba(255,255,255,0.08), 0 0 40px rgba(249,115,22,0.05)",
+                        ? "inset 0 0 60px rgba(48,213,200,0.15), 0 0 40px rgba(48,213,200,0.1)"
+                        : "inset 0 0 60px rgba(255,255,255,0.08), 0 0 40px rgba(48,213,200,0.05)",
                 }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -53,11 +53,11 @@ function ConcentricRings() {
                 className="absolute w-[320px] h-[320px] rounded-full transition-all duration-300"
                 style={{
                     background: isHovered
-                        ? "radial-gradient(circle at 30% 30%, rgba(249,115,22,0.25) 0%, rgba(249,115,22,0.12) 50%, rgba(249,115,22,0.05) 100%)"
+                        ? "radial-gradient(circle at 30% 30%, rgba(48,213,200,0.25) 0%, rgba(48,213,200,0.12) 50%, rgba(48,213,200,0.05) 100%)"
                         : "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 100%)",
                     boxShadow: isHovered
-                        ? "inset 0 0 40px rgba(249,115,22,0.2), 0 0 30px rgba(249,115,22,0.15)"
-                        : "inset 0 0 40px rgba(255,255,255,0.12), 0 0 30px rgba(249,115,22,0.08)",
+                        ? "inset 0 0 40px rgba(48,213,200,0.2), 0 0 30px rgba(48,213,200,0.15)"
+                        : "inset 0 0 40px rgba(255,255,255,0.12), 0 0 30px rgba(48,213,200,0.08)",
                 }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -82,11 +82,11 @@ function ConcentricRings() {
                 className="absolute w-[200px] h-[200px] rounded-full flex items-center justify-center transition-all duration-300"
                 style={{
                     background: isHovered
-                        ? "radial-gradient(circle at 30% 30%, rgba(249,115,22,0.4) 0%, rgba(249,115,22,0.2) 50%, rgba(249,115,22,0.08) 100%)"
+                        ? "radial-gradient(circle at 30% 30%, rgba(48,213,200,0.4) 0%, rgba(48,213,200,0.2) 50%, rgba(48,213,200,0.08) 100%)"
                         : "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.05) 100%)",
                     boxShadow: isHovered
-                        ? "inset 0 0 30px rgba(249,115,22,0.3), 0 0 25px rgba(249,115,22,0.2)"
-                        : "inset 0 0 30px rgba(255,255,255,0.18), 0 0 25px rgba(249,115,22,0.1)",
+                        ? "inset 0 0 30px rgba(48,213,200,0.3), 0 0 25px rgba(48,213,200,0.2)"
+                        : "inset 0 0 30px rgba(255,255,255,0.18), 0 0 25px rgba(48,213,200,0.1)",
                 }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -111,8 +111,8 @@ function ConcentricRings() {
                 className="absolute w-[200px] h-[200px] rounded-full pointer-events-none"
                 style={{
                     background: isHovered
-                        ? "radial-gradient(circle, rgba(249,115,22,0.25) 0%, transparent 70%)"
-                        : "radial-gradient(circle, rgba(249,115,22,0.15) 0%, transparent 70%)",
+                        ? "radial-gradient(circle, rgba(48,213,200,0.25) 0%, transparent 70%)"
+                        : "radial-gradient(circle, rgba(48,213,200,0.15) 0%, transparent 70%)",
                 }}
                 animate={{
                     scale: [1, 1.2, 1],
@@ -145,7 +145,7 @@ export default function LandingAbout() {
                         </span>
                         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                             Powering the Future of{" "}
-                            <span className="text-[#f97316]">Digital Lending</span>
+                            <span className="text-[#30D5C8]">Digital Lending</span>
                         </h2>
                         <p className="text-lg lg:text-xl text-gray-400 leading-relaxed">
                             Efunds is India&apos;s leading lending infrastructure platform,

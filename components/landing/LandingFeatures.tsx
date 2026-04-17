@@ -34,7 +34,7 @@ function ApiCodeAnimation() {
                             x: step >= i ? 0 : -10,
                         }}
                         transition={{ duration: 0.3 }}
-                        className={`${step >= i ? "text-[#f97316]" : "text-gray-600"
+                        className={`${step >= i ? "text-[#30D5C8]" : "text-gray-600"
                             } ${i === 3 ? "text-green-400" : ""}`}
                     >
                         {line.text}
@@ -68,7 +68,7 @@ function DashboardAnimation() {
                 {[1, 2, 3].map((i) => (
                     <motion.div
                         key={i}
-                        className="bg-[#f97316]/30 rounded-md h-8 w-full"
+                        className="bg-[#30D5C8]/30 rounded-md h-8 w-full"
                         layout
                         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                     />
@@ -105,7 +105,7 @@ function SpeedIndicator() {
                             key="text"
                             initial={{ y: 20, opacity: 0, filter: "blur(5px)" }}
                             animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                            className="text-3xl md:text-4xl font-sans font-bold text-[#f97316]"
+                            className="text-3xl md:text-4xl font-sans font-bold text-[#30D5C8]"
                         >
                             Same Day
                         </motion.span>
@@ -115,7 +115,7 @@ function SpeedIndicator() {
             <span className="text-sm text-gray-400">Disbursal Time</span>
             <div className="w-full max-w-[120px] h-1.5 bg-white/10 rounded-full overflow-hidden">
                 <motion.div
-                    className="h-full bg-gradient-to-r from-[#f97316] to-[#fb923c] rounded-full"
+                    className="h-full bg-gradient-to-r from-[#30D5C8] to-[#4bdcc7] rounded-full"
                     initial={{ width: 0 }}
                     animate={{ width: loading ? 0 : "100%" }}
                     transition={{ type: "spring", stiffness: 100, damping: 15, mass: 1 }}
@@ -153,13 +153,13 @@ function SecurityBadge() {
             {shields.map((shield) => (
                 <motion.div
                     key={shield.id}
-                    className={`w-16 h-16 rounded-xl flex flex-col items-center justify-center gap-1 ${shield.active ? "bg-[#f97316]/20" : "bg-white/5"
+                    className={`w-16 h-16 rounded-xl flex flex-col items-center justify-center gap-1 ${shield.active ? "bg-[#30D5C8]/20" : "bg-white/5"
                         }`}
                     animate={{ scale: shield.active ? 1.1 : 1 }}
                     transition={{ duration: 0.3 }}
                 >
                     <Lock
-                        className={`w-5 h-5 ${shield.active ? "text-[#f97316]" : "text-gray-600"
+                        className={`w-5 h-5 ${shield.active ? "text-[#30D5C8]" : "text-gray-600"
                             }`}
                     />
                     <span
@@ -181,14 +181,14 @@ function PartnerNetwork() {
     return (
         <div className="flex items-center justify-center h-full relative">
             <div className="relative z-10 flex flex-col items-center">
-                <Users className="w-14 h-14 text-[#f97316]" />
+                <Users className="w-14 h-14 text-[#30D5C8]" />
                 <span className="text-2xl font-bold text-white mt-2">50+</span>
                 <span className="text-xs text-gray-400">Partners</span>
             </div>
             {pulses.map((pulse) => (
                 <motion.div
                     key={pulse}
-                    className="absolute w-16 h-16 border-2 border-[#f97316]/30 rounded-full"
+                    className="absolute w-16 h-16 border-2 border-[#30D5C8]/30 rounded-full"
                     initial={{ scale: 0.5, opacity: 1 }}
                     animate={{ scale: 3, opacity: 0 }}
                     transition={{
@@ -224,7 +224,7 @@ function MultiProductAnimation() {
             {products.map((product, i) => (
                 <motion.div
                     key={product.name}
-                    className={`flex flex-col items-center gap-2 p-3 rounded-xl ${activeIndex === i ? "bg-[#f97316]/20" : "bg-white/5"
+                    className={`flex flex-col items-center gap-2 p-3 rounded-xl ${activeIndex === i ? "bg-[#30D5C8]/20" : "bg-white/5"
                         }`}
                     animate={{
                         scale: activeIndex === i ? 1.1 : 1,
@@ -257,13 +257,13 @@ export default function LandingFeatures() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <span className="inline-block px-4 py-2 bg-[#f97316]/10 text-[#f97316] rounded-full text-sm font-medium mb-4 uppercase tracking-widest">
+                    <span className="inline-block px-4 py-2 bg-[#30D5C8]/10 text-[#30D5C8] rounded-full text-sm font-medium mb-4 uppercase tracking-widest">
                         Features
                     </span>
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
                         Everything You Need to
                         <br />
-                        <span className="text-[#f97316]">Scale Your Lending</span>
+                        <span className="text-[#30D5C8]">Scale Your Lending</span>
                     </h2>
                     <p className="text-lg text-gray-400 max-w-2xl mx-auto">
                         Our comprehensive platform provides all the tools and infrastructure
@@ -275,7 +275,7 @@ export default function LandingFeatures() {
                 <div className="grid grid-cols-1 md:grid-cols-6 gap-4 auto-rows-[200px]">
                     {/* 1. Instant Integration - Tall (2x2) */}
                     <motion.div
-                        className="md:col-span-2 md:row-span-2 bg-zinc-900 border border-zinc-800 rounded-2xl p-6 sm:p-8 flex flex-col hover:border-[#f97316]/50 transition-colors cursor-pointer overflow-hidden"
+                        className="md:col-span-2 md:row-span-2 bg-zinc-900 border border-zinc-800 rounded-2xl p-6 sm:p-8 flex flex-col hover:border-[#30D5C8]/50 transition-colors cursor-pointer overflow-hidden"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -286,7 +286,7 @@ export default function LandingFeatures() {
                         </div>
                         <div className="mt-4">
                             <h3 className="text-xl text-white font-semibold flex items-center gap-2">
-                                <Zap className="w-5 h-5 text-[#f97316]" />
+                                <Zap className="w-5 h-5 text-[#30D5C8]" />
                                 Instant Integration
                             </h3>
                             <p className="text-gray-400 text-sm mt-2">
@@ -297,7 +297,7 @@ export default function LandingFeatures() {
 
                     {/* 2. Real-Time Analytics - Standard (2x1) */}
                     <motion.div
-                        className="md:col-span-2 bg-zinc-900 border border-zinc-800 rounded-2xl p-6 sm:p-8 flex flex-col hover:border-[#f97316]/50 transition-colors cursor-pointer overflow-hidden"
+                        className="md:col-span-2 bg-zinc-900 border border-zinc-800 rounded-2xl p-6 sm:p-8 flex flex-col hover:border-[#30D5C8]/50 transition-colors cursor-pointer overflow-hidden"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -317,19 +317,19 @@ export default function LandingFeatures() {
 
                     {/* 3. Partner Network - Tall (2x2) */}
                     <motion.div
-                        className="md:col-span-2 md:row-span-2 bg-zinc-900 border border-zinc-800 rounded-2xl p-6 flex flex-col hover:border-[#f97316]/50 transition-colors cursor-pointer overflow-hidden"
+                        className="md:col-span-2 md:row-span-2 bg-zinc-900 border border-zinc-800 rounded-2xl p-6 flex flex-col hover:border-[#30D5C8]/50 transition-colors cursor-pointer overflow-hidden"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        whileHover={{ scale: 1.02, boxShadow: "0 25px 50px -12px rgba(249, 115, 22, 0.15)" }}
+                        whileHover={{ scale: 1.02, boxShadow: "0 25px 50px -12px rgba(48,213,200, 0.15)" }}
                     >
                         <div className="flex-1 flex items-center justify-center">
                             <PartnerNetwork />
                         </div>
                         <div className="mt-auto relative z-20 bg-zinc-900/50 backdrop-blur-sm rounded-lg p-2">
                             <h3 className="text-xl text-white flex items-center gap-2 font-semibold">
-                                <Globe className="w-5 h-5 text-[#f97316]" />
+                                <Globe className="w-5 h-5 text-[#30D5C8]" />
                                 Partner Network
                             </h3>
                             <p className="text-gray-400 text-sm mt-1">
@@ -340,7 +340,7 @@ export default function LandingFeatures() {
 
                     {/* 4. Quick Disbursals - Standard (2x1) */}
                     <motion.div
-                        className="md:col-span-2 bg-zinc-900 border border-zinc-800 rounded-2xl p-6 sm:p-8 flex flex-col hover:border-[#f97316]/50 transition-colors cursor-pointer overflow-hidden"
+                        className="md:col-span-2 bg-zinc-900 border border-zinc-800 rounded-2xl p-6 sm:p-8 flex flex-col hover:border-[#30D5C8]/50 transition-colors cursor-pointer overflow-hidden"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -352,7 +352,7 @@ export default function LandingFeatures() {
                         </div>
                         <div className="mt-4">
                             <h3 className="text-xl text-white font-semibold flex items-center gap-2">
-                                <Clock className="w-5 h-5 text-[#f97316]" />
+                                <Clock className="w-5 h-5 text-[#30D5C8]" />
                                 Quick Disbursals
                             </h3>
                             <p className="text-gray-400 text-sm mt-1">
@@ -363,7 +363,7 @@ export default function LandingFeatures() {
 
                     {/* 5. Bank-Grade Security - Wide (3x1) */}
                     <motion.div
-                        className="md:col-span-3 bg-zinc-900 border border-zinc-800 rounded-2xl p-6 sm:p-8 flex flex-col hover:border-[#f97316]/50 transition-colors cursor-pointer overflow-hidden"
+                        className="md:col-span-3 bg-zinc-900 border border-zinc-800 rounded-2xl p-6 sm:p-8 flex flex-col hover:border-[#30D5C8]/50 transition-colors cursor-pointer overflow-hidden"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -375,7 +375,7 @@ export default function LandingFeatures() {
                         </div>
                         <div className="mt-4">
                             <h3 className="text-xl text-white flex items-center gap-2 font-semibold">
-                                <Lock className="w-5 h-5 text-[#f97316]" />
+                                <Lock className="w-5 h-5 text-[#30D5C8]" />
                                 Bank-Grade Security
                             </h3>
                             <p className="text-gray-400 text-sm mt-1">
@@ -386,7 +386,7 @@ export default function LandingFeatures() {
 
                     {/* 6. Multi-Product Support - Wide (3x1) */}
                     <motion.div
-                        className="md:col-span-3 bg-zinc-900 border border-zinc-800 rounded-2xl p-6 sm:p-8 flex flex-col hover:border-[#f97316]/50 transition-colors cursor-pointer overflow-hidden"
+                        className="md:col-span-3 bg-zinc-900 border border-zinc-800 rounded-2xl p-6 sm:p-8 flex flex-col hover:border-[#30D5C8]/50 transition-colors cursor-pointer overflow-hidden"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -398,7 +398,7 @@ export default function LandingFeatures() {
                         </div>
                         <div className="mt-4">
                             <h3 className="text-xl text-white font-semibold flex items-center gap-2">
-                                <Wallet className="w-5 h-5 text-[#f97316]" />
+                                <Wallet className="w-5 h-5 text-[#30D5C8]" />
                                 Multi-Product Support
                             </h3>
                             <p className="text-gray-400 text-sm mt-1">

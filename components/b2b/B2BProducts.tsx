@@ -78,7 +78,7 @@ export default function B2BProducts() {
                 <defs>
                     <linearGradient id="icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" stopColor="#000000" /> {/* Black */}
-                        <stop offset="100%" stopColor="#f97316" /> {/* Orange-500 */}
+                        <stop offset="100%" stopColor="#30D5C8" /> {/* Teal */}
                     </linearGradient>
                 </defs>
             </svg>

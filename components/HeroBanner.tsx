@@ -19,7 +19,7 @@ export default function HeroBanner({
         <div
             className="relative overflow-hidden rounded-2xl sm:rounded-3xl h-40 sm:h-48 lg:h-56 mb-4 sm:mb-6 opacity-0 animate-fadeInUp"
             style={{
-                background: 'linear-gradient(135deg, #f48b3b 0%, #e67a2a 50%, #d86a1a 100%)',
+                background: 'linear-gradient(135deg, #4bdcc7 0%, #30D5C8 50%, #26b5aa 100%)',
             }}
         >
             {/* Content */}

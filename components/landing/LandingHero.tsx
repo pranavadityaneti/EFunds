@@ -49,7 +49,7 @@ export default function LandingHero() {
                 animationSpeed={0.03}
                 topOffset={20}
                 gradientPosition="50% 100%"
-                gradientColors={["#fb923c", "#f97316", "#ea580c", "#000000", "#000000"]}
+                gradientColors={["#4bdcc7", "#30D5C8", "#26b5aa", "#000000", "#000000"]}
                 gradientStops={[0, 25, 50, 75, 100]}
                 enableSunrise={true}
             />

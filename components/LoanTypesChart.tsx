@@ -18,8 +18,8 @@ export default function LoanTypesChart() {
                     >
                         <defs>
                             <linearGradient id="orangeGradient" x1="0" y1="0" x2="1" y2="0">
-                                <stop offset="0%" stopColor="#f97316" stopOpacity={0.8} />
-                                <stop offset="100%" stopColor="#fb923c" stopOpacity={1} />
+                                <stop offset="0%" stopColor="#30D5C8" stopOpacity={0.8} />
+                                <stop offset="100%" stopColor="#4bdcc7" stopOpacity={1} />
                             </linearGradient>
                         </defs>
                         <CartesianGrid strokeDasharray="0" stroke="#f3f4f6" horizontal={true} vertical={false} />
@@ -34,7 +34,7 @@ export default function LoanTypesChart() {
                             tickLine={false}
                         />
                         <Tooltip
-                            cursor={{ fill: 'rgba(249, 115, 22, 0.05)' }}
+                            cursor={{ fill: 'rgba(48,213,200, 0.05)' }}
                             content={({ active, payload }) => {
                                 if (active && payload && payload.length) {
                                     return (

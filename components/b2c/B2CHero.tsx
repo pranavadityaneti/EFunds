@@ -7,29 +7,29 @@ import { ArrowRight } from "lucide-react";
 // Unsplash Image URLs for "Faces of India" / Diverse Professionals theme
 const row1 = [
     "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop", // Woman Professional
-    "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop", // Man Suit
+    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop", // Man Suit
     "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop", // Woman Smile
-    "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop", // Man Corporate
+    "https://images.unsplash.com/photo-1531384441138-2736e62e0919?q=80&w=400&auto=format&fit=crop", // Man Corporate
     "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop", // Loop
-    "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop",
 ];
 
 const row2 = [
     "https://images.unsplash.com/photo-1595152226875-9c17df37648f?q=80&w=400&auto=format&fit=crop", // Woman Saree/Formal
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop", // Man Smiling
-    "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=400&auto=format&fit=crop", // Woman Smart Casual
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop", // Man Portrait
+    "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&w=400&auto=format&fit=crop", // Man Smiling
+    "https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?q=80&w=400&auto=format&fit=crop", // Woman Smart Casual
+    "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?q=80&w=400&auto=format&fit=crop", // Man Portrait
     "https://images.unsplash.com/photo-1595152226875-9c17df37648f?q=80&w=400&auto=format&fit=crop", // Loop
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&w=400&auto=format&fit=crop",
 ];
 
 const row3 = [
     "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=400&auto=format&fit=crop", // Woman Business
-    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop", // Man Portrait
-    "https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=400&auto=format&fit=crop", // Woman Professional
-    "https://images.unsplash.com/photo-1563223552-30d01309cc5b?q=80&w=400&auto=format&fit=crop", // Man Casual
+    "https://images.unsplash.com/photo-1488161628813-044c8c7d6b38?q=80&w=400&auto=format&fit=crop", // Man Portrait
+    "https://images.unsplash.com/photo-1563236318-7f5b8ee9e7cc?q=80&w=400&auto=format&fit=crop", // Woman Professional
+    "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=400&auto=format&fit=crop", // Man Casual
     "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=400&auto=format&fit=crop", // Loop
-    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1488161628813-044c8c7d6b38?q=80&w=400&auto=format&fit=crop",
 ];
 
 import LandingHeader from "../landing/LandingHeader";
@@ -138,8 +138,7 @@ const MarqueeRow = ({ images, direction, speed }: { images: string[], direction:
                            Ideally would use Next/Image but plain img is easier for quick proto.
                         */}
                         <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                            {/* <img src={src} alt="User" className="w-full h-full object-cover" /> */}
-                            <span className="text-white/20 text-xs">User {idx}</span>
+                            <img src={src} alt={`User ${idx + 1}`} className="w-full h-full object-cover" />
                         </div>
                     </div>
                 ))}

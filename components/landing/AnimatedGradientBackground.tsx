@@ -22,8 +22,8 @@ const AnimatedGradientBackground: React.FC<AnimatedGradientBackgroundProps> = ({
     Breathing = false,
     gradientColors = [
         "#0A0A0A",
-        "#f97316",
-        "#fb923c",
+        "#30D5C8",
+        "#4bdcc7",
         "#fdba74",
         "#fed7aa",
         "#fff7ed",

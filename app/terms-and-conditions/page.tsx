@@ -7,7 +7,7 @@ export default function TermsAndConditions() {
             <header className="border-b border-gray-100 bg-white sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
                     <a href="/" className="inline-block">
-                        <img src="/logo.png" alt="Efunds" className="h-8 w-auto object-contain" />
+                        <img src="/logo.png" alt="Finlot Logo" className="h-8 w-auto object-contain" />
                     </a>
                 </div>
             </header>

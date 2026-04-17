@@ -59,6 +59,17 @@
 }
 
 @theme inline {
+  --color-orange-50: #eafbf9;
+  --color-orange-100: #ccf5f0;
+  --color-orange-200: #9ef0e3;
+  --color-orange-300: #6ee6d4;
+  --color-orange-400: #4bdcc7;
+  --color-orange-500: #30D5C8;
+  --color-orange-600: #26b5aa;
+  --color-orange-700: #209189;
+  --color-orange-800: #1b736e;
+  --color-orange-900: #175f5b;
+  --color-orange-950: #0a3331;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: 'Questrial', sans-serif;

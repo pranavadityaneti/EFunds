@@ -80,7 +80,7 @@ export default function LandingAudience() {
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                         Smart Lending.
                         <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f97316] to-[#fb923c]">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#30D5C8] to-[#4bdcc7]">
                             Simplified for Everyone.
                         </span>
                     </h2>
@@ -160,7 +160,7 @@ export default function LandingAudience() {
                     </p>
                     <a
                         href="#contact"
-                        className="inline-flex items-center gap-2 text-[#f97316] hover:text-[#ea580c] font-semibold transition-colors group"
+                        className="inline-flex items-center gap-2 text-[#30D5C8] hover:text-[#26b5aa] font-semibold transition-colors group"
                     >
                         Talk to our experts
                         <motion.span

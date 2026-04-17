@@ -28,30 +28,30 @@ export default function LandingContact() {
                         {/* Contact Info */}
                         <div className="space-y-6">
                             <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-xl bg-[#f97316]/20 flex items-center justify-center">
-                                    <Mail className="w-5 h-5 text-[#f97316]" />
+                                <div className="w-12 h-12 rounded-xl bg-[#30D5C8]/20 flex items-center justify-center">
+                                    <Mail className="w-5 h-5 text-[#30D5C8]" />
                                 </div>
                                 <div>
                                     <div className="text-sm text-gray-500">Email Us</div>
-                                    <a href="mailto:contact@efunds.in" className="text-white hover:text-[#f97316] transition-colors font-medium">
+                                    <a href="mailto:contact@efunds.in" className="text-white hover:text-[#30D5C8] transition-colors font-medium">
                                         contact@efunds.in
                                     </a>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-xl bg-[#f97316]/20 flex items-center justify-center">
-                                    <Phone className="w-5 h-5 text-[#f97316]" />
+                                <div className="w-12 h-12 rounded-xl bg-[#30D5C8]/20 flex items-center justify-center">
+                                    <Phone className="w-5 h-5 text-[#30D5C8]" />
                                 </div>
                                 <div>
                                     <div className="text-sm text-gray-500">Call Us</div>
-                                    <a href="tel:+919876543210" className="text-white hover:text-[#f97316] transition-colors font-medium">
+                                    <a href="tel:+919876543210" className="text-white hover:text-[#30D5C8] transition-colors font-medium">
                                         +91 98765 43210
                                     </a>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-xl bg-[#f97316]/20 flex items-center justify-center">
-                                    <MapPin className="w-5 h-5 text-[#f97316]" />
+                                <div className="w-12 h-12 rounded-xl bg-[#30D5C8]/20 flex items-center justify-center">
+                                    <MapPin className="w-5 h-5 text-[#30D5C8]" />
                                 </div>
                                 <div>
                                     <div className="text-sm text-gray-500">Visit Us</div>
@@ -82,7 +82,7 @@ export default function LandingContact() {
                                     </label>
                                     <input
                                         type="text"
-                                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#f97316] transition-colors"
+                                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#30D5C8] transition-colors"
                                         placeholder="John"
                                     />
                                 </div>
@@ -92,7 +92,7 @@ export default function LandingContact() {
                                     </label>
                                     <input
                                         type="text"
-                                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#f97316] transition-colors"
+                                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#30D5C8] transition-colors"
                                         placeholder="Doe"
                                     />
                                 </div>
@@ -103,7 +103,7 @@ export default function LandingContact() {
                                 </label>
                                 <input
                                     type="email"
-                                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#f97316] transition-colors"
+                                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#30D5C8] transition-colors"
                                     placeholder="john@company.com"
                                 />
                             </div>
@@ -113,7 +113,7 @@ export default function LandingContact() {
                                 </label>
                                 <input
                                     type="tel"
-                                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#f97316] transition-colors"
+                                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#30D5C8] transition-colors"
                                     placeholder="+91 98765 43210"
                                 />
                             </div>
@@ -123,13 +123,13 @@ export default function LandingContact() {
                                 </label>
                                 <textarea
                                     rows={4}
-                                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#f97316] transition-colors resize-none"
+                                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#30D5C8] transition-colors resize-none"
                                     placeholder="Tell us about your lending requirements..."
                                 />
                             </div>
                             <button
                                 type="submit"
-                                className="w-full bg-gradient-to-r from-[#f97316] to-[#ea580c] hover:from-[#ea580c] hover:to-[#c2410c] text-white py-4 rounded-xl font-semibold transition-all hover:scale-[1.02] flex items-center justify-center gap-2 group"
+                                className="w-full bg-gradient-to-r from-[#30D5C8] to-[#26b5aa] hover:from-[#26b5aa] hover:to-[#1d8880] text-white py-4 rounded-xl font-semibold transition-all hover:scale-[1.02] flex items-center justify-center gap-2 group"
                             >
                                 Send Message
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

@@ -35,22 +35,22 @@ export default function DashboardSettingsPage() {
                         <button
                             onClick={() => setSettings(prev => ({ ...prev, theme: 'light' }))}
                             className={`flex-1 flex items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all ${settings.theme === 'light'
-                                    ? 'border-[#f48b3b] bg-orange-50'
+                                    ? 'border-[#30D5C8] bg-orange-50'
                                     : 'border-gray-200 hover:border-gray-300'
                                 }`}
                         >
-                            <Sun className={`w-5 h-5 ${settings.theme === 'light' ? 'text-[#f48b3b]' : 'text-gray-400'}`} />
-                            <span className={`font-medium ${settings.theme === 'light' ? 'text-[#f48b3b]' : 'text-gray-600'}`}>Light</span>
+                            <Sun className={`w-5 h-5 ${settings.theme === 'light' ? 'text-[#30D5C8]' : 'text-gray-400'}`} />
+                            <span className={`font-medium ${settings.theme === 'light' ? 'text-[#30D5C8]' : 'text-gray-600'}`}>Light</span>
                         </button>
                         <button
                             onClick={() => setSettings(prev => ({ ...prev, theme: 'dark' }))}
                             className={`flex-1 flex items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all ${settings.theme === 'dark'
-                                    ? 'border-[#f48b3b] bg-orange-50'
+                                    ? 'border-[#30D5C8] bg-orange-50'
                                     : 'border-gray-200 hover:border-gray-300'
                                 }`}
                         >
-                            <Moon className={`w-5 h-5 ${settings.theme === 'dark' ? 'text-[#f48b3b]' : 'text-gray-400'}`} />
-                            <span className={`font-medium ${settings.theme === 'dark' ? 'text-[#f48b3b]' : 'text-gray-600'}`}>Dark</span>
+                            <Moon className={`w-5 h-5 ${settings.theme === 'dark' ? 'text-[#30D5C8]' : 'text-gray-400'}`} />
+                            <span className={`font-medium ${settings.theme === 'dark' ? 'text-[#30D5C8]' : 'text-gray-600'}`}>Dark</span>
                         </button>
                     </div>
                 </div>
@@ -61,7 +61,7 @@ export default function DashboardSettingsPage() {
                     <select
                         value={settings.defaultPage}
                         onChange={(e) => setSettings(prev => ({ ...prev, defaultPage: e.target.value }))}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#f48b3b]/20 focus:border-[#f48b3b] transition-all"
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#30D5C8]/20 focus:border-[#30D5C8] transition-all"
                     >
                         <option value="dashboard">Dashboard</option>
                         <option value="leads">Leads</option>
@@ -82,7 +82,7 @@ export default function DashboardSettingsPage() {
                             <button
                                 type="button"
                                 onClick={() => handleToggle('emailNotifications')}
-                                className={`relative w-12 h-6 rounded-full transition-colors duration-200 ${settings.emailNotifications ? 'bg-[#f48b3b]' : 'bg-gray-200'
+                                className={`relative w-12 h-6 rounded-full transition-colors duration-200 ${settings.emailNotifications ? 'bg-[#30D5C8]' : 'bg-gray-200'
                                     }`}
                             >
                                 <span
@@ -99,7 +99,7 @@ export default function DashboardSettingsPage() {
                             <button
                                 type="button"
                                 onClick={() => handleToggle('pushNotifications')}
-                                className={`relative w-12 h-6 rounded-full transition-colors duration-200 ${settings.pushNotifications ? 'bg-[#f48b3b]' : 'bg-gray-200'
+                                className={`relative w-12 h-6 rounded-full transition-colors duration-200 ${settings.pushNotifications ? 'bg-[#30D5C8]' : 'bg-gray-200'
                                     }`}
                             >
                                 <span
@@ -120,7 +120,7 @@ export default function DashboardSettingsPage() {
                             <select
                                 value={settings.dateFormat}
                                 onChange={(e) => setSettings(prev => ({ ...prev, dateFormat: e.target.value }))}
-                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#f48b3b]/20 focus:border-[#f48b3b] transition-all"
+                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#30D5C8]/20 focus:border-[#30D5C8] transition-all"
                             >
                                 <option value="DD/MM/YYYY">DD/MM/YYYY</option>
                                 <option value="MM/DD/YYYY">MM/DD/YYYY</option>
@@ -132,7 +132,7 @@ export default function DashboardSettingsPage() {
                             <select
                                 value={settings.currency}
                                 onChange={(e) => setSettings(prev => ({ ...prev, currency: e.target.value }))}
-                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#f48b3b]/20 focus:border-[#f48b3b] transition-all"
+                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#30D5C8]/20 focus:border-[#30D5C8] transition-all"
                             >
                                 <option value="INR">INR (₹)</option>
                                 <option value="USD">USD ($)</option>
@@ -142,7 +142,7 @@ export default function DashboardSettingsPage() {
                     </div>
                 </div>
 
-                <button className="inline-flex items-center gap-2 px-6 py-3 bg-[#f48b3b] text-white font-medium rounded-xl hover:bg-[#e07a2a] transition-colors">
+                <button className="inline-flex items-center gap-2 px-6 py-3 bg-[#30D5C8] text-white font-medium rounded-xl hover:bg-[#26b5aa] transition-colors">
                     <Check className="w-4 h-4" />
                     Save Settings
                 </button>

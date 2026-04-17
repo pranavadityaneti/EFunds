@@ -120,7 +120,7 @@ function ValueCard({ prop, index }: { prop: typeof valueProps[0]; index: number 
                 </motion.div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-[#f97316] transition-colors duration-300">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-[#30D5C8] transition-colors duration-300">
                     {prop.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -170,7 +170,7 @@ export default function LandingValueProps() {
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                         Speed, Clarity, Trust.
                         <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f97316] to-[#fb923c]">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#30D5C8] to-[#4bdcc7]">
                             At Scale.
                         </span>
                     </h2>

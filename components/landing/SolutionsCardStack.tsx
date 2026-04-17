@@ -156,9 +156,9 @@ function SolutionVisual({ contentId, gradient }: { contentId: number; gradient: 
                             />
                             <defs>
                                 <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                    <stop offset="0%" stopColor="#f97316" stopOpacity="0" />
-                                    <stop offset="50%" stopColor="#f97316" stopOpacity="1" />
-                                    <stop offset="100%" stopColor="#f97316" stopOpacity="0" />
+                                    <stop offset="0%" stopColor="#30D5C8" stopOpacity="0" />
+                                    <stop offset="50%" stopColor="#30D5C8" stopOpacity="1" />
+                                    <stop offset="100%" stopColor="#30D5C8" stopOpacity="0" />
                                 </linearGradient>
                             </defs>
                         </svg>

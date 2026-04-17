@@ -11,7 +11,7 @@ interface FeatureItemProps {
 function FeatureItem({ icon, text }: FeatureItemProps) {
     return (
         <div className="flex items-center gap-3 transition-colors duration-300 group-hover:text-white/90 text-zinc-600">
-            <span className="group-hover:text-white/80 text-[#f97316]">{icon}</span>
+            <span className="group-hover:text-white/80 text-[#30D5C8]">{icon}</span>
             <span className="text-sm font-medium">{text}</span>
         </div>
     );
@@ -38,7 +38,7 @@ function BusinessCard({
 }: BusinessCardProps) {
     return (
         <motion.div
-            className="relative flex flex-col p-8 rounded-3xl overflow-hidden cursor-pointer group min-h-[500px] border-2 border-transparent transition-all duration-300 bg-gray-100 hover:bg-[#f97316] hover:shadow-2xl hover:shadow-orange-500/20 max-w-sm mx-auto w-full"
+            className="relative flex flex-col p-8 rounded-3xl overflow-hidden cursor-pointer group min-h-[500px] border-2 border-transparent transition-all duration-300 bg-gray-100 hover:bg-[#30D5C8] hover:shadow-2xl hover:shadow-orange-500/20 max-w-sm mx-auto w-full"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -52,14 +52,14 @@ function BusinessCard({
 
             {/* Icon */}
             <div className="relative z-10 w-14 h-14 rounded-2xl flex items-center justify-center mb-8 bg-white shadow-sm group-hover:bg-white/20 group-hover:shadow-none transition-all duration-300">
-                <div className="text-[#f97316] group-hover:text-white transition-colors duration-300">
+                <div className="text-[#30D5C8] group-hover:text-white transition-colors duration-300">
                     {icon}
                 </div>
             </div>
 
             {/* Title & Subtitle */}
             <div className="relative z-10 mb-4">
-                <h3 className="text-2xl md:text-3xl font-bold text-[#f97316] group-hover:text-white mb-2 transition-colors duration-300">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#30D5C8] group-hover:text-white mb-2 transition-colors duration-300">
                     {title}
                 </h3>
                 <p className="text-zinc-500 group-hover:text-white/80 text-sm font-medium transition-colors duration-300">
@@ -76,7 +76,7 @@ function BusinessCard({
             {/* CTA Button */}
             {/* CTA Button */}
             <div
-                className="relative z-10 w-full py-4 rounded-xl font-bold text-base mb-8 transition-all duration-300 bg-white text-[#f97316] border border-[#f97316]/20 shadow-sm group-hover:bg-white group-hover:text-[#f97316] group-hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] text-center"
+                className="relative z-10 w-full py-4 rounded-xl font-bold text-base mb-8 transition-all duration-300 bg-white text-[#30D5C8] border border-[#30D5C8]/20 shadow-sm group-hover:bg-white group-hover:text-[#30D5C8] group-hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] text-center"
             >
                 Learn More
             </div>

@@ -55,7 +55,7 @@ export default function LandingFooter() {
                             Experience seamless integration, real-time analytics, and instant disbursals.
                         </p>
                         <div className="flex flex-wrap items-center justify-center gap-4">
-                            <button className="px-8 py-4 bg-[#f97316] text-white rounded-2xl font-bold text-lg hover:bg-[#ea580c] transition-all shadow-xl shadow-orange-500/20 hover:scale-105">
+                            <button className="px-8 py-4 bg-[#30D5C8] text-white rounded-2xl font-bold text-lg hover:bg-[#26b5aa] transition-all shadow-xl shadow-orange-500/20 hover:scale-105">
                                 Start Lending
                             </button>
                             <button className="px-8 py-4 bg-white border border-gray-200 text-gray-700 rounded-2xl font-bold text-lg hover:bg-gray-50 transition-all hover:border-gray-300">
@@ -75,7 +75,7 @@ export default function LandingFooter() {
                     <div className="grid lg:grid-cols-12 gap-12 lg:gap-8">
                         {/* Left: Brand & Newsletter */}
                         <div className="lg:col-span-3 flex flex-col items-start">
-                            <img src="/footer-logo.png" alt="Efunds" className="h-10 w-auto object-contain mb-10" />
+                            <img src="/footer-logo.png" alt="Finlot Logo" className="h-10 w-auto object-contain mb-10" />
 
                             <p className="text-gray-900 font-bold mb-4">Stay updated with Efunds.</p>
                             <div className="relative flex items-center mb-6">
@@ -99,7 +99,7 @@ export default function LandingFooter() {
                                 <h4 className="text-[13px] font-bold text-gray-400 uppercase tracking-widest mb-6 border-b border-gray-100 pb-2">Consumer Loans</h4>
                                 <ul className="space-y-4">
                                     {footerLinks.consumerLoans.map((link) => (
-                                        <li key={link.name}><a href={link.href} className="text-[15px] font-medium text-gray-600 hover:text-[#f97316] transition-colors">{link.name}</a></li>
+                                        <li key={link.name}><a href={link.href} className="text-[15px] font-medium text-gray-600 hover:text-[#30D5C8] transition-colors">{link.name}</a></li>
                                     ))}
                                 </ul>
                             </div>
@@ -107,7 +107,7 @@ export default function LandingFooter() {
                                 <h4 className="text-[13px] font-bold text-gray-400 uppercase tracking-widest mb-6 border-b border-gray-100 pb-2">Corporate Loans</h4>
                                 <ul className="space-y-4">
                                     {footerLinks.corporateLoans.map((link) => (
-                                        <li key={link.name}><a href={link.href} className="text-[15px] font-medium text-gray-600 hover:text-[#f97316] transition-colors">{link.name}</a></li>
+                                        <li key={link.name}><a href={link.href} className="text-[15px] font-medium text-gray-600 hover:text-[#30D5C8] transition-colors">{link.name}</a></li>
                                     ))}
                                 </ul>
                             </div>
@@ -115,7 +115,7 @@ export default function LandingFooter() {
                                 <h4 className="text-[13px] font-bold text-gray-400 uppercase tracking-widest mb-6 border-b border-gray-100 pb-2">Products</h4>
                                 <ul className="space-y-4">
                                     {footerLinks.products.map((link) => (
-                                        <li key={link.name}><a href={link.href} className="text-[15px] font-medium text-gray-600 hover:text-[#f97316] transition-colors">{link.name}</a></li>
+                                        <li key={link.name}><a href={link.href} className="text-[15px] font-medium text-gray-600 hover:text-[#30D5C8] transition-colors">{link.name}</a></li>
                                     ))}
                                 </ul>
                             </div>
@@ -126,7 +126,7 @@ export default function LandingFooter() {
                                 </div>
                                 <ul className="space-y-4">
                                     {footerLinks.legal.map((link) => (
-                                        <li key={link.name}><a href={link.href} className="text-[15px] font-medium text-gray-600 hover:text-[#f97316] transition-colors">{link.name}</a></li>
+                                        <li key={link.name}><a href={link.href} className="text-[15px] font-medium text-gray-600 hover:text-[#30D5C8] transition-colors">{link.name}</a></li>
                                     ))}
                                 </ul>
                             </div>

@@ -141,7 +141,7 @@ export default function TopMetricCards() {
                     change={metrics.totalLeadsChange}
                     subtitle="this month"
                     bgColor="bg-orange-50"
-                    chartColor="#f97316"
+                    chartColor="#30D5C8"
                     chartData={leadsChartData}
                     delay={0.05}
                 />

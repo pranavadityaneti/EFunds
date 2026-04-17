@@ -37,7 +37,7 @@ export default function CustomerHero() {
                                 </p>
 
                                 <div className="flex flex-wrap gap-4 items-center">
-                                    <button className="px-8 py-4 bg-[#f97316] text-white rounded-full font-bold text-lg hover:bg-[#ea580c] transition-all shadow-lg shadow-orange-500/25 flex items-center gap-2 group">
+                                    <button className="px-8 py-4 bg-[#30D5C8] text-white rounded-full font-bold text-lg hover:bg-[#26b5aa] transition-all shadow-lg shadow-orange-500/25 flex items-center gap-2 group">
                                         Get the App
                                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                     </button>
@@ -108,7 +108,7 @@ export default function CustomerHero() {
                                         <p className="text-gray-500 text-xs text-center mb-6">Select your loan amount</p>
 
                                         <div className="text-center mb-2">
-                                            <span className="text-3xl font-bold text-[#f97316]">₹9,00,000</span>
+                                            <span className="text-3xl font-bold text-[#30D5C8]">₹9,00,000</span>
                                         </div>
                                         <p className="text-center text-[10px] text-gray-500 font-medium mb-6">
                                             EMI starting from ₹30,216/month
@@ -120,12 +120,12 @@ export default function CustomerHero() {
                                             <span>₹9L</span>
                                         </div>
                                         <div className="relative h-2 bg-gray-100 rounded-full mb-8">
-                                            <div className="absolute left-0 top-0 bottom-0 w-[70%] bg-[#f97316] rounded-full" />
-                                            <div className="absolute left-[70%] top-1/2 -translate-y-1/2 w-6 h-6 bg-white border-2 border-[#f97316] rounded-full shadow-md flex items-center justify-center">
-                                                <div className="w-1.5 h-1.5 bg-[#f97316] md:hidden" /> {/* Arrows icon simplified */}
+                                            <div className="absolute left-0 top-0 bottom-0 w-[70%] bg-[#30D5C8] rounded-full" />
+                                            <div className="absolute left-[70%] top-1/2 -translate-y-1/2 w-6 h-6 bg-white border-2 border-[#30D5C8] rounded-full shadow-md flex items-center justify-center">
+                                                <div className="w-1.5 h-1.5 bg-[#30D5C8] md:hidden" /> {/* Arrows icon simplified */}
                                                 <div className="hidden md:flex gap-0.5">
-                                                    <div className="w-0 h-0 border-y-[3px] border-y-transparent border-r-[4px] border-r-[#f97316]" />
-                                                    <div className="w-0 h-0 border-y-[3px] border-y-transparent border-l-[4px] border-l-[#f97316]" />
+                                                    <div className="w-0 h-0 border-y-[3px] border-y-transparent border-r-[4px] border-r-[#30D5C8]" />
+                                                    <div className="w-0 h-0 border-y-[3px] border-y-transparent border-l-[4px] border-l-[#30D5C8]" />
                                                 </div>
                                             </div>
                                         </div>

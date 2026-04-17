@@ -48,7 +48,7 @@ export default function ContactPage() {
                 {/* Contact Form */}
                 <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 opacity-0 animate-fadeInUp" style={{ boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)', animationDelay: '0.1s' }}>
                     <div className="mb-4 sm:mb-6">
-                        <span className="text-xs font-semibold text-[#f48b3b] uppercase tracking-wider">CONTACT</span>
+                        <span className="text-xs font-semibold text-[#30D5C8] uppercase tracking-wider">CONTACT</span>
                         <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mt-1">Get in <span className="italic">touch</span></h2>
                         <p className="text-sm sm:text-base text-gray-500 mt-2">Receive expert guidance to resolve any issues or queries.</p>
                     </div>
@@ -58,7 +58,7 @@ export default function ContactPage() {
                         <button
                             onClick={() => setSelectedTeam('tech')}
                             className={`flex-1 py-2 sm:py-2.5 px-3 sm:px-4 rounded-xl font-medium text-xs sm:text-sm transition-all ${selectedTeam === 'tech'
-                                ? 'bg-[#f48b3b] text-white'
+                                ? 'bg-[#30D5C8] text-white'
                                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                                 }`}
                         >
@@ -67,7 +67,7 @@ export default function ContactPage() {
                         <button
                             onClick={() => setSelectedTeam('business')}
                             className={`flex-1 py-2 sm:py-2.5 px-3 sm:px-4 rounded-xl font-medium text-xs sm:text-sm transition-all ${selectedTeam === 'business'
-                                ? 'bg-[#f48b3b] text-white'
+                                ? 'bg-[#30D5C8] text-white'
                                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                                 }`}
                         >
@@ -84,7 +84,7 @@ export default function ContactPage() {
                                     placeholder="Your name"
                                     value={formData.name}
                                     onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#f48b3b]/20 focus:border-[#f48b3b] transition-all"
+                                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#30D5C8]/20 focus:border-[#30D5C8] transition-all"
                                     required
                                 />
                             </div>
@@ -95,7 +95,7 @@ export default function ContactPage() {
                                     placeholder="Your email address"
                                     value={formData.email}
                                     onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#f48b3b]/20 focus:border-[#f48b3b] transition-all"
+                                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#30D5C8]/20 focus:border-[#30D5C8] transition-all"
                                     required
                                 />
                             </div>
@@ -107,7 +107,7 @@ export default function ContactPage() {
                                 placeholder="Your phone number"
                                 value={formData.phone}
                                 onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#f48b3b]/20 focus:border-[#f48b3b] transition-all"
+                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#30D5C8]/20 focus:border-[#30D5C8] transition-all"
                             />
                         </div>
                         <div>
@@ -117,7 +117,7 @@ export default function ContactPage() {
                                 rows={4}
                                 value={formData.message}
                                 onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#f48b3b]/20 focus:border-[#f48b3b] transition-all resize-none"
+                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#30D5C8]/20 focus:border-[#30D5C8] transition-all resize-none"
                                 required
                             />
                         </div>
@@ -132,11 +132,11 @@ export default function ContactPage() {
 
                     {/* Contact Info */}
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 mt-6 pt-6 border-t border-gray-100">
-                        <a href="mailto:support@efundzz.com" className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#f48b3b]">
+                        <a href="mailto:support@efundzz.com" className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#30D5C8]">
                             <Mail className="w-4 h-4" />
                             support@efundzz.com
                         </a>
-                        <a href="tel:+919876543210" className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#f48b3b]">
+                        <a href="tel:+919876543210" className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#30D5C8]">
                             <Phone className="w-4 h-4" />
                             +91 98765 43210
                         </a>
@@ -160,7 +160,7 @@ export default function ContactPage() {
                                 return (
                                     <div
                                         key={key}
-                                        className={`bg-white rounded-xl border-l-4 transition-all ${isOpen ? 'border-l-[#f48b3b]' : 'border-l-gray-200'
+                                        className={`bg-white rounded-xl border-l-4 transition-all ${isOpen ? 'border-l-[#30D5C8]' : 'border-l-gray-200'
                                             }`}
                                         style={{ boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)' }}
                                     >
@@ -169,7 +169,7 @@ export default function ContactPage() {
                                             className="w-full flex items-center justify-between p-4 text-left"
                                         >
                                             <span className="text-sm font-medium text-gray-900 pr-4">{faq.q}</span>
-                                            <span className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${isOpen ? 'bg-[#f48b3b] text-white' : 'bg-gray-100 text-gray-500'
+                                            <span className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${isOpen ? 'bg-[#30D5C8] text-white' : 'bg-gray-100 text-gray-500'
                                                 }`}>
                                                 {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
                                             </span>
@@ -193,7 +193,7 @@ export default function ContactPage() {
                                 return (
                                     <div
                                         key={key}
-                                        className={`bg-white rounded-xl border-l-4 transition-all ${isOpen ? 'border-l-[#f48b3b]' : 'border-l-gray-200'
+                                        className={`bg-white rounded-xl border-l-4 transition-all ${isOpen ? 'border-l-[#30D5C8]' : 'border-l-gray-200'
                                             }`}
                                         style={{ boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)' }}
                                     >
@@ -202,7 +202,7 @@ export default function ContactPage() {
                                             className="w-full flex items-center justify-between p-4 text-left"
                                         >
                                             <span className="text-sm font-medium text-gray-900 pr-4">{faq.q}</span>
-                                            <span className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${isOpen ? 'bg-[#f48b3b] text-white' : 'bg-gray-100 text-gray-500'
+                                            <span className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${isOpen ? 'bg-[#30D5C8] text-white' : 'bg-gray-100 text-gray-500'
                                                 }`}>
                                                 {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
                                             </span>
