@@ -3,8 +3,8 @@ import "./globals.css";
 import ClientLayout from "@/components/ClientLayout";
 
 export const metadata: Metadata = {
-  title: "EFundzz CRM Dashboard",
-  description: "Loan Management Dashboard",
+  title: "Finlot CRM Dashboard",
+  description: "Finlot Loan Management Dashboard",
   icons: {
     icon: [
       { url: '/icon-light.png', media: '(prefers-color-scheme: light)' },
