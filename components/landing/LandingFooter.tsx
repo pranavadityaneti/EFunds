@@ -75,7 +75,7 @@ export default function LandingFooter() {
                     <div className="grid lg:grid-cols-12 gap-12 lg:gap-8">
                         {/* Left: Brand & Newsletter */}
                         <div className="lg:col-span-3 flex flex-col items-start">
-                            <img src="/footer-logo.png" alt="Finlot Logo" className="h-12 w-auto object-contain mb-10" />
+                            <img src="/footer-logo.png" alt="Finlot Logo" className="h-14 w-auto object-contain mb-10" />
 
                             <p className="text-gray-900 font-bold mb-4">Stay updated with Efunds.</p>
                             <div className="relative flex items-center mb-6">
