@@ -126,14 +126,24 @@ const MarqueeRow = ({ products, direction, speed, onCardClick }: { products: any
     );
 }
 
+const PERSONAL_LOAN_URL = "https://www.finlot.efundzz.com/loanAuth?loanType=LoanOnDemand&brand=FL";
+
 const Card = ({ product, onClick }: { product: typeof products[0], onClick?: () => void }) => {
     const Icon = product.icon;
     const isPersonalLoan = product.title === "Personal Loans";
 
+    const handleClick = () => {
+        if (isPersonalLoan) {
+            window.open(PERSONAL_LOAN_URL, "_blank", "noopener,noreferrer");
+        } else {
+            onClick?.();
+        }
+    };
+
     return (
         <div
-            onClick={!isPersonalLoan ? onClick : undefined}
-            className={`relative w-[340px] h-[460px] flex-shrink-0 rounded-[2.5rem] overflow-hidden group transition-transform duration-300 hover:scale-105 ${!isPersonalLoan ? 'cursor-pointer' : ''}`}
+            onClick={handleClick}
+            className="relative w-[340px] h-[460px] flex-shrink-0 rounded-[2.5rem] overflow-hidden group transition-transform duration-300 hover:scale-105 cursor-pointer"
         >
 
             {/* Card Background: Dark Gradient + Noise */}
@@ -166,11 +176,9 @@ const Card = ({ product, onClick }: { product: typeof products[0], onClick?: () 
                 </p>
 
                 {/* Arrow Icon */}
-                {!isPersonalLoan && (
-                    <div className="absolute bottom-8 right-8 w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-colors">
-                        <ArrowUpRight className="text-white/60 w-5 h-5 group-hover:text-white transition-colors" />
-                    </div>
-                )}
+                <div className="absolute bottom-8 right-8 w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                    <ArrowUpRight className="text-white/60 w-5 h-5 group-hover:text-white transition-colors" />
+                </div>
 
             </div>
         </div>
