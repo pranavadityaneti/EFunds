@@ -1,21 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowRight, CheckCircle2, Loader2, ShieldCheck, Clock, TrendingUp } from "lucide-react";
-
-const LOAN_AMOUNT_OPTIONS = [
-    "Up to ₹10 Lakhs",
-    "₹10 Lakhs - ₹50 Lakhs",
-    "₹50 Lakhs - ₹1 Crore",
-    "₹1 Crore+",
-];
-
-const TURNOVER_OPTIONS = [
-    "Below ₹1 Lakh / month",
-    "₹1 Lakh - ₹5 Lakhs / month",
-    "₹5 Lakhs - ₹25 Lakhs / month",
-    "₹25 Lakhs+ / month",
-];
+import { useState, useEffect } from "react";
+import { ArrowRight, CheckCircle2, Loader2, ShieldCheck, Clock, TrendingUp, AlertCircle } from "lucide-react";
 
 const TRUST_POINTS = [
     { icon: ShieldCheck, text: "Bank-grade data security" },
@@ -23,11 +9,17 @@ const TRUST_POINTS = [
     { icon: TrendingUp, text: "Funding up to ₹5 Crore" },
 ];
 
+const PAN_REGEX = /^[A-Z]{5}[0-9]{4}[A-Z]$/;
+const GST_REGEX = /^\d{2}[A-Z]{5}\d{4}[A-Z][A-Z\d]Z[A-Z\d]$/;
+const PHONE_REGEX = /^(\+91[\-\s]?)?[6-9]\d{9}$/;
+
 const initialFormState = {
     businessName: "",
     contactName: "",
     phone: "",
     email: "",
+    businessPan: "",
+    businessGst: "",
     loanAmount: "",
     turnover: "",
     message: "",
@@ -38,20 +30,39 @@ export default function B2BLeadForm() {
     const [consent, setConsent] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [errorMsg, setErrorMsg] = useState("");
+    const [campaignSource, setCampaignSource] = useState("website");
+
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search);
+        const utmSource = params.get("utm_source");
+        if (utmSource) setCampaignSource(utmSource);
+    }, []);
+
+    const panValid = PAN_REGEX.test(formData.businessPan.trim().toUpperCase());
+    const gstValid = GST_REGEX.test(formData.businessGst.trim().toUpperCase());
+    const phoneValid = PHONE_REGEX.test(formData.phone.trim());
 
     const isValid =
         formData.businessName.trim() !== "" &&
         formData.contactName.trim() !== "" &&
-        formData.phone.trim() !== "" &&
+        phoneValid &&
         formData.email.trim() !== "" &&
-        formData.loanAmount !== "" &&
+        panValid &&
+        gstValid &&
+        formData.loanAmount.trim() !== "" &&
         consent;
 
     const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
+    };
+
+    const handleUppercaseChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value.toUpperCase() }));
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -59,15 +70,37 @@ export default function B2BLeadForm() {
         if (!isValid) return;
 
         setIsSubmitting(true);
-        await new Promise((resolve) => setTimeout(resolve, 1500));
-        setIsSubmitting(false);
-        setIsSuccess(true);
+        setErrorMsg("");
+
+        try {
+            const response = await fetch("/api/leads/business-loan", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    ...formData,
+                    businessPan: formData.businessPan.trim().toUpperCase(),
+                    businessGst: formData.businessGst.trim().toUpperCase(),
+                    campaignSource,
+                }),
+            });
+
+            if (!response.ok) {
+                throw new Error("Submission failed");
+            }
+
+            setIsSuccess(true);
+        } catch {
+            setErrorMsg("Something went wrong submitting your enquiry. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const resetForm = () => {
         setFormData(initialFormState);
         setConsent(false);
         setIsSuccess(false);
+        setErrorMsg("");
     };
 
     return (
@@ -151,6 +184,9 @@ export default function B2BLeadForm() {
                                             placeholder="+91 98765 43210"
                                             className="w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all"
                                         />
+                                        {formData.phone.trim() !== "" && !phoneValid && (
+                                            <p className="text-xs text-red-500 mt-1">Enter a valid 10-digit Indian mobile number</p>
+                                        )}
                                     </div>
                                     <div>
                                         <label htmlFor="lead-email" className="block text-sm font-medium text-gray-700 mb-1.5">
@@ -171,39 +207,76 @@ export default function B2BLeadForm() {
 
                                 <div className="grid sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label htmlFor="lead-loanAmount" className="block text-sm font-medium text-gray-700 mb-1.5">
-                                            Loan Amount Required*
+                                        <label htmlFor="lead-businessPan" className="block text-sm font-medium text-gray-700 mb-1.5">
+                                            Business PAN*
                                         </label>
-                                        <select
+                                        <input
+                                            id="lead-businessPan"
+                                            type="text"
+                                            name="businessPan"
+                                            required
+                                            maxLength={10}
+                                            value={formData.businessPan}
+                                            onChange={handleUppercaseChange}
+                                            placeholder="e.g. ABCDE1234F"
+                                            className="w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all uppercase"
+                                        />
+                                        {formData.businessPan.trim() !== "" && !panValid && (
+                                            <p className="text-xs text-red-500 mt-1">Enter a valid 10-character PAN</p>
+                                        )}
+                                    </div>
+                                    <div>
+                                        <label htmlFor="lead-businessGst" className="block text-sm font-medium text-gray-700 mb-1.5">
+                                            Business GSTIN*
+                                        </label>
+                                        <input
+                                            id="lead-businessGst"
+                                            type="text"
+                                            name="businessGst"
+                                            required
+                                            maxLength={15}
+                                            value={formData.businessGst}
+                                            onChange={handleUppercaseChange}
+                                            placeholder="e.g. 29ABCDE1234F1Z5"
+                                            className="w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all uppercase"
+                                        />
+                                        {formData.businessGst.trim() !== "" && !gstValid && (
+                                            <p className="text-xs text-red-500 mt-1">Enter a valid 15-character GSTIN</p>
+                                        )}
+                                    </div>
+                                </div>
+
+                                <div className="grid sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label htmlFor="lead-loanAmount" className="block text-sm font-medium text-gray-700 mb-1.5">
+                                            Loan Amount Required (₹)*
+                                        </label>
+                                        <input
                                             id="lead-loanAmount"
+                                            type="number"
                                             name="loanAmount"
                                             required
+                                            min={1}
                                             value={formData.loanAmount}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all appearance-none bg-white"
-                                        >
-                                            <option value="" disabled>Select amount</option>
-                                            {LOAN_AMOUNT_OPTIONS.map((opt) => (
-                                                <option key={opt} value={opt}>{opt}</option>
-                                            ))}
-                                        </select>
+                                            placeholder="e.g. 500000"
+                                            className="w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all"
+                                        />
                                     </div>
                                     <div>
                                         <label htmlFor="lead-turnover" className="block text-sm font-medium text-gray-700 mb-1.5">
-                                            Monthly Turnover
+                                            Monthly Turnover (₹)
                                         </label>
-                                        <select
+                                        <input
                                             id="lead-turnover"
+                                            type="number"
                                             name="turnover"
+                                            min={0}
                                             value={formData.turnover}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all appearance-none bg-white"
-                                        >
-                                            <option value="">Select turnover (optional)</option>
-                                            {TURNOVER_OPTIONS.map((opt) => (
-                                                <option key={opt} value={opt}>{opt}</option>
-                                            ))}
-                                        </select>
+                                            placeholder="Optional - e.g. 100000"
+                                            className="w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all"
+                                        />
                                     </div>
                                 </div>
 
@@ -234,6 +307,13 @@ export default function B2BLeadForm() {
                                         I agree to be contacted by Finlot regarding my business loan enquiry.
                                     </span>
                                 </label>
+
+                                {errorMsg && (
+                                    <div className="flex items-center gap-2 text-sm text-red-600 bg-red-50 border border-red-100 rounded-xl px-4 py-3">
+                                        <AlertCircle size={16} className="shrink-0" />
+                                        {errorMsg}
+                                    </div>
+                                )}
 
                                 <button
                                     type="submit"
