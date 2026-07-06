@@ -36,10 +36,17 @@ export async function POST(request: Request) {
         return NextResponse.json({ error: `Missing required fields: ${missing.join(', ')}` }, { status: 400 });
     }
 
-    const webhookUrl = process.env.BUSINESS_LOAN_WEBHOOK_URL;
-    if (!webhookUrl) {
+    const rawWebhookUrl = process.env.BUSINESS_LOAN_WEBHOOK_URL;
+    if (!rawWebhookUrl || rawWebhookUrl.trim() === '') {
         console.error('BUSINESS_LOAN_WEBHOOK_URL is not configured');
         return NextResponse.json({ error: 'Lead submission is not configured' }, { status: 500 });
+    }
+
+    // The vendor endpoint 301-redirects URLs without a trailing slash, which
+    // turns the POST into a GET and drops the body. Normalize pasted values.
+    let webhookUrl = rawWebhookUrl.trim().replace(/^["']+|["']+$/g, '');
+    if (!webhookUrl.endsWith('/')) {
+        webhookUrl += '/';
     }
 
     const vendorPayload = {
@@ -65,8 +72,12 @@ export async function POST(request: Request) {
         });
 
         if (!upstreamResponse.ok) {
-            console.error(`Business loan webhook forward failed with status ${upstreamResponse.status}`);
-            return NextResponse.json({ error: 'Failed to submit lead' }, { status: 502 });
+            const upstreamBody = await upstreamResponse.text().catch(() => '');
+            console.error(`Business loan webhook forward failed with status ${upstreamResponse.status}: ${upstreamBody.slice(0, 500)}`);
+            return NextResponse.json(
+                { error: 'Failed to submit lead', upstreamStatus: upstreamResponse.status },
+                { status: 502 }
+            );
         }
 
         return NextResponse.json({ success: true });
