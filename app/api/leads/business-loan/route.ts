@@ -9,6 +9,7 @@ interface BusinessLoanLeadRequest {
     businessGst?: string;
     loanAmount?: string;
     turnover?: string;
+    message?: string;
     campaignSource?: string;
 }
 
@@ -50,7 +51,7 @@ export async function POST(request: Request) {
         business_gst: body.businessGst,
         loan_amount: body.loanAmount,
         monthly_turnover: body.turnover || '',
-        needs: 'funds_needed',
+        funds_needed: body.message?.trim() || 'Business loan enquiry',
         campaign: {
             source: body.campaignSource || 'website',
         },
