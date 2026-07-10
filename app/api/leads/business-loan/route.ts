@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { sendLeadConfirmationEmail } from '@/lib/lead-confirmation-email';
 
 interface BusinessLoanLeadRequest {
     contactName?: string;
@@ -79,6 +80,14 @@ export async function POST(request: Request) {
                 { status: 502 }
             );
         }
+
+        // Lead is captured. Send a confirmation email as a best-effort side
+        // effect — a mail failure must not fail the submission the borrower made.
+        await sendLeadConfirmationEmail({
+            contactName: body.contactName,
+            email: body.email,
+            businessName: body.businessName,
+        });
 
         return NextResponse.json({ success: true });
     } catch (error) {
