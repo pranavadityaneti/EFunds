@@ -7,7 +7,7 @@ interface LeadConfirmationInput {
 }
 
 const REPLY_TO = 'support@finlot.ai';
-const BRAND_TEAL = '#30D5C8';
+const LOGO_URL = 'https://www.finlot.ai/logo.png';
 
 function buildHtml(firstName: string, businessName: string): string {
     return `<!DOCTYPE html>
@@ -18,8 +18,8 @@ function buildHtml(firstName: string, businessName: string): string {
       <td align="center">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;background-color:#ffffff;border-radius:16px;overflow:hidden;border:1px solid #e4e4e7;">
           <tr>
-            <td style="background-color:#000000;padding:28px 32px;">
-              <span style="color:${BRAND_TEAL};font-size:22px;font-weight:700;letter-spacing:0.5px;">Finlot</span>
+            <td style="background-color:#000000;padding:22px 32px;">
+              <img src="${LOGO_URL}" width="135" alt="Finlot" style="display:block;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;" />
             </td>
           </tr>
           <tr>
