@@ -11,7 +11,28 @@ const TRUST_POINTS = [
 
 const PAN_REGEX = /^[A-Z]{5}[0-9]{4}[A-Z]$/;
 const GST_REGEX = /^\d{2}[A-Z]{5}\d{4}[A-Z][A-Z\d]Z[A-Z\d]$/;
-const PHONE_REGEX = /^(\+91[\-\s]?)?[6-9]\d{9}$/;
+
+/*
+ * Validation runs on NORMALISED values, never on raw keystrokes. People type
+ * phone numbers the way our own placeholder shows them ("+91 98765 43210"),
+ * amounts with commas, and GSTINs with stray spaces — rejecting those formats
+ * silently disabled the submit button and cost real enquiries. Normalise first,
+ * validate second, and submit the normalised value so downstream (Gain webhook,
+ * confirmation email) always receives clean data.
+ */
+
+/** "+91 98765 43210" / "091..." / "91..." / dashes → bare 10-digit number. */
+const normalisePhone = (raw: string): string => {
+    let p = raw.replace(/[\s\-()]/g, "");
+    if (p.startsWith("+91")) p = p.slice(3);
+    else if (p.startsWith("91") && p.length === 12) p = p.slice(2);
+    else if (p.startsWith("0") && p.length === 11) p = p.slice(1);
+    return p;
+};
+/** Uppercase and drop every space — covers paste artefacts in PAN/GSTIN. */
+const normaliseCode = (raw: string): string => raw.toUpperCase().replace(/\s/g, "");
+/** "5,00,000" / "5 00 000" → "500000". */
+const normaliseAmount = (raw: string): string => raw.replace(/[,\s]/g, "");
 
 const initialFormState = {
     businessName: "",
@@ -39,19 +60,20 @@ export default function B2BLeadForm() {
         if (utmSource) setCampaignSource(utmSource);
     }, []);
 
-    const panValid = PAN_REGEX.test(formData.businessPan.trim().toUpperCase());
-    const gstValid = GST_REGEX.test(formData.businessGst.trim().toUpperCase());
-    const phoneValid = PHONE_REGEX.test(formData.phone.trim());
+    const panValid = PAN_REGEX.test(normaliseCode(formData.businessPan));
+    const gstValid = GST_REGEX.test(normaliseCode(formData.businessGst));
+    const phoneValid = /^[6-9]\d{9}$/.test(normalisePhone(formData.phone));
+    const amountValid = /^[1-9]\d*$/.test(normaliseAmount(formData.loanAmount));
 
-    const isValid =
+    const fieldsValid =
         formData.businessName.trim() !== "" &&
         formData.contactName.trim() !== "" &&
         phoneValid &&
         formData.email.trim() !== "" &&
         panValid &&
         gstValid &&
-        formData.loanAmount.trim() !== "" &&
-        consent;
+        amountValid;
+    const isValid = fieldsValid && consent;
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -78,8 +100,13 @@ export default function B2BLeadForm() {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     ...formData,
-                    businessPan: formData.businessPan.trim().toUpperCase(),
-                    businessGst: formData.businessGst.trim().toUpperCase(),
+                    // Normalised, so Gain and the confirmation email always get
+                    // clean values regardless of how they were typed.
+                    phone: normalisePhone(formData.phone),
+                    businessPan: normaliseCode(formData.businessPan),
+                    businessGst: normaliseCode(formData.businessGst),
+                    loanAmount: normaliseAmount(formData.loanAmount),
+                    turnover: normaliseAmount(formData.turnover),
                     campaignSource,
                 }),
             });
@@ -251,17 +278,23 @@ export default function B2BLeadForm() {
                                         <label htmlFor="lead-loanAmount" className="block text-sm font-medium text-gray-700 mb-1.5">
                                             Loan Amount Required (₹)*
                                         </label>
+                                        {/* type="text": a number input silently swallows pasted
+                                            values like "5,00,000" into an empty string. Commas
+                                            and spaces are normalised away instead. */}
                                         <input
                                             id="lead-loanAmount"
-                                            type="number"
+                                            type="text"
+                                            inputMode="numeric"
                                             name="loanAmount"
                                             required
-                                            min={1}
                                             value={formData.loanAmount}
                                             onChange={handleChange}
                                             placeholder="e.g. 500000"
                                             className="w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all"
                                         />
+                                        {formData.loanAmount.trim() !== "" && !amountValid && (
+                                            <p className="text-xs text-red-500 mt-1">Numbers only, e.g. 500000</p>
+                                        )}
                                     </div>
                                     <div>
                                         <label htmlFor="lead-turnover" className="block text-sm font-medium text-gray-700 mb-1.5">
@@ -269,9 +302,9 @@ export default function B2BLeadForm() {
                                         </label>
                                         <input
                                             id="lead-turnover"
-                                            type="number"
+                                            type="text"
+                                            inputMode="numeric"
                                             name="turnover"
-                                            min={0}
                                             value={formData.turnover}
                                             onChange={handleChange}
                                             placeholder="Optional - e.g. 100000"
@@ -307,6 +340,14 @@ export default function B2BLeadForm() {
                                         I agree to be contacted by Finlot regarding my business loan enquiry.
                                     </span>
                                 </label>
+                                {/* Once every field is valid, an unticked consent box is the
+                                    only thing keeping the button disabled — say so, or the
+                                    button just looks broken. */}
+                                {fieldsValid && !consent && (
+                                    <p className="text-xs text-red-500 -mt-2">
+                                        Tick the box above to enable the button.
+                                    </p>
+                                )}
 
                                 {errorMsg && (
                                     <div className="flex items-center gap-2 text-sm text-red-600 bg-red-50 border border-red-100 rounded-xl px-4 py-3">
