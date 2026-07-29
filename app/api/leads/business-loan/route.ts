@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { sendLeadConfirmationEmail } from '@/lib/lead-confirmation-email';
+import { sendLeadRescueEmail, type LeadRescueInput } from '@/lib/lead-rescue-email';
 
 interface BusinessLoanLeadRequest {
     contactName?: string;
@@ -37,10 +38,52 @@ export async function POST(request: Request) {
         return NextResponse.json({ error: `Missing required fields: ${missing.join(', ')}` }, { status: 400 });
     }
 
+    /**
+     * The enquiry is captured either way.
+     *
+     * Every path below that fails to reach the partner system emails the
+     * enquiry to the team instead, and reports success to the borrower —
+     * because from their side it IS captured: a human has their details and
+     * will call. Telling them "something went wrong" when we hold the lead
+     * only invites a duplicate submission, or loses the enquiry entirely.
+     * Only a genuinely unrecoverable case (rescue mail also failed) is
+     * reported as a failure.
+     */
+    const rescuePayload = (failureReason: string): LeadRescueInput => ({
+        contactName: body.contactName,
+        email: body.email,
+        phone: body.phone,
+        businessName: body.businessName,
+        businessPan: body.businessPan,
+        businessGst: body.businessGst,
+        loanAmount: body.loanAmount,
+        turnover: body.turnover,
+        message: body.message,
+        campaignSource: body.campaignSource,
+        failureReason,
+    });
+
+    /** Rescue, then answer the borrower honestly about what we could do. */
+    const rescue = async (failureReason: string) => {
+        const rescued = await sendLeadRescueEmail(rescuePayload(failureReason));
+        if (!rescued) {
+            // Nothing holds this enquiry now except the logs. Say so.
+            return NextResponse.json({ error: 'Failed to submit lead' }, { status: 502 });
+        }
+        // Held by the team. Confirm to the borrower, and send them the same
+        // acknowledgement they would have received on the happy path.
+        await sendLeadConfirmationEmail({
+            contactName: body.contactName,
+            email: body.email,
+            businessName: body.businessName,
+        });
+        return NextResponse.json({ success: true, captured: 'manual' });
+    };
+
     const rawWebhookUrl = process.env.BUSINESS_LOAN_WEBHOOK_URL;
     if (!rawWebhookUrl || rawWebhookUrl.trim() === '') {
         console.error('BUSINESS_LOAN_WEBHOOK_URL is not configured');
-        return NextResponse.json({ error: 'Lead submission is not configured' }, { status: 500 });
+        return rescue('BUSINESS_LOAN_WEBHOOK_URL is not configured');
     }
 
     // The vendor endpoint 301-redirects URLs without a trailing slash, which
@@ -75,10 +118,7 @@ export async function POST(request: Request) {
         if (!upstreamResponse.ok) {
             const upstreamBody = await upstreamResponse.text().catch(() => '');
             console.error(`Business loan webhook forward failed with status ${upstreamResponse.status}: ${upstreamBody.slice(0, 500)}`);
-            return NextResponse.json(
-                { error: 'Failed to submit lead', upstreamStatus: upstreamResponse.status },
-                { status: 502 }
-            );
+            return rescue(`Partner webhook returned ${upstreamResponse.status}`);
         }
 
         // Lead is captured. Send a confirmation email as a best-effort side
@@ -91,7 +131,9 @@ export async function POST(request: Request) {
 
         return NextResponse.json({ success: true });
     } catch (error) {
+        // The partner system was unreachable (DNS, TLS, timeout). Same promise
+        // as every other failure: the enquiry is not lost.
         console.error('Error forwarding business loan lead:', error);
-        return NextResponse.json({ error: 'Failed to submit lead' }, { status: 502 });
+        return rescue(`Could not reach the partner webhook: ${String(error)}`);
     }
 }
