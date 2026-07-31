@@ -1,0 +1,318 @@
+<meta charset="utf-8">
+<title>Docket — Product Overview</title>
+<style>
+  :root {
+    --ink: #1a1d21;
+    --muted: #5c6470;
+    --line: #e3e6ea;
+    --accent: #0f5c8c;
+    --accent-soft: #eaf3f9;
+    --warn-soft: #fdf3e3;
+    --code-bg: #f5f6f8;
+    --max: 860px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 16px;
+    background: #fff;
+  }
+  main { max-width: var(--max); margin: 0 auto; padding: 48px 28px 96px; }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 6px; }
+  .subtitle { color: var(--muted); font-size: 17px; margin: 0 0 8px; }
+  .meta { color: var(--muted); font-size: 13px; margin-bottom: 40px; }
+  h2 {
+    font-size: 24px; margin: 56px 0 12px; padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  h2 .part { display: block; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  h3 { font-size: 18px; margin: 32px 0 8px; }
+  p { margin: 0 0 14px; }
+  ul, ol { margin: 0 0 16px; padding-left: 24px; }
+  li { margin-bottom: 6px; }
+  table { border-collapse: collapse; width: 100%; margin: 16px 0 24px; font-size: 15px; }
+  th, td { text-align: left; padding: 9px 12px; border: 1px solid var(--line); vertical-align: top; }
+  th { background: var(--code-bg); font-weight: 600; }
+  pre {
+    background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px;
+    padding: 16px 18px; overflow-x: auto; font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+    font-size: 13px; line-height: 1.5; margin: 16px 0 24px;
+  }
+  code { font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace; font-size: 14px; background: var(--code-bg); padding: 1px 5px; border-radius: 4px; }
+  .callout {
+    background: var(--accent-soft); border-left: 4px solid var(--accent);
+    padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 18px 0 24px;
+  }
+  .callout.warn { background: var(--warn-soft); border-left-color: #c98a1b; }
+  .callout p:last-child { margin-bottom: 0; }
+  .toc { background: var(--code-bg); border: 1px solid var(--line); border-radius: 10px; padding: 22px 28px; margin: 0 0 12px; }
+  .toc h2 { border: 0; margin: 0 0 10px; padding: 0; font-size: 17px; }
+  .toc ol { margin: 0; padding-left: 20px; }
+  .toc li { margin-bottom: 4px; }
+  .toc a { color: var(--accent); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .term { font-weight: 600; }
+  .who { color: var(--muted); font-size: 14px; font-style: italic; }
+  @media print {
+    body { font-size: 12px; }
+    main { padding: 0; max-width: 100%; }
+    h2 { page-break-after: avoid; }
+    pre, table, .callout { page-break-inside: avoid; }
+    .toc a { color: var(--ink); }
+  }
+</style>
+
+<main>
+
+<h1>Docket — Product Overview</h1>
+<p class="subtitle">What the product is, how it works, and the words we use — for the marketing, development, testing and analytics teams.</p>
+<p class="meta">Written 31 July 2026 · Describes the product as built in the <code>docket</code> repository · Plain-English by design</p>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+  <li><a href="#what">What Docket is</a></li>
+  <li><a href="#problem">The problem it solves</a></li>
+  <li><a href="#who">Who it is for</a></li>
+  <li><a href="#vocab">The vocabulary — nine words that explain everything</a></li>
+  <li><a href="#core-idea">The core idea: every client gets their own address</a></li>
+  <li><a href="#journey">The end-to-end journey</a></li>
+  <li><a href="#matching">How a document finds its home</a></li>
+  <li><a href="#ai">The AI sorter</a></li>
+  <li><a href="#outbound">Asking and reminding — the outbound half</a></li>
+  <li><a href="#screens">What staff see</a></li>
+  <li><a href="#whitelabel">White-label: the client's brand, never ours</a></li>
+  <li><a href="#agnostic">Industry-agnostic by design</a></li>
+  <li><a href="#security">Security and data handling</a></li>
+  <li><a href="#teams">How each team can use this document</a></li>
+</ol>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="what"><span class="part">Part 1 · The basics</span>1. What Docket is</h2>
+
+<p><strong>In one sentence:</strong> Docket collects documents from people, over the channels they already use, and automatically puts each document in the right place.</p>
+
+<p>The slightly longer version: any business that processes applications — a loan, an insurance claim, a college admission, a rental — needs a pile of documents from the applicant before anything can move forward. Docket gives each business its own dedicated email address and WhatsApp number. Applicants simply send their documents there, the way they would message a friend — no portal, no login, no app to install. Docket receives every file, works out which applicant it came from, works out which case it belongs to, reads the document with AI to work out <em>what it is</em> (a PAN card, a bank statement, a photograph), and files it into the right slot on that case's checklist. Staff see one live checklist per case: what has arrived, what is still missing, and what needs a human decision.</p>
+
+<p>Docket is <strong>white-label</strong> and <strong>multi-tenant</strong>: many businesses run on the same platform, each under its own brand, each invisible to the others.</p>
+
+<!-- ============================================================ -->
+<h2 id="problem"><span class="part">Part 1 · The basics</span>2. The problem it solves</h2>
+
+<p>Today, document collection at most firms looks like this:</p>
+
+<ul>
+  <li>An agent asks the applicant for ten documents over a phone call. The applicant sends four of them on the agent's <em>personal</em> WhatsApp, two by email a week later, and forgets the rest.</li>
+  <li>Files are named things like <code>IMG_7742.jpg</code> and <code>scan (3).pdf</code>. Someone has to open every file to find out what it is.</li>
+  <li>Nobody can say, at a glance, what is still missing on any given application. So agents re-ask for documents that already arrived — which annoys applicants — or forget to ask for ones that never came — which stalls the case.</li>
+  <li>When the agent leaves the company, the documents leave with their phone.</li>
+  <li>When an auditor asks "who put this document on this file?", nobody knows.</li>
+</ul>
+
+<p>The result is slow cases, irritated applicants, and no institutional record. Docket replaces that entire mess with one system of record: documents arrive on <em>company-owned</em> channels, are sorted automatically, and every action — who filed what, when, and whether a human or the AI did it — is written down.</p>
+
+<!-- ============================================================ -->
+<h2 id="who"><span class="part">Part 1 · The basics</span>3. Who it is for</h2>
+
+<h3>The industries</h3>
+<p>Any business whose work starts with "send us your documents." The first live workflow is <strong>business lending</strong> (our own domain), but the platform is deliberately built so the same engine runs other industries without new code — see <a href="#agnostic">section 12</a>. The code itself uses three recurring examples: a lender (Borrower / Application), a college (Student / Admission), and a CA firm (Client / Engagement).</p>
+
+<h3>The people</h3>
+<table>
+  <tr><th>Person</th><th>Their world</th></tr>
+  <tr><td><strong>The subject</strong> (applicant, borrower, student…)</td><td>Never sees Docket at all. They see their lender's email address and WhatsApp number, send photos of their documents, and get polite requests and reminders. No app, no login, no password.</td></tr>
+  <tr><td><strong>The agent</strong></td><td>Owns cases day to day. Opens cases, watches documents land, confirms the AI's suggestions, chases what's missing.</td></tr>
+  <tr><td><strong>The reviewer</strong></td><td>Checks the work — looks at filed documents and case state.</td></tr>
+  <tr><td><strong>The admin / owner</strong></td><td>Runs the tenant: team members, channels, settings.</td></tr>
+</table>
+<p class="who">These four staff roles — owner, admin, agent, reviewer — are enforced by the system, not just convention.</p>
+
+<!-- ============================================================ -->
+<h2 id="vocab"><span class="part">Part 2 · How to think about it</span>4. The vocabulary — nine words that explain everything</h2>
+
+<p>Every conversation about Docket uses these nine words. Learn them once and every screen, API and analytics table makes sense.</p>
+
+<table>
+  <tr><th>Word</th><th>What it means</th><th>Example</th></tr>
+  <tr><td class="term">Tenant</td><td>One business running on Docket. Tenants are completely walled off from each other — data, channels, users, everything.</td><td>A lender; a college; a CA firm.</td></tr>
+  <tr><td class="term">Workflow</td><td>A process a tenant runs, including its own vocabulary, stages, form fields and document checklist.</td><td>"Business Loan" is a workflow.</td></tr>
+  <tr><td class="term">Stage</td><td>A step in a workflow's pipeline. Cases move through stages in order.</td><td>Received → In review → Approved.</td></tr>
+  <tr><td class="term">Case</td><td>One run of a workflow. The unit everything hangs off. Every case gets a short human-friendly reference like <code>DKT-7F3K2M</code> that can be quoted in a message or read over the phone.</td><td>One loan application; one admission.</td></tr>
+  <tr><td class="term">Subject</td><td>The person (or organisation) documents are collected <em>from</em>. Their email address and phone number are how inbound files get matched. The UI calls them whatever the workflow says — Borrower, Student, Client.</td><td>The loan applicant.</td></tr>
+  <tr><td class="term">Requirement</td><td>One slot on a case's document checklist. The workflow defines the list; each case tracks which slots are filled.</td><td>"PAN card", "6 months' bank statements".</td></tr>
+  <tr><td class="term">Channel</td><td>A tenant-owned intake address — a mailbox or a WhatsApp number that subjects send documents to.</td><td><code>docs@theirbank.com</code>; a WhatsApp number.</td></tr>
+  <tr><td class="term">Document</td><td>One file that arrived — with who sent it, on which channel, when, and (after the AI has looked) what it is and which requirement it fills.</td><td>A photo of an Aadhaar card.</td></tr>
+  <tr><td class="term">Unmatched</td><td>A file that arrived but could not be tied to any case — usually because the sender's address or number isn't on any subject yet. It waits in a holding inbox for a human.</td><td>A PDF from an unknown email address.</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="core-idea"><span class="part">Part 2 · How to think about it</span>5. The core idea: every client gets their own address</h2>
+
+<p>This is the heart of the product, and it is easy to miss because it sounds like a detail.</p>
+
+<p>Each tenant gets <strong>dedicated channels under their own identity</strong> — their mailbox, their WhatsApp number. Not a shared Docket inbox with clever routing. This one decision produces almost everything that makes the product work:</p>
+
+<ul>
+  <li><strong>White-label is real, not cosmetic.</strong> The applicant writes to <em>their lender</em>. Docket's name appears nowhere in the conversation. A shared inbox would give the game away the moment the second customer signed up.</li>
+  <li><strong>Zero friction for the subject.</strong> "Email or WhatsApp your documents to this address" is an instruction anyone can follow. Portals and upload links are where applicants give up.</li>
+  <li><strong>Adding a tenant is adding a row, not writing code.</strong> A new client means new channel records in the database — the pollers and webhooks pick them up automatically.</li>
+  <li><strong>The company owns the channel.</strong> Documents stop living on agents' personal phones.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="journey"><span class="part">Part 3 · How it actually works</span>6. The end-to-end journey</h2>
+
+<p>Here is one loan application, start to finish, as a story.</p>
+
+<ol>
+  <li><strong>A case is born.</strong> An enquiry comes in — say from the website form. An agent creates the subject (name, email, phone) and a case on the Business Loan workflow. The case gets its reference, <code>DKT-7F3K2M</code>, and an empty 13-slot document checklist.</li>
+  <li><strong>Docket asks.</strong> The system sends the subject a document request over every channel they are reachable on — email and WhatsApp — listing exactly what is needed. The list is composed from the case's live checklist, so it can never ask for something that has already arrived.</li>
+  <li><strong>The subject replies like a human.</strong> They photograph their Aadhaar card and send it on WhatsApp. Two days later they email three PDFs. The files have names like <code>IMG_7742.jpg</code>. Nobody renames anything.</li>
+  <li><strong>Docket catches everything.</strong> The mailbox is polled on a schedule; WhatsApp messages arrive by webhook. Every attachment is saved to storage and recorded. Duplicate sends of the same file are detected by content fingerprint and not recorded twice.</li>
+  <li><strong>Each file finds its case.</strong> The sender's email address or phone number is matched to a subject, and through them to the open case (<a href="#matching">section 7</a>).</li>
+  <li><strong>The AI sorts.</strong> Each new file is read by the classifier (<a href="#ai">section 8</a>). The Aadhaar photo is recognised with high confidence and filed into the "Aadhaar" slot automatically. A rental agreement is recognised with medium confidence, so it becomes a <em>suggestion</em> for the agent to confirm. A bank passbook that fits no slot is left for a human, honestly labelled with what the AI thinks it is.</li>
+  <li><strong>The agent works the exceptions, not the pile.</strong> On the case screen the checklist shows what landed and what's missing. The agent confirms or dismisses the AI's suggestions with one click and files the oddballs by hand. They never open the files that sorted themselves.</li>
+  <li><strong>Docket reminds.</strong> If required documents are still missing after a few days, the system nudges the subject again — automatically, up to a polite maximum, and it stops the moment the checklist is complete.</li>
+  <li><strong>The case moves on.</strong> With the checklist filled, the agent moves the case to the next stage. Every document on the file shows who put it there — a person by name, or the AI, marked as such.</li>
+</ol>
+
+<pre>
+ SUBJECT                   DOCKET                                  STAFF
+ ───────                   ──────                                  ─────
+ sends photo on WhatsApp ► webhook receives it ─┐
+ emails a PDF ───────────► mailbox poller ──────┤
+                                                ▼
+                           match sender ► found? ──no──► Unmatched inbox ► human attaches
+                                                │yes
+                                                ▼
+                           AI reads the file
+                             high confidence ─► filed automatically ("auto-filed")
+                             medium / low ────► suggestion ──────► human confirms/dismisses
+                             no idea ─────────► left unfiled, labelled ► human files by hand
+                                                │
+                                                ▼
+                           case checklist updates ► missing items? ► reminder goes out
+</pre>
+
+<!-- ============================================================ -->
+<h2 id="matching"><span class="part">Part 3 · How it actually works</span>7. How a document finds its home</h2>
+
+<p>Two separate questions are answered for every inbound file, in order:</p>
+
+<h3>Question 1 — whose file is this? (routing)</h3>
+<p>The sender's identity — email address for mail, phone number for WhatsApp — is looked up against the tenant's subjects. A hit leads to that subject's case. This is why capturing a subject's correct email <em>and</em> phone at case creation matters so much: those two fields are the routing keys for everything they will ever send.</p>
+
+<p><strong>If there is no hit</strong>, the file is not dropped and not guessed at. It goes to the tenant's <strong>Unmatched inbox</strong> with its sender, channel and timestamp, where staff can attach it to the right case in one action. Nothing that arrives is ever silently lost.</p>
+
+<h3>Question 2 — what is this file? (classification)</h3>
+<p>Answered by the AI sorter — next section. The two questions are deliberately independent: routing uses <em>who sent it</em>, classification uses <em>what's inside it</em>. A failure of one never corrupts the other.</p>
+
+<!-- ============================================================ -->
+<h2 id="ai"><span class="part">Part 3 · How it actually works</span>8. The AI sorter</h2>
+
+<p>Subjects do not name their files usefully, and they should not have to. The classifier looks at each arriving file the way a person would and answers: <em>which checklist slot does this fill, if any?</em></p>
+
+<h3>What it looks at</h3>
+<ul>
+  <li><strong>Photos and images</strong> (the vast majority of WhatsApp traffic) are examined visually at high detail — the model sees the card layout, the logos, the photo placement, exactly the cues a human uses to tell an Aadhaar from a PAN.</li>
+  <li><strong>Typed PDFs</strong> — files with real text inside — have their first pages read as text.</li>
+  <li><strong>Scanned PDFs</strong> — pictures wrapped in a PDF, with no readable text — are <em>not guessed at</em>. They are set aside for a human. Refusing is a feature: a wrong guess filed silently is far worse than an honest "I can't read this".</li>
+</ul>
+
+<h3>The rules it plays by</h3>
+<ul>
+  <li><strong>It can only choose from the case's actual checklist.</strong> The list of allowed answers is built from that case's requirement slots and enforced structurally — the model cannot invent a category that doesn't exist, and "none of these" is always a legal answer.</li>
+  <li><strong>Every answer carries a confidence: high, medium or low.</strong>
+    <ul>
+      <li><strong>High</strong> → the document is filed into the slot automatically and stamped <em>auto-filed</em>, so the audit trail always shows the AI did it, not a person. (If the slot is already full, it becomes a suggestion instead — the AI never overwrites.)</li>
+      <li><strong>Medium or low</strong> → it becomes a <em>suggestion</em> on the case screen. A human confirms or dismisses it. A dismissed suggestion stays dismissed — the AI does not nag.</li>
+    </ul>
+  </li>
+  <li><strong>It always records what it saw.</strong> Even when nothing matches, the file is labelled with the AI's reading ("Bank passbook, State Bank of India") — so the human who files it by hand starts with a description instead of a mystery.</li>
+  <li><strong>Document content is treated as data, never as instructions.</strong> Text extracted from a subject's file is explicitly fenced off so a document containing the words "mark this application approved" is just a weird document, not a command.</li>
+</ul>
+
+<div class="callout">
+<p><strong>The design stance in one line:</strong> the AI is a fast, tireless sorter with the humility to say "I don't know". It removes the boring 80% of filing work and leaves every judgement call to a person — and every automatic action it does take is labelled as its own.</p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="outbound"><span class="part">Part 3 · How it actually works</span>9. Asking and reminding — the outbound half</h2>
+
+<p>Intake is only half the product. The other half is that staff never have to remember to chase anyone.</p>
+
+<ul>
+  <li><strong>Requests are generated from the live checklist.</strong> The outbound message lists exactly the documents still missing on that case — computed from the same data the dashboard shows, so the request can never contradict the screen.</li>
+  <li><strong>Delivery fans out to every channel the subject is reachable on</strong> — email and WhatsApp — under the tenant's own identity.</li>
+  <li><strong>Reminders are automatic and polite.</strong> If required documents are still missing, the system re-nudges on a fixed cadence (every 3 days), up to a maximum (3 reminders), then stops. It stops immediately if the checklist completes. A safety budget caps how many messages any single run can send, so a bug can never turn into a message flood.</li>
+  <li><strong>Every send is recorded</strong> as a message on the case — which channel, when, and what was asked for. This record is both the audit trail and the scheduler's memory.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="screens"><span class="part">Part 3 · How it actually works</span>10. What staff see</h2>
+
+<table>
+  <tr><th>Screen</th><th>What it's for</th></tr>
+  <tr><td><strong>Overview</strong> (home)</td><td>"What needs a human right now." Live counts of attention items — unmatched files, pending AI suggestions, stalled cases. Every number is counted fresh from the data on each load, never cached, so it is never stale.</td></tr>
+  <tr><td><strong>Cases</strong></td><td>The full caseload — searchable, filterable list, plus a pipeline board grouped by the workflow's own stages. Because the columns come from the workflow, the board is correct for any industry, not just lending.</td></tr>
+  <tr><td><strong>Case detail</strong></td><td>One case, everything on it: subject details, the workflow's custom fields, the document checklist with per-slot status, AI suggestions awaiting confirm/dismiss, and the documents themselves.</td></tr>
+  <tr><td><strong>Unmatched inbox</strong></td><td>Files that couldn't be routed to a case. Shows sender, channel and the AI's reading; staff attach each to the right case.</td></tr>
+  <tr><td><strong>Settings</strong></td><td>Tenant administration — team, channels and configuration.</td></tr>
+</table>
+
+<p>Staff sign in with email and password, with a standard forgot/reset-password flow. Subjects, remember, never sign in at all.</p>
+
+<!-- ============================================================ -->
+<h2 id="whitelabel"><span class="part">Part 4 · What makes it different</span>11. White-label: the client's brand, never ours</h2>
+
+<p>From the subject's side of the glass, Docket does not exist. The document request comes from the lender's address. The WhatsApp number is the lender's number. The reminder is signed by the lender. Each tenant carries its own branding on the platform.</p>
+
+<p>This matters commercially as well as cosmetically: our customers are businesses whose own brand is their asset. A product that inserted itself between them and their applicants ("powered by…") would be asking them to lend us their trust. Docket instead disappears into their operations — which is also why churn should be low: switching away means changing the address their applicants write to.</p>
+
+<!-- ============================================================ -->
+<h2 id="agnostic"><span class="part">Part 4 · What makes it different</span>12. Industry-agnostic by design</h2>
+
+<p>Docket is <em>not</em> a lending tool with other industries bolted on. The core engine knows nothing about loans. Everything domain-specific lives in the workflow definition, as data:</p>
+
+<table>
+  <tr><th>Configured per workflow</th><th>Lender example</th><th>College example</th></tr>
+  <tr><td>What the subject is called</td><td>Borrower</td><td>Student</td></tr>
+  <tr><td>What a case is called</td><td>Application</td><td>Admission</td></tr>
+  <tr><td>Pipeline stages</td><td>Received → In review → Approved</td><td>Applied → Verified → Enrolled</td></tr>
+  <tr><td>Form fields on a case</td><td>Loan amount, entity type</td><td>Course applied for</td></tr>
+  <tr><td>Document checklist</td><td>PAN, Aadhaar, bank statements…</td><td>Marksheets, transfer certificate…</td></tr>
+</table>
+
+<p>The screens read this vocabulary instead of hardcoding nouns; the AI sorter builds its allowed answers from whatever checklist the workflow defines. Launching Docket into a new industry is therefore a <em>content</em> exercise — write the workflow, its stages, fields and checklist — not an engineering project. The first shipped workflow is Business Loan, with a 13-item checklist whose slot descriptions are precisely worded to tell look-alike documents apart (a passport is not a passport <em>photo</em>; a bank record carrying a photo is not a photograph).</p>
+
+<!-- ============================================================ -->
+<h2 id="security"><span class="part">Part 5 · The serious bits</span>13. Security and data handling</h2>
+
+<p>Docket handles KYC documents — among the most sensitive files a person owns. The posture, in plain English:</p>
+
+<ul>
+  <li><strong>Tenants cannot see each other, and the database itself enforces it.</strong> Isolation is not left to application code remembering to add a filter: row-level security in the database walls each tenant's rows off, so even a buggy query cannot cross the wall.</li>
+  <li><strong>Documents are stored encrypted, in India.</strong> Files live in cloud storage in the Mumbai region, encrypted at rest with managed keys. Uploads go directly to storage over short-lived signed URLs.</li>
+  <li><strong>Channel credentials are locked down.</strong> A tenant's mailbox password or WhatsApp token is stored only in encrypted form (AES-256-GCM), is never returned by any API, and is never written to a log.</li>
+  <li><strong>Application secrets live in a secrets vault,</strong> not in code, not in config files. Access to them is scoped and logged.</li>
+  <li><strong>Staff passwords are hashed with a modern algorithm (argon2id);</strong> password-reset links are single-use, expiring, and stored only as hashes.</li>
+  <li><strong>The audit trail answers the auditor's questions.</strong> Who filed this document — a named person or the AI? (Auto-filed documents are permanently flagged.) What did we ask the subject for, on which channel, when? (Every outbound message is a record.) Nothing that arrives is silently discarded — files that can't be routed wait, visibly, in Unmatched.</li>
+  <li><strong>Deletion is soft.</strong> Removing a document marks it removed rather than destroying the record, preserving history.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="teams"><span class="part">Part 5 · The serious bits</span>14. How each team can use this document</h2>
+
+<table>
+  <tr><th>Team</th><th>Read especially</th><th>The one thing to internalise</th></tr>
+  <tr><td><strong>Marketing</strong></td><td>Sections 2, 5, 11, 12</td><td>The pitch is the applicant's experience: "your customers just WhatsApp their documents — under your brand — and they're already sorted." Never position Docket as a portal; the absence of a portal is the selling point.</td></tr>
+  <tr><td><strong>Development</strong></td><td>Sections 4, 7, 8, 13</td><td>Tenant isolation and the audit trail are load-bearing product promises, not implementation details. The vocabulary in section 4 maps one-to-one onto the database schema.</td></tr>
+  <tr><td><strong>Testing</strong></td><td>Sections 6, 7, 8, 9</td><td>The interesting behaviour is at the boundaries: unknown senders, duplicate files, look-alike documents, full checklist slots, dismissed suggestions, reminder cut-offs. The happy path is the easy part.</td></tr>
+  <tr><td><strong>Analytics</strong></td><td>Sections 4, 8, 10</td><td>Everything countable hangs off the vocabulary: cases per stage, time-to-complete checklists, auto-file rate vs. suggestion rate vs. manual filing, unmatched volume per channel. The auto-filed flag and confidence labels are your measure of how much work the AI is actually saving.</td></tr>
+</table>
+
+</main>
