@@ -1,0 +1,217 @@
+<meta charset="utf-8">
+<title>Docket — Per-Loan-Type Document Map (DRAFT for review)</title>
+<style>
+  :root {
+    --ink: #1a1d21; --muted: #5c6470; --line: #e3e6ea;
+    --accent: #0f5c8c; --accent-soft: #eaf3f9;
+    --warn: #c98a1b; --warn-soft: #fdf3e3;
+    --danger-soft: #fdecea; --danger: #b3261e;
+    --ok-soft: #e9f5ec; --ok: #1d7a3d;
+    --code-bg: #f5f6f8;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink); line-height: 1.6; font-size: 16px; background: #fff; }
+  main { max-width: 980px; margin: 0 auto; padding: 40px 26px 90px; }
+  h1 { font-size: 31px; margin: 0 0 6px; line-height: 1.2; }
+  .sub { color: var(--muted); font-size: 16px; margin: 0 0 6px; }
+  .meta { color: var(--muted); font-size: 13px; margin-bottom: 28px; }
+  h2 { font-size: 22px; margin: 46px 0 10px; padding-top: 20px; border-top: 1px solid var(--line); }
+  h3 { font-size: 17px; margin: 26px 0 8px; }
+  p { margin: 0 0 13px; }
+  ul, ol { margin: 0 0 15px; padding-left: 22px; }
+  li { margin-bottom: 5px; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0 22px; font-size: 14.5px; }
+  th, td { text-align: left; padding: 8px 11px; border: 1px solid var(--line); vertical-align: top; }
+  th { background: var(--code-bg); font-weight: 600; }
+  td.c { text-align: center; }
+  code { font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace; font-size: 13.5px;
+    background: var(--code-bg); padding: 1px 5px; border-radius: 4px; }
+  .box { border-left: 4px solid var(--accent); background: var(--accent-soft);
+    padding: 13px 17px; border-radius: 0 8px 8px 0; margin: 16px 0 22px; }
+  .box.warn { border-left-color: var(--warn); background: var(--warn-soft); }
+  .box p:last-child { margin-bottom: 0; }
+  .yes { color: var(--ok); font-weight: 600; }
+  .no  { color: var(--muted); }
+  .new { background: var(--warn-soft); }
+  .pill { display: inline-block; font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+    padding: 2px 7px; border-radius: 99px; vertical-align: middle; }
+  .pill.draft { background: var(--danger-soft); color: var(--danger); }
+  .toc { background: var(--code-bg); border: 1px solid var(--line); border-radius: 10px; padding: 18px 24px; }
+  .toc h2 { border: 0; margin: 0 0 8px; padding: 0; font-size: 16px; }
+  .toc ol { margin: 0; padding-left: 20px; }
+  .toc a { color: var(--accent); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .q { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--warn);
+    border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 10px 0; }
+  .q b { display: block; margin-bottom: 3px; }
+  @media print {
+    body { font-size: 11.5px; } main { padding: 0; max-width: 100%; }
+    h2 { page-break-after: avoid; } table, .box, .q { page-break-inside: avoid; }
+  }
+</style>
+
+<main>
+
+<h1>Per-Loan-Type Document Map <span class="pill draft">Draft — needs your review</span></h1>
+<p class="sub">What Docket asks a business-loan applicant for, what it should ask, and the questions only you can answer.</p>
+<p class="meta">Drafted 1 August 2026 · For Pranav's review · <strong>Nothing in this document is live yet</strong></p>
+
+<div class="box warn">
+<p><strong>Read this first.</strong> I am not a lending domain expert. Everything in the “proposed” columns below is my best reading of standard Indian SME-lending practice, not verified policy. It is a <em>starting point for you and your credit-ops people to correct</em>, not a recommendation to adopt. I have marked every place where I am guessing, and listed the open questions at the end. No configuration changes until you sign off.</p>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+  <li><a href="#today">What Docket asks for today</a></li>
+  <li><a href="#gap">The gap: loan type changes nothing</a></li>
+  <li><a href="#proposed">Proposed map, by loan type</a></li>
+  <li><a href="#newdocs">New checklist items this would need</a></li>
+  <li><a href="#howitworks">How this gets implemented (no code)</a></li>
+  <li><a href="#questions">Open questions for you</a></li>
+</ol>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="today">1. What Docket asks for today</h2>
+
+<p>Thirteen items are configured. Eleven are asked of everyone; two are gated on <strong>entity type</strong>. Nothing is gated on loan type.</p>
+
+<table>
+  <tr><th>Checklist item</th><th>Required?</th><th>Gated on</th></tr>
+  <tr><td>PAN Card</td><td>Required</td><td class="no">— everyone</td></tr>
+  <tr><td>Aadhaar</td><td>Required</td><td class="no">— everyone</td></tr>
+  <tr><td>Passport photograph</td><td>Required</td><td class="no">— everyone</td></tr>
+  <tr><td>Residence address proof</td><td>Required</td><td class="no">— everyone</td></tr>
+  <tr><td>Office address proof</td><td>Required</td><td class="no">— everyone</td></tr>
+  <tr><td>Business proof</td><td>Required</td><td class="no">— everyone</td></tr>
+  <tr><td>ITR + computation</td><td>Required</td><td class="no">— everyone</td></tr>
+  <tr><td>Audited financials</td><td>Required</td><td class="no">— everyone</td></tr>
+  <tr><td>Current account statements</td><td>Required</td><td class="no">— everyone</td></tr>
+  <tr><td>GST certificate</td><td>Optional</td><td class="no">— everyone</td></tr>
+  <tr><td>GSTR-3B returns</td><td>Optional</td><td class="no">— everyone</td></tr>
+  <tr><td>Partnership Deed</td><td>Required</td><td><code>entity_type = Partnership</code></td></tr>
+  <tr><td>Certificate of Incorporation</td><td>Required</td><td><code>entity_type ∈ {Pvt Ltd, Public Ltd, LLP}</code></td></tr>
+</table>
+
+<p>This is why your test email listed <strong>nine</strong> items: you chose <em>Proprietorship</em>, so both entity-gated documents were correctly excluded, and the two optional ones are not demanded in a request.</p>
+
+<!-- ============================================================ -->
+<h2 id="gap">2. The gap: loan type changes nothing</h2>
+
+<p>The form captures <strong>Loan Type</strong> (SME Term Loan · LAP · Working Capital · Top-up) and stores it — but no checklist item reads it. All four loan types get the same list.</p>
+
+<p>The clearest consequence: <strong>LAP is a loan against property, and we never ask for a single property document.</strong> No sale deed, no encumbrance certificate, no valuation. A LAP file collected through Docket today would reach credit review structurally incomplete.</p>
+
+<div class="box">
+<p><strong>The good news:</strong> the engine already supports this. Conditions are generic — a rule is <code>{ field, equals }</code> or <code>{ field, in: [...] }</code> against any value on the case. “Ask for a sale deed only when loan type is LAP” is <em>configuration</em>, exactly like the partnership-deed rule that already works. No new code is required for anything in this document.</p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="proposed">3. Proposed map, by loan type</h2>
+
+<p><span class="yes">✔</span> = ask for it &nbsp;·&nbsp; <span class="no">—</span> = don't &nbsp;·&nbsp; rows shaded <span class="new" style="padding:1px 5px">like this</span> are <strong>new items that do not exist yet</strong>.</p>
+
+<table>
+  <tr>
+    <th>Document</th>
+    <th class="c">SME Term Loan</th>
+    <th class="c">LAP</th>
+    <th class="c">Working Capital</th>
+    <th class="c">Top-up</th>
+    <th>My reasoning (challenge this)</th>
+  </tr>
+
+  <tr><td colspan="6" style="background:var(--code-bg)"><strong>Identity &amp; KYC — unchanged, asked of everyone</strong></td></tr>
+  <tr><td>PAN Card</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td>Mandatory KYC.</td></tr>
+  <tr><td>Aadhaar</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td>Mandatory KYC.</td></tr>
+  <tr><td>Passport photograph</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td>Standard on application forms.</td></tr>
+  <tr><td>Residence address proof</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td>Mandatory KYC.</td></tr>
+  <tr><td>Office address proof</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td>Business premises verification.</td></tr>
+
+  <tr><td colspan="6" style="background:var(--code-bg)"><strong>Business existence — unchanged</strong></td></tr>
+  <tr><td>Business proof</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td>Shop Act / Udyam / trade licence.</td></tr>
+  <tr><td>Partnership Deed <em>(entity-gated)</em></td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td>Already gated on entity type; loan type doesn't change it.</td></tr>
+  <tr><td>Certificate of Incorporation <em>(entity-gated)</em></td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td>Same as above.</td></tr>
+
+  <tr><td colspan="6" style="background:var(--code-bg)"><strong>Financials — where I think loan type should start mattering</strong></td></tr>
+  <tr><td>ITR + computation</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c">?</td><td><strong>Guess.</strong> A top-up on a performing loan may reuse financials already on file. Depends on your policy and how recent they are.</td></tr>
+  <tr><td>Audited financials</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c">?</td><td><strong>Guess.</strong> Same reasoning. Also: are audited statements realistic for small proprietorships, or should this be entity- or turnover-gated rather than universal?</td></tr>
+  <tr><td>Current account statements</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td>Cash-flow evidence in every case.</td></tr>
+  <tr><td>GST certificate <em>(optional today)</em></td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td class="c yes">✔</td><td>Should this become required when the business is GST-registered? We capture GSTIN on the enquiry form, so a rule is possible.</td></tr>
+  <tr><td>GSTR-3B returns <em>(optional today)</em></td><td class="c">?</td><td class="c">?</td><td class="c yes">✔</td><td class="c">?</td><td><strong>Guess.</strong> Working capital is assessed on turnover, so recent GST returns seem more central there. Is that right?</td></tr>
+
+  <tr><td colspan="6" style="background:var(--code-bg)"><strong>Property — the real gap (all new)</strong></td></tr>
+  <tr class="new"><td>Property title deed / sale deed</td><td class="c no">—</td><td class="c yes">✔</td><td class="c no">—</td><td class="c no">—</td><td>The security being offered. Cannot assess a LAP without it.</td></tr>
+  <tr class="new"><td>Encumbrance certificate (EC)</td><td class="c no">—</td><td class="c yes">✔</td><td class="c no">—</td><td class="c no">—</td><td>Proves the property is unencumbered. How many years back do you require?</td></tr>
+  <tr class="new"><td>Latest property tax receipt</td><td class="c no">—</td><td class="c yes">✔</td><td class="c no">—</td><td class="c no">—</td><td>Ownership + dues confirmation.</td></tr>
+  <tr class="new"><td>Approved building plan / occupancy certificate</td><td class="c no">—</td><td class="c">?</td><td class="c no">—</td><td class="c no">—</td><td><strong>Guess.</strong> May only apply to constructed property, not land. Your call.</td></tr>
+  <tr class="new"><td>Valuation report</td><td class="c no">—</td><td class="c">?</td><td class="c no">—</td><td class="c no">—</td><td><strong>Probably not.</strong> Usually the lender commissions this, not the borrower — so it may not belong on a borrower checklist at all.</td></tr>
+
+  <tr><td colspan="6" style="background:var(--code-bg)"><strong>Existing-facility documents (all new)</strong></td></tr>
+  <tr class="new"><td>Existing loan sanction letter</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">✔</td><td>A top-up is on an existing facility — its terms are the starting point.</td></tr>
+  <tr class="new"><td>Existing loan statement of account</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">✔</td><td>Repayment record on the facility being topped up.</td></tr>
+  <tr class="new"><td>Debtors &amp; creditors ageing</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">✔</td><td class="c no">—</td><td><strong>Guess.</strong> Standard for working-capital assessment in my understanding — please confirm.</td></tr>
+  <tr class="new"><td>Stock / inventory statement</td><td class="c no">—</td><td class="c no">—</td><td class="c">?</td><td class="c no">—</td><td><strong>Guess.</strong> May apply only to secured working capital / CC limits.</td></tr>
+</table>
+
+<p><strong>Net effect if adopted as drafted:</strong> a Proprietorship SME Term Loan would ask for roughly the same 9 items it does today; a Proprietorship LAP would ask for about 12; a Top-up would ask for around 11 but potentially fewer financials.</p>
+
+<!-- ============================================================ -->
+<h2 id="newdocs">4. New checklist items this would need</h2>
+
+<p>Nine new items, each needing a precise description before it ships. Descriptions matter more than usual here — they are what the AI classifier reads to tell look-alike documents apart, and vague wording is how a sale deed gets filed as a rent agreement.</p>
+
+<ol>
+  <li>Property title deed / sale deed</li>
+  <li>Encumbrance certificate</li>
+  <li>Latest property tax receipt</li>
+  <li>Approved building plan / occupancy certificate <em>(if adopted)</em></li>
+  <li>Valuation report <em>(if adopted — likely not borrower-supplied)</em></li>
+  <li>Existing loan sanction letter</li>
+  <li>Existing loan statement of account</li>
+  <li>Debtors &amp; creditors ageing</li>
+  <li>Stock / inventory statement <em>(if adopted)</em></li>
+</ol>
+
+<!-- ============================================================ -->
+<h2 id="howitworks">5. How this gets implemented (no code)</h2>
+
+<p>Every rule above is a condition on the case's own data, in the same shape the two existing rules use:</p>
+
+<table>
+  <tr><th>Intent</th><th>Condition</th></tr>
+  <tr><td>Only for LAP</td><td><code>{ field: "loan_type", equals: "LAP" }</code></td></tr>
+  <tr><td>Only for Top-up</td><td><code>{ field: "loan_type", equals: "Top-up" }</code></td></tr>
+  <tr><td>For term loans and working capital</td><td><code>{ field: "loan_type", in: ["SME Term Loan", "Working Capital"] }</code></td></tr>
+</table>
+
+<p>Delivery would be one migration in the pattern of <code>0015</code> — generated from the TypeScript config so the SQL cannot drift from it, idempotent, and applied only after your sign-off.</p>
+
+<div class="box warn">
+<p><strong>One behaviour note.</strong> Loan type is currently an <em>optional</em> field. If a case has no loan type, a rule like <code>equals: "LAP"</code> evaluates false and the document is simply not asked for. If these rules go live, loan type should probably become <strong>required</strong> on the create form — otherwise a case saved without it silently skips its loan-specific documents. That is a one-line config change, and worth deciding at the same time.</p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="questions">6. Open questions for you</h2>
+
+<div class="q"><b>1. Is the current 9-item baseline right at all?</b> It has never been reviewed by anyone with credit-ops experience. Before adding loan-type rules, is the common core itself correct?</div>
+
+<div class="q"><b>2. Are audited financials realistic for every applicant?</b> A small proprietorship may not have audited statements. Should this be gated on entity type or turnover rather than asked of everyone?</div>
+
+<div class="q"><b>3. What does a Top-up genuinely need?</b> If the borrower already has a live facility with you, which documents can be reused from the original file, and which must be refreshed?</div>
+
+<div class="q"><b>4. LAP property set — is my list right, and how far back?</b> Specifically: how many years of encumbrance certificate, and do you want building plan / occupancy certificate on the borrower's list?</div>
+
+<div class="q"><b>5. Who supplies the valuation?</b> If your empanelled valuer does it, it should not be on the borrower's checklist at all.</div>
+
+<div class="q"><b>6. Should GST documents become conditional on GST registration?</b> We capture GSTIN at enquiry, so “required when the business is GST-registered” is expressible.</div>
+
+<div class="q"><b>7. Should loan type become mandatory?</b> See the note in section 5 — rules that depend on it are unreliable while it is optional.</div>
+
+<div class="q"><b>8. Do different lenders need different lists?</b> Today one workflow serves everyone. If Docket's tenants each want their own checklist, that is already supported (requirements are per-workflow) — but it changes how we roll this out.</div>
+
+<p style="margin-top:26px"><strong>Next step:</strong> mark this document up — correct the ✔/—/? cells, answer what you can, and flag anything I have simply got wrong. I will turn your corrected version into a migration, with the AI-facing descriptions written to the same disambiguation standard as the current checklist.</p>
+
+</main>
