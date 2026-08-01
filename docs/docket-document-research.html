@@ -1,0 +1,338 @@
+<meta charset="utf-8">
+<title>Docket — Document Requirements: Research Findings &amp; Industry Expansion</title>
+<style>
+  :root {
+    --ink:#1a1d21; --muted:#5c6470; --line:#e3e6ea;
+    --accent:#0f5c8c; --accent-soft:#eaf3f9;
+    --warn:#c98a1b; --warn-soft:#fdf3e3;
+    --danger:#b3261e; --danger-soft:#fdecea;
+    --ok:#1d7a3d; --ok-soft:#e9f5ec;
+    --code-bg:#f5f6f8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);line-height:1.6;font-size:16px;background:#fff}
+  main{max-width:1000px;margin:0 auto;padding:40px 26px 90px}
+  h1{font-size:31px;margin:0 0 6px;line-height:1.2}
+  .sub{color:var(--muted);font-size:16px;margin:0 0 6px}
+  .meta{color:var(--muted);font-size:13px;margin-bottom:26px}
+  h2{font-size:22px;margin:46px 0 10px;padding-top:20px;border-top:1px solid var(--line)}
+  h3{font-size:17.5px;margin:28px 0 8px}
+  h4{font-size:15px;margin:18px 0 6px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+  p{margin:0 0 13px}
+  ul,ol{margin:0 0 15px;padding-left:22px}
+  li{margin-bottom:5px}
+  table{border-collapse:collapse;width:100%;margin:14px 0 22px;font-size:14.5px}
+  th,td{text-align:left;padding:8px 11px;border:1px solid var(--line);vertical-align:top}
+  th{background:var(--code-bg);font-weight:600}
+  td.c{text-align:center}
+  code{font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;font-size:13.5px;
+    background:var(--code-bg);padding:1px 5px;border-radius:4px}
+  .box{border-left:4px solid var(--accent);background:var(--accent-soft);
+    padding:13px 17px;border-radius:0 8px 8px 0;margin:16px 0 22px}
+  .box.warn{border-left-color:var(--warn);background:var(--warn-soft)}
+  .box.danger{border-left-color:var(--danger);background:var(--danger-soft)}
+  .box.ok{border-left-color:var(--ok);background:var(--ok-soft)}
+  .box p:last-child{margin-bottom:0}
+  .verdict{font-weight:600}
+  .pill{display:inline-block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    padding:2px 7px;border-radius:99px;vertical-align:middle;margin-left:6px}
+  .pill.reg{background:var(--ok-soft);color:var(--ok)}
+  .pill.sec{background:var(--code-bg);color:var(--muted)}
+  .pill.new{background:var(--warn-soft);color:var(--warn)}
+  .toc{background:var(--code-bg);border:1px solid var(--line);border-radius:10px;padding:18px 24px}
+  .toc h2{border:0;margin:0 0 8px;padding:0;font-size:16px}
+  .toc ol{margin:0;padding-left:20px}
+  .toc a{color:var(--accent);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .q{background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);
+    border-radius:0 8px 8px 0;padding:14px 18px;margin:22px 0}
+  .q > b:first-child{display:block;font-size:16.5px;margin-bottom:8px}
+  .src{font-size:13px;color:var(--muted)}
+  .src a{color:var(--accent)}
+  @media print{
+    body{font-size:11.5px} main{padding:0;max-width:100%}
+    h2{page-break-after:avoid} table,.box,.q{page-break-inside:avoid}
+  }
+</style>
+
+<main>
+
+<h1>Document Requirements: Research Findings &amp; Industry Expansion</h1>
+<p class="sub">Answers to the eight open questions, researched against regulatory and lender sources — plus what Docket's workflow library should cover beyond lending.</p>
+<p class="meta">Researched 1 August 2026 · <strong>Nothing here has been applied to the live checklist</strong> · Labels: <span class="pill reg">regulatory source</span> <span class="pill sec">industry/secondary source</span></p>
+
+<div class="box danger">
+<p><strong>Two findings change things materially, and neither was on your list of questions.</strong></p>
+<p><strong>1. Demanding "Aadhaar" as a required document is a compliance risk.</strong> The Supreme Court struck down Section 57 of the Aadhaar Act, ending private entities' power to compel Aadhaar. RBI's framework accepts any one of six Officially Valid Documents. Our checklist names Aadhaar specifically and marks it required — it should be "Identity proof (any one OVD)" with Aadhaar as one accepted option.</p>
+<p><strong>2. Demanding audited financials from everyone is unrealistic and often impossible.</strong> A proprietorship under ₹1 crore turnover has no legal obligation to be audited, so a compliant small business simply cannot produce the document we insist on.</p>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+  <li><a href="#q1">Q1 · Is the 9-item baseline right?</a></li>
+  <li><a href="#q2">Q2 · Are audited financials realistic?</a></li>
+  <li><a href="#q3">Q3 · What does a Top-up need?</a></li>
+  <li><a href="#q4">Q4 · LAP property set — right, and how far back?</a></li>
+  <li><a href="#q5">Q5 · Who supplies the valuation?</a></li>
+  <li><a href="#q6">Q6 · GST documents conditional on registration</a></li>
+  <li><a href="#q7">Q7 · Should loan type be mandatory?</a></li>
+  <li><a href="#q8">Q8 · Do different lenders need different lists?</a></li>
+  <li><a href="#revised">The revised business-loan checklist</a></li>
+  <li><a href="#industries">Beyond lending: the workflow library</a></li>
+  <li><a href="#sources">Sources</a></li>
+</ol>
+</div>
+
+<!-- ================= Q1 ================= -->
+<h2 id="q1">Q1 · Is the current 9-item baseline right at all?</h2>
+
+<p class="verdict">Verdict: the <em>categories</em> are right; the <em>execution</em> has three real defects.</p>
+
+<p>Every lender source I checked asks for the same four buckets we do — identity KYC, address, business existence, financials. Nothing in our list is spurious. But three problems surfaced:</p>
+
+<h4>Defect 1 — "Aadhaar" should not be a named mandatory item <span class="pill reg">regulatory</span></h4>
+<p>RBI's KYC Master Direction accepts <strong>any one of six OVDs</strong>: passport, driving licence, proof of possession of Aadhaar, voter ID, NREGA job card, or the NPR letter — with PAN (or Form 60) in addition. Meanwhile the Supreme Court struck down Section 57 of the Aadhaar Act, which is what had let private entities compel Aadhaar authentication; after that judgment Aadhaar is voluntary for private contracts.</p>
+<p><strong>Fix:</strong> rename the item to <em>"Identity proof (any one Officially Valid Document)"</em>, listing all six in the description. This is also better for the AI classifier — today a borrower who sends a passport instead of Aadhaar has it filed as address proof or left unmatched.</p>
+
+<h4>Defect 2 — entity documents are incomplete <span class="pill sec">lender sources</span></h4>
+<p>We ask a Private Limited company only for its Certificate of Incorporation. Lender checklists consistently also require <strong>MOA and AOA</strong>, and a <strong>CA/CS-certified list of directors and shareholders</strong>. For an LLP, the <strong>LLP Agreement</strong> is required — we don't ask for it at all, only the incorporation certificate. And a proprietorship typically signs a <strong>Sole Proprietorship Declaration</strong>, which we have no item for.</p>
+
+<h4>Defect 3 — no board resolution / authority to borrow</h4>
+<p>For companies and LLPs, lenders require a resolution authorising the borrowing and naming signatories. We never ask.</p>
+
+<div class="box">
+<p><strong>What this means in practice:</strong> a Pvt Ltd applicant completing our checklist 100% would still be missing MOA/AOA, the director list and a board resolution — so credit-ops would be chasing three documents outside the system, which is precisely the chaos Docket exists to remove.</p>
+</div>
+
+<!-- ================= Q2 ================= -->
+<h2 id="q2">Q2 · Are audited financials realistic for every applicant?</h2>
+
+<p class="verdict">Verdict: no. Demanding them universally is wrong, and the thresholds are precise enough to encode as rules.</p>
+
+<table>
+  <tr><th>Applicant</th><th>Is an audit legally required?</th><th>Source type</th></tr>
+  <tr><td>Proprietorship / partnership (non-company)</td>
+      <td>Tax audit under <strong>s.44AB</strong> only if turnover exceeds <strong>₹1 crore</strong> — raised to <strong>₹10 crore</strong> when cash receipts <em>and</em> cash payments are each ≤5% of the total. Below that: <strong>no audit</strong>.</td>
+      <td><span class="pill reg">Income Tax Act</span></td></tr>
+  <tr><td>LLP</td>
+      <td>Audit only if turnover &gt; <strong>₹40 lakh</strong> or contribution &gt; <strong>₹25 lakh</strong>. Below both: <strong>no audit</strong>.</td>
+      <td><span class="pill reg">LLP Act</span></td></tr>
+  <tr><td>Private / Public Limited company</td>
+      <td><strong>Always</strong> — statutory audit applies regardless of turnover.</td>
+      <td><span class="pill reg">Companies Act</span></td></tr>
+</table>
+
+<p><strong>Fix:</strong> split the item in two.</p>
+<ul>
+  <li><strong>Audited financial statements</strong> — required when <code>entity_type ∈ {Private Limited, Public Limited}</code>. Always available, so always fair to demand.</li>
+  <li><strong>Financial statements (P&amp;L and balance sheet)</strong> — required for everyone else, audited <em>if available</em>. A ₹60-lakh proprietorship can produce these; it cannot produce an audit report that legally doesn't exist.</li>
+</ul>
+
+<p>The turnover-based rules (₹1cr / ₹10cr / ₹40L) are expressible too — we capture monthly turnover — but they need care, since our field is monthly and the thresholds are annual. Worth deciding whether to encode them or keep the simpler entity-based split.</p>
+
+<!-- ================= Q3 ================= -->
+<h2 id="q3">Q3 · What does a Top-up genuinely need?</h2>
+
+<p class="verdict">Your answer: it depends on what the top-up is <em>on</em>. Research agrees — and that has a design consequence.</p>
+
+<p>A top-up is additional lending on an existing facility, so the question "what do we need?" resolves to "what is already on file, and what has gone stale?" Two things are always needed and are new to us:</p>
+<ul>
+  <li><strong>Existing loan sanction letter</strong> — the terms being topped up</li>
+  <li><strong>Existing loan statement of account</strong> — the repayment record</li>
+</ul>
+
+<p>Beyond that, the answer genuinely varies with the underlying facility: a top-up on a LAP re-opens the property questions (has anything been mortgaged since?), while a top-up on an unsecured term loan mostly needs refreshed financials.</p>
+
+<div class="box">
+<p><strong>Design consequence:</strong> Docket already has a feature for exactly this — requirements can be marked <strong>reusable</strong> with a <strong>validity window</strong> (<code>validityDays</code>). Documents already collected on the borrower's earlier case can be carried forward while still valid, and only the expired ones re-requested. That is the honest way to model a top-up, and it needs no new concept — just correct validity periods per document, which is a question for your credit policy.</p>
+</div>
+
+<!-- ================= Q4 ================= -->
+<h2 id="q4">Q4 · LAP property set — is my list right, and how far back?</h2>
+
+<p class="verdict">Verdict: my list was directionally right but incomplete. Two documents were missing, and I can now answer the "how far back".</p>
+
+<table>
+  <tr><th>Document</th><th>Status</th><th>Detail</th></tr>
+  <tr><td>Title deed / sale deed</td><td>✔ confirmed</td><td>The security itself. Banks ask for the original.</td></tr>
+  <tr><td>Encumbrance certificate</td><td>✔ confirmed</td><td><strong>13 to 30 years</strong> is the standard range quoted across lender sources. The exact period is a lender policy choice — <em>this is the one number you still need to set.</em></td></tr>
+  <tr><td>Property tax receipts</td><td>✔ confirmed</td><td>Latest paid municipal tax; some banks also ask for water tax and maintenance receipts.</td></tr>
+  <tr><td>Approved building plan</td><td>✔ confirmed</td><td>Applies to constructed property. My "?" resolved: yes, it is standard.</td></tr>
+  <tr><td>Occupancy certificate</td><td>✔ confirmed</td><td>Same — confirms the building is legally fit for occupation.</td></tr>
+  <tr><td><strong>Chain of title (previous sale deeds)</strong></td><td class="c"><span class="pill new">I missed this</span></td><td>Where the property has changed hands, lenders require the full chain of prior deeds to trace ownership.</td></tr>
+  <tr><td><strong>NOC / non-encumbrance letter from society</strong></td><td class="c"><span class="pill new">I missed this</span></td><td>Bank of Baroda's own checklist requires a non-encumbrance letter from the co-op society, permission to create an equitable mortgage, and confirmation that the bank's lien is noted on society records.</td></tr>
+</table>
+
+<!-- ================= Q5 ================= -->
+<h2 id="q5">Q5 · Who supplies the valuation?</h2>
+
+<p class="verdict">Verdict: <strong>the lender does — it must not be on the borrower's checklist.</strong> My draft guessed this; it is now confirmed.</p>
+
+<p>RBI's prudential guidelines on collateral require lenders to obtain an independent valuation, and banks specifically will not accept a value supplied by the borrower or seller — the whole point of empanelment is that the valuer is the bank's, not the applicant's. The same logic applies to the <strong>legal opinion / title clearance report</strong>: Bank of Baroda's checklist explicitly refers to "the Bank's panel advocate".</p>
+
+<div class="box ok">
+<p><strong>Action:</strong> drop "Valuation report" from the proposed LAP list entirely. Asking a borrower for it would produce a document the lender cannot use — worse than not asking. If you ever want to <em>track</em> the panel valuer's report inside Docket, that is a different feature: an internally-uploaded document, not something requested from the applicant.</p>
+</div>
+
+<!-- ================= Q6 ================= -->
+<h2 id="q6">Q6 · Should GST documents become conditional on GST registration?</h2>
+
+<p class="verdict">Your answer: yes. Straightforward to implement.</p>
+<p>We capture GSTIN on the enquiry form, so the rule is expressible today. GST registration is compulsory above the turnover thresholds and voluntary below them, so a real applicant may legitimately have no GSTIN — which is exactly why the conditional is the correct shape rather than making it universally required.</p>
+<p>One caveat worth your decision: the condition can key off "GSTIN present on the case" only if that field is reliably filled. Cases created from the website form carry it; cases created by staff may not, unless we make it a required field for GST-registered applicants.</p>
+
+<!-- ================= Q7 ================= -->
+<h2 id="q7">Q7 · Should loan type become mandatory?</h2>
+
+<p class="verdict">Your answer: depends on the loan type. Here is the mechanical consequence, which I'd ask you to weigh.</p>
+<p>Loan type is optional today. If loan-type rules go live and a case is saved without one, every loan-specific document silently drops out of the checklist — the case looks complete while missing the property documents that make a LAP assessable. Silence is the dangerous part: nothing warns anyone.</p>
+<p><strong>Recommendation:</strong> make loan type <strong>required at case creation</strong> (a one-line config change, no code). If a case genuinely starts before the product is known, the honest modelling is an explicit "Not yet decided" option that asks only the common core — a deliberate state, rather than an empty field that quietly under-asks.</p>
+
+<!-- ================= Q8 ================= -->
+<h2 id="q8">Q8 · Do different lenders need different lists?</h2>
+
+<p class="verdict">Verdict: your instinct is half right — and the half that isn't matters commercially.</p>
+<table>
+  <tr><th>Layer</th><th>Varies by lender?</th><th>Why</th></tr>
+  <tr><td>KYC core (identity, address, PAN)</td><td><strong>No</strong></td><td>Fixed by RBI's KYC Master Direction. Every regulated lender asks the same thing.</td></tr>
+  <tr><td>Entity documents</td><td>Barely</td><td>Driven by company law, not credit policy.</td></tr>
+  <tr><td>Financial / credit layer</td><td><strong>Yes, substantially</strong></td><td>Banks typically want 2–3 years of ITR plus audited financials; NBFCs commonly work off 6–12 months of bank statements and GST data, and some lend on small tickets without ITR at all.</td></tr>
+  <tr><td>Property / security layer</td><td>Yes</td><td>EC period and NOC requirements are policy choices.</td></tr>
+</table>
+
+<div class="box ok">
+<p><strong>The good news is architectural:</strong> Docket already stores requirements <em>per workflow</em>, and workflows are <em>per tenant</em>. So an NBFC tenant and a bank tenant can run different checklists today with no code change. What we should ship is a well-researched <strong>default</strong> that a tenant can trim — not a single list imposed on everyone.</p>
+</div>
+
+<!-- ================= REVISED ================= -->
+<h2 id="revised">The revised business-loan checklist</h2>
+
+<p>Combining everything above. <span class="pill new">new</span> = does not exist yet; <em>italic</em> = changed from today.</p>
+
+<table>
+  <tr><th>Item</th><th>Who is asked</th><th>Change</th></tr>
+  <tr><td colspan="3" style="background:var(--code-bg)"><strong>Identity &amp; address — everyone</strong></td></tr>
+  <tr><td><em>Identity proof (any one OVD)</em></td><td>All</td><td>Renamed from "Aadhaar" — compliance fix</td></tr>
+  <tr><td>PAN Card</td><td>All</td><td>unchanged</td></tr>
+  <tr><td>Passport photograph</td><td>All</td><td>unchanged</td></tr>
+  <tr><td>Residence address proof</td><td>All</td><td>unchanged</td></tr>
+  <tr><td>Office address proof</td><td>All</td><td>unchanged</td></tr>
+
+  <tr><td colspan="3" style="background:var(--code-bg)"><strong>Entity &amp; authority</strong></td></tr>
+  <tr><td>Business proof</td><td>All</td><td>unchanged</td></tr>
+  <tr><td>Partnership Deed</td><td>Partnership</td><td>unchanged</td></tr>
+  <tr><td>Certificate of Incorporation</td><td>Pvt Ltd / Public / LLP</td><td>unchanged</td></tr>
+  <tr><td>MOA &amp; AOA <span class="pill new">new</span></td><td>Pvt Ltd / Public Ltd</td><td>gap found</td></tr>
+  <tr><td>LLP Agreement <span class="pill new">new</span></td><td>LLP</td><td>gap found</td></tr>
+  <tr><td>Director / shareholder list, CA-certified <span class="pill new">new</span></td><td>Pvt Ltd / Public / LLP</td><td>gap found</td></tr>
+  <tr><td>Board resolution to borrow <span class="pill new">new</span></td><td>Pvt Ltd / Public / LLP</td><td>gap found</td></tr>
+  <tr><td>Sole proprietorship declaration <span class="pill new">new</span></td><td>Proprietorship</td><td>gap found</td></tr>
+
+  <tr><td colspan="3" style="background:var(--code-bg)"><strong>Financials</strong></td></tr>
+  <tr><td>ITR + computation</td><td>All</td><td>unchanged</td></tr>
+  <tr><td><em>Audited financial statements</em></td><td>Pvt Ltd / Public Ltd only</td><td>was universal — now entity-gated</td></tr>
+  <tr><td>Financial statements (P&amp;L, balance sheet) <span class="pill new">new</span></td><td>Everyone else</td><td>replaces audit demand for small entities</td></tr>
+  <tr><td>Current account statements</td><td>All</td><td>unchanged</td></tr>
+  <tr><td><em>GST certificate</em></td><td>GST-registered only</td><td>optional → conditional</td></tr>
+  <tr><td><em>GSTR-3B returns</em></td><td>GST-registered only</td><td>optional → conditional</td></tr>
+
+  <tr><td colspan="3" style="background:var(--code-bg)"><strong>Property — LAP only (all new)</strong></td></tr>
+  <tr><td>Title deed / sale deed <span class="pill new">new</span></td><td>LAP</td><td></td></tr>
+  <tr><td>Chain of title <span class="pill new">new</span></td><td>LAP</td><td>found in research</td></tr>
+  <tr><td>Encumbrance certificate <span class="pill new">new</span></td><td>LAP</td><td>period = your decision (13–30 yrs)</td></tr>
+  <tr><td>Property tax receipt <span class="pill new">new</span></td><td>LAP</td><td></td></tr>
+  <tr><td>Approved building plan + OC <span class="pill new">new</span></td><td>LAP (constructed)</td><td></td></tr>
+  <tr><td>Society NOC / non-encumbrance letter <span class="pill new">new</span></td><td>LAP (society property)</td><td>found in research</td></tr>
+  <tr><td style="text-decoration:line-through;color:var(--muted)">Valuation report</td><td colspan="2"><strong>Dropped</strong> — lender's empanelled valuer, never the borrower</td></tr>
+
+  <tr><td colspan="3" style="background:var(--code-bg)"><strong>Existing facility — Top-up only (all new)</strong></td></tr>
+  <tr><td>Existing sanction letter <span class="pill new">new</span></td><td>Top-up</td><td></td></tr>
+  <tr><td>Existing loan statement <span class="pill new">new</span></td><td>Top-up</td><td></td></tr>
+
+  <tr><td colspan="3" style="background:var(--code-bg)"><strong>Working capital only</strong></td></tr>
+  <tr><td>Debtors &amp; creditors ageing <span class="pill new">new</span></td><td>Working Capital</td><td>still needs your confirmation</td></tr>
+  <tr><td>Stock / inventory statement <span class="pill new">new</span></td><td>Working Capital (secured)</td><td>still needs your confirmation</td></tr>
+</table>
+
+<p><strong>What still needs you, not research:</strong> the EC period (13 vs 30 years), whether to encode turnover-based audit rules, the working-capital pair above, and the validity windows that make top-up document reuse work.</p>
+
+<!-- ================= INDUSTRIES ================= -->
+<h2 id="industries">Beyond lending: the workflow library</h2>
+
+<p>Docket ships two workflows today (Business Loan, and a College Admission example). Every industry below is the same shape — a subject, a case, stages, and a conditional document checklist — so each is <strong>configuration, not code</strong>. Here are the three you named, researched, plus the ones that fit the pattern most naturally.</p>
+
+<h3>1 · CA firm — client engagement onboarding</h3>
+<p>ICAI issued <strong>Client KYC Norms</strong> for members in practice, applying to attest functions — audit, review, agreed-upon procedures and compilation of financial statements. Notably it is framed as <em>information to be maintained</em> rather than a heavy document list, which suits Docket well: the case fields carry the information, the checklist carries the evidence.</p>
+<table>
+  <tr><th>Vocabulary</th><td>Subject = <strong>Client</strong> · Case = <strong>Engagement</strong></td></tr>
+  <tr><th>Case fields</th><td>Engagement type (Audit / Review / Compilation / Certification), entity type, PAN, CIN, DIN of directors, ultimate parent, previous auditor</td></tr>
+  <tr><th>Checklist</th><td>PAN of entity · identity proof of signatory · incorporation/registration certificate · MOA-AOA or partnership deed or LLP agreement · board resolution appointing the firm · previous year's financial statements · previous auditor's NOC <em>(where an audit is being taken over)</em> · GST registration · bank statements <em>(engagement-dependent)</em></td></tr>
+  <tr><th>Conditionals</th><td>Entity documents gate on entity type; previous-auditor NOC gates on engagement type = Audit</td></tr>
+</table>
+
+<h3>2 · Company registration (SPICe+)</h3>
+<p>MCA's <strong>SPICe+</strong> form is a single application delivering ten services — DIN, PAN, TAN, GSTIN, EPFO, ESIC and bank account among them. This is an unusually good fit for Docket because the document set is precisely defined by the filing itself.</p>
+<table>
+  <tr><th>Vocabulary</th><td>Subject = <strong>Promoter</strong> · Case = <strong>Registration</strong></td></tr>
+  <tr><th>Case fields</th><td>Proposed company name(s), company type (Pvt Ltd / OPC / LLP / Section 8), number of directors, authorised capital, registered-office state</td></tr>
+  <tr><th>Checklist</th><td>PAN of each subscriber/director · identity proof · <strong>residential address proof dated within 2 months</strong> (utility bill or bank statement) · passport photograph · Class 3 DSC for every director · DIN <em>(where already held)</em> · registered-office proof · <strong>NOC from the office premises owner</strong> · utility bill for the registered office · INC-9 declaration · MOA &amp; AOA</td></tr>
+  <tr><th>Conditionals</th><td>DIN gates on "already holds DIN"; foreign-national documents (apostilled) gate on nationality</td></tr>
+</table>
+<div class="box warn">
+<p><strong>Note the freshness rule:</strong> the address proof must be <em>no older than two months</em>. Docket already models this — <code>validityDays</code> per requirement — so an expired utility bill would be flagged automatically rather than discovered at filing. That is a genuinely strong demo for this vertical.</p>
+</div>
+
+<h3>3 · Employee onboarding</h3>
+<p>The most universally applicable workflow of the three, and the one with the clearest statutory backbone.</p>
+<table>
+  <tr><th>Vocabulary</th><td>Subject = <strong>New joiner</strong> · Case = <strong>Onboarding</strong></td></tr>
+  <tr><th>Case fields</th><td>Role, department, joining date, monthly salary, employment type, has previous employment (Y/N)</td></tr>
+  <tr><th>Checklist</th><td><strong>Statutory:</strong> PAN (TDS under s.192) · Aadhaar (EPFO KYC) · bank account proof · <strong>PF Form 11</strong> declaration · <strong>Form 2</strong> PF nomination · UAN <em>(if previously employed)</em> · <strong>ESI Form 1</strong> <em>(salary ≤ ₹21,000/month)</em><br>
+  <strong>Credentials:</strong> degree certificates + marksheets · passport photograph<br>
+  <strong>Previous employment:</strong> relieving letter · experience letter · last 3 months' payslips · Form 16</td></tr>
+  <tr><th>Conditionals</th><td>ESI Form 1 gates on salary ≤ ₹21,000 · previous-employment block gates on "has previous employment" · UAN likewise</td></tr>
+</table>
+<p>This one demonstrates conditional logic better than lending does: the ESI rule is a clean numeric threshold, and the entire previous-employment block appearing or vanishing on one answer is very visible in a demo.</p>
+
+<h3>Others that fit the same shape</h3>
+<table>
+  <tr><th>Workflow</th><th>Subject · Case</th><th>Why it fits</th></tr>
+  <tr><td>Insurance claim</td><td>Claimant · Claim</td><td>Document-heavy, conditional on claim type (motor / health / property); the sibling business to lending</td></tr>
+  <tr><td>Tenant / rental onboarding</td><td>Tenant · Tenancy</td><td>KYC + income proof + employer letter; high volume, low complexity</td></tr>
+  <tr><td>Vendor / supplier onboarding</td><td>Vendor · Empanelment</td><td>GST, PAN, bank proof, MSME certificate, cancelled cheque — every company does this</td></tr>
+  <tr><td>School / college admission</td><td>Student · Admission</td><td>Already the second workflow; marksheets, TC, caste/income certificates gate on category</td></tr>
+  <tr><td>Visa / immigration filing</td><td>Applicant · Application</td><td>Extremely checklist-driven with hard freshness rules</td></tr>
+  <tr><td>Property conveyancing</td><td>Buyer · Transaction</td><td>Reuses the entire LAP property document set</td></tr>
+</table>
+
+<div class="box">
+<p><strong>The strategic point.</strong> Every workflow above needs zero engineering — a name, a vocabulary pair, stages, field definitions and a conditional checklist, all data. What each genuinely needs is <em>domain review</em>, exactly as the lending checklist does. That is the real constraint on Docket's breadth: not code, but someone who knows each field signing off the list. Worth saying plainly to Eswar, because it reframes "which industries do you support?" into "how fast can we configure one?" — and the answer is days, not releases.</p>
+</div>
+
+<!-- ================= SOURCES ================= -->
+<h2 id="sources">Sources</h2>
+<p class="src">Regulatory and standards material:</p>
+<ul class="src">
+  <li><a href="https://lexcomply.com/rsjadmin/news/202105171430MD%20DBR.AML.BC.%20No.%2081-14.01.001-2015-16-MD-KYC%20Direct%202016%20(Updated%20on%2010-05-2021).PDF">RBI Master Direction — KYC (DBR.AML.BC.No.81/14.01.001/2015-16)</a> · <a href="https://hyperverge.co/blog/rbi-kyc-guidelines/">RBI KYC guidelines summary, 2026</a></li>
+  <li><a href="https://cleartax.in/s/tax-audit-section-44ab">Tax audit under Section 44AB — ClearTax</a> · <a href="https://www.indiafilings.com/learn/income-tax-audit-limit">Income tax audit limits — IndiaFilings</a></li>
+  <li><a href="https://www.indiafilings.com/learn/llp-audit-applicability">LLP audit applicability — IndiaFilings</a> · <a href="https://razorpay.com/rize/blogs/llp-audit-applicability-limits-requirement">LLP audit limits — Razorpay Rize</a></li>
+  <li><a href="https://www.scobserver.in/reports/constitutionality-of-aadhaar-justice-k-s-puttaswamy-union-of-india-judgment-in-plain-english/">Puttaswamy (Aadhaar) judgment summary — Supreme Court Observer</a> · <a href="https://privacyinternational.org/long-read/2299/initial-analysis-indian-supreme-court-decision-aadhaar">Analysis of Section 57 — Privacy International</a></li>
+  <li><a href="https://www.icai.org/resource/44207esb-kyc-guidelines.pdf">ICAI Announcement of KYC Norms</a> · <a href="https://taxguru.in/chartered-accountant/icai-issues-client-kyc-norms-members-practice.html">ICAI Client KYC norms — TaxGuru</a></li>
+  <li><a href="https://taxguru.in/company-law/private-limited-company-incorporation-process-via-spice-plus-faqs.html">SPICe+ incorporation process &amp; FAQs — TaxGuru</a> · <a href="https://ebizfiling.com/blog/new-mca-form-for-company-registration-spice-plus/">MCA SPICe+ form — Ebizfiling</a></li>
+</ul>
+<p class="src">Lender and industry material:</p>
+<ul class="src">
+  <li><a href="https://www.hdfc.bank.in/business-loan/documentation">HDFC Bank — business loan documentation</a> · <a href="https://www.icici.bank.in/business-banking/finance/documents-required">ICICI Bank — documents required</a> · <a href="https://deal4loans.com/loans/articles/documents-required-for-business-loans-in-india">Business loan documents by entity type — Deal4Loans</a></li>
+  <li><a href="https://bankofbaroda.bank.in/banking-mantra/loans-borrowings/articles/documents-required-for-loan-against-property-a-complete-checklist">Bank of Baroda — LAP document checklist</a> · <a href="https://www.credlix.com/blogs/the-complete-list-of-documents-required-for-a-business-loan-against-property-in-india">LAP documents — Credlix</a> · <a href="https://www.kissht.com/blog/documents-required-loan-against-property">LAP documents — Kissht</a></li>
+  <li><a href="https://www.valuer.co.in/why-banks-insist-on-valuation-from-empaneled-property-valuation-services/">Why banks insist on empanelled valuers — Tanuj Kumar &amp; Associates</a> · <a href="https://rakeshnarula.com/property-valuation-for-bank-loan-business-india/">Property valuation for bank loans</a></li>
+  <li><a href="https://flexiloans.com/blog/business-loan-from-nbfc-vs-traditional-bank/">NBFC vs bank documentation — FlexiLoans</a> · <a href="https://www.iifl.com/blogs/business-loan/nbfc-or-bank-business-loans">NBFC or bank business loans — IIFL</a></li>
+  <li><a href="https://www.zoho.com/people/hrknowledgehive/top-9-onboarding-documents-required-in-india.html">Onboarding documents required in India — Zoho People</a> · <a href="https://salarybox.in/onboarding-documentation-checklist-indian-companies/">Onboarding documentation checklist — SalaryBox</a> · <a href="https://www.wisemonk.io/blogs/employee-onboarding-checklist-in-india">Employee onboarding checklist — Wisemonk</a></li>
+</ul>
+
+<div class="box warn">
+<p><strong>On the reliability of this research.</strong> Regulatory facts above (OVD list, s.44AB thresholds, LLP audit limits, the Aadhaar judgment, SPICe+ contents, PF/ESI forms) come from statutory or institutional sources and I would defend them. The <em>lender practice</em> claims — which documents a given bank asks for, the 13–30 year EC range — come from bank pages and loan aggregators, which are marketing material and can be incomplete or out of date. Treat the first group as established and the second as a strong starting point that your credit-ops people should confirm before it becomes policy.</p>
+</div>
+
+</main>
