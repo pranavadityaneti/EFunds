@@ -46,7 +46,12 @@ const initialFormState = {
     message: "",
 };
 
-export default function B2BLeadForm() {
+/**
+ * `endpoint` lets a page choose where the lead goes: the default posts to the
+ * partner-CRM route; /loan-enquiry passes the Docket intake route instead.
+ * Same form, same validation, different destination.
+ */
+export default function B2BLeadForm({ endpoint = "/api/leads/business-loan" }: { endpoint?: string } = {}) {
     const [formData, setFormData] = useState(initialFormState);
     const [consent, setConsent] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -95,7 +100,7 @@ export default function B2BLeadForm() {
         setErrorMsg("");
 
         try {
-            const response = await fetch("/api/leads/business-loan", {
+            const response = await fetch(endpoint, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
